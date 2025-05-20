@@ -9,7 +9,7 @@ import { Preview } from "@/components/Preview";
 import { Gallery4Demo } from "@/components/blocks/demo";
 
 export default function Home() {
-  const [scope, heroAnimate] = useAnimate(); // Renamed heroScope to heroAnimate for clarity
+  const [scope] = useAnimate();
   const serviciosRef = useRef<HTMLDivElement>(null); // Ref for the servicios section
   const proyectosRef = useRef<HTMLDivElement>(null); // Ref for the proyectos section
   const contactoRef = useRef<HTMLDivElement>(null); // Ref for the contacto section
