@@ -130,10 +130,11 @@ export default function Home() {
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious();
     const proyectosTop = proyectosRef.current?.offsetTop;
+    const proyectosHeight = proyectosRef.current?.offsetHeight; // Get height
     const contactoTop = contactoRef.current?.offsetTop;
 
-    // Check if scrolling down, not currently animating, and within the proyectos section's scroll range
-    if (proyectosTop !== undefined && contactoTop !== undefined && previous !== undefined && latest > previous && latest >= proyectosTop && latest < contactoTop && !isAnimating) {
+    // Check if scrolling down, not currently animating, and past the end of the proyectos section minus 20px
+    if (proyectosTop !== undefined && proyectosHeight !== undefined && contactoTop !== undefined && previous !== undefined && latest > previous && latest > proyectosTop + proyectosHeight - 520 && latest < contactoTop && !isAnimating) {
       setIsAnimating(true);
       animate(
         latest, // Animate from current scroll position
@@ -200,10 +201,10 @@ export default function Home() {
         <section className="servicios h-screen flex items-end" ref={serviciosRef}> {/* Added ref */}
           <Preview />
         </section>
-        <section className="proyectos pb-20" ref={proyectosRef}> {/* Added ref */}
+        <section className="proyectos" ref={proyectosRef}> {/* Added ref */}
           <Gallery4Demo />
         </section>
-        <section className="contacto  h-screen bg-red100" ref={contactoRef}> {/* Added ref */}
+        <section className="contacto h-screen" ref={contactoRef}> {/* Added ref */}
           <h1>contacto</h1>
         </section>
       </main>

@@ -103,7 +103,7 @@ function Preview() {
             />
           </div>
         </div>
-        <div className="absolute inset-0 overflow-auto snap-y snap-mandatory">
+        <div className="absolute scrollbar-hide inset-0 overflow-auto snap-y snap-mandatory">
           {slicedImages.map((image, index) => (
             <Item
               key={index}
