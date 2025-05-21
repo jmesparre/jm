@@ -108,11 +108,12 @@ const Gallery4 = ({
             </h2>
             <p className="max-w-lg text-muted-foreground">{description}</p>
           </div>
-          <div className="hidden shrink-0 gap-2 md:flex">
+          <div className="shrink-0 gap-2 md:flex">
             <Button
               size="icon"
               variant="ghost"
               onClick={() => {
+                console.log("Previous button clicked");
                 carouselApi?.scrollPrev();
               }}
               disabled={!canScrollPrev}
@@ -124,6 +125,7 @@ const Gallery4 = ({
               size="icon"
               variant="ghost"
               onClick={() => {
+                console.log("Next button clicked");
                 carouselApi?.scrollNext();
               }}
               disabled={!canScrollNext}
@@ -177,14 +179,23 @@ const Gallery4 = ({
             ))}
           </CarouselContent>
         </Carousel>
-        <div className="mt-8 flex justify-center gap-2">
+        {/* Debugging Info */}
+        <div>
+          <p>canScrollPrev: {String(canScrollPrev)}</p>
+          <p>canScrollNext: {String(canScrollNext)}</p>
+          <p>currentSlide: {currentSlide}</p>
+        </div>
+        <div className="mt-8 flex justify-center gap-2" style={{ display: 'flex !important' }}>
           {items.map((_, index) => (
             <button
               key={index}
               className={`h-2 w-2 rounded-full transition-colors ${
                 currentSlide === index ? "bg-primary" : "bg-primary/20"
               }`}
-              onClick={() => carouselApi?.scrollTo(index)}
+              onClick={() => {
+                console.log("Dot indicator clicked:", index);
+                carouselApi?.scrollTo(index);
+              }}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}

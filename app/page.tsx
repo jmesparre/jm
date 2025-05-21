@@ -10,11 +10,29 @@ import { Gallery4Demo } from "@/components/blocks/demo";
 
 export default function Home() {
   const [scope] = useAnimate();
+  const [isAnimating, setIsAnimating] = useState(false); // State to prevent re-triggering
+
+  // Effect to disable scroll while animating
+  useEffect(() => {
+    const handleScrollAttempt = (event: WheelEvent | TouchEvent) => {
+      if (isAnimating) {
+        event.preventDefault();
+      }
+    };
+
+    window.addEventListener('wheel', handleScrollAttempt, { passive: false });
+    window.addEventListener('touchmove', handleScrollAttempt, { passive: false });
+
+    return () => {
+      window.removeEventListener('wheel', handleScrollAttempt);
+      window.removeEventListener('touchmove', handleScrollAttempt);
+    };
+  }, [isAnimating]); // Re-run effect when isAnimating changes
+
   const serviciosRef = useRef<HTMLDivElement>(null); // Ref for the servicios section
   const proyectosRef = useRef<HTMLDivElement>(null); // Ref for the proyectos section
   const contactoRef = useRef<HTMLDivElement>(null); // Ref for the contacto section
   const { scrollY } = useScroll(); // Track scroll position
-  const [isAnimating, setIsAnimating] = useState(false); // State to prevent re-triggering
 
   useEffect(() => {
     const blinkAnimation = animate(
@@ -57,7 +75,9 @@ export default function Home() {
             window.scrollTo(0, value); // Update scroll position manually
           },
           onComplete: () => {
-            setIsAnimating(false);
+            setTimeout(() => {
+              setIsAnimating(false);
+            }, 1000); // 1 second delay
           },
         }
       );
@@ -74,9 +94,11 @@ export default function Home() {
            onUpdate: (value) => {
              window.scrollTo(0, value); // Update scroll position manually
            },
-           onComplete: () => {
-             setIsAnimating(false);
-           },
+          onComplete: () => {
+            setTimeout(() => {
+              setIsAnimating(false);
+            }, 1000); // 1 second delay
+          },
          }
        );
     }
@@ -101,7 +123,9 @@ export default function Home() {
             window.scrollTo(0, value); // Update scroll position manually
           },
           onComplete: () => {
-            setIsAnimating(false);
+            setTimeout(() => {
+              setIsAnimating(false);
+            }, 1000); // 1 second delay
           },
         }
       );
