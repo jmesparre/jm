@@ -89,7 +89,7 @@ function Preview() {
             <TextRotate
               ref={textRotateRef}
               texts={slicedImages.map((image) => image.author)}
-              mainClassName="text-sm sm:text-3xl md:text-4xl w-full justify-center flex pt-2"
+              mainClassName="text-sm text-black sm:text-3xl md:text-4xl w-full justify-center flex pt-2"
               splitLevelClassName="overflow-hidden pb-2"
               staggerFrom={"first"}
               animatePresenceMode="wait"

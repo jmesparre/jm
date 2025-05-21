@@ -11,6 +11,7 @@ import { Gallery4Demo } from "@/components/blocks/demo";
 export default function Home() {
   const [scope] = useAnimate();
   const [isAnimating, setIsAnimating] = useState(false); // State to prevent re-triggering
+  const [currentSection, setCurrentSection] = useState('hero'); // State to track current section
 
   // Effect to disable scroll while animating
   useEffect(() => {
@@ -75,6 +76,7 @@ export default function Home() {
             window.scrollTo(0, value); // Update scroll position manually
           },
           onComplete: () => {
+            setCurrentSection('servicios'); // Update current section
             setTimeout(() => {
               setIsAnimating(false);
             }, 1000); // 1 second delay
@@ -82,8 +84,8 @@ export default function Home() {
         }
       );
     }
-    // Check if scrolling up, not currently animating, and within the servicios section's scroll range
-    else if (serviciosTop !== undefined && previous !== undefined && latest < previous && latest >= serviciosTop - window.innerHeight / 2 && latest < serviciosTop && !isAnimating) {
+    // Check if scrolling up, not currently animating, and within the servicios section's scroll range AND current section is 'servicios'
+    else if (serviciosTop !== undefined && previous !== undefined && latest < previous && latest >= serviciosTop - window.innerHeight / 2 && latest < serviciosTop && !isAnimating && currentSection === 'servicios') {
        setIsAnimating(true);
        animate(
          latest, // Animate from current scroll position
@@ -95,6 +97,7 @@ export default function Home() {
              window.scrollTo(0, value); // Update scroll position manually
            },
           onComplete: () => {
+            setCurrentSection('hero'); // Update current section
             setTimeout(() => {
               setIsAnimating(false);
             }, 1000); // 1 second delay
@@ -110,8 +113,8 @@ export default function Home() {
     const serviciosTop = serviciosRef.current?.offsetTop;
     const proyectosTop = proyectosRef.current?.offsetTop;
 
-    // Check if scrolling down, not currently animating, and within the servicios section's scroll range
-    if (serviciosTop !== undefined && proyectosTop !== undefined && previous !== undefined && latest > previous && latest >= serviciosTop && latest < proyectosTop && !isAnimating) {
+    // Check if scrolling down, not currently animating, and within the servicios section's scroll range AND current section is 'servicios'
+    if (serviciosTop !== undefined && proyectosTop !== undefined && previous !== undefined && latest > previous && latest >= serviciosTop && latest < proyectosTop && !isAnimating && currentSection === 'servicios') {
       setIsAnimating(true);
       animate(
         latest, // Animate from current scroll position
@@ -123,6 +126,7 @@ export default function Home() {
             window.scrollTo(0, value); // Update scroll position manually
           },
           onComplete: () => {
+            setCurrentSection('proyectos'); // Update current section
             setTimeout(() => {
               setIsAnimating(false);
             }, 1000); // 1 second delay
@@ -130,8 +134,8 @@ export default function Home() {
         }
       );
     }
-    // Check if scrolling up, not currently animating, and within the proyectos section's scroll range
-    else if (serviciosTop !== undefined && proyectosTop !== undefined && previous !== undefined && latest < previous && latest >= proyectosTop - window.innerHeight / 2 && latest < proyectosTop && !isAnimating) {
+    // Check if scrolling up, not currently animating, and within the proyectos section's scroll range AND current section is 'proyectos'
+    else if (serviciosTop !== undefined && proyectosTop !== undefined && previous !== undefined && latest < previous && latest >= proyectosTop - window.innerHeight / 2 && latest < proyectosTop && !isAnimating && currentSection === 'proyectos') {
       setIsAnimating(true);
       animate(
         latest, // Animate from current scroll position
@@ -143,7 +147,10 @@ export default function Home() {
             window.scrollTo(0, value); // Update scroll position manually
           },
           onComplete: () => {
-            setIsAnimating(false);
+            setCurrentSection('servicios'); // Update current section
+            setTimeout(() => {
+              setIsAnimating(false);
+            }, 1000); // 1 second delay
           },
         }
       );
@@ -157,8 +164,8 @@ export default function Home() {
     const proyectosHeight = proyectosRef.current?.offsetHeight; // Get height
     const contactoTop = contactoRef.current?.offsetTop;
 
-    // Check if scrolling down, not currently animating, and past the end of the proyectos section minus 20px
-    if (proyectosTop !== undefined && proyectosHeight !== undefined && contactoTop !== undefined && previous !== undefined && latest > previous && latest > proyectosTop + proyectosHeight - 520 && latest < contactoTop && !isAnimating) {
+    // Check if scrolling down, not currently animating, and past the end of the proyectos section minus 20px AND current section is 'proyectos'
+    if (proyectosTop !== undefined && proyectosHeight !== undefined && contactoTop !== undefined && previous !== undefined && latest > previous && latest > proyectosTop + proyectosHeight - 520 && latest < contactoTop && !isAnimating && currentSection === 'proyectos') {
       setIsAnimating(true);
       animate(
         latest, // Animate from current scroll position
@@ -170,13 +177,16 @@ export default function Home() {
             window.scrollTo(0, value); // Update scroll position manually
           },
           onComplete: () => {
-            setIsAnimating(false);
+            setCurrentSection('contacto'); // Update current section
+            setTimeout(() => {
+              setIsAnimating(false);
+            }, 1000); // 1 second delay
           },
         }
       );
     }
-    // Check if scrolling up, not currently animating, and within the contacto section's scroll range
-    else if (proyectosTop !== undefined && contactoTop !== undefined && previous !== undefined && latest < previous && latest >= contactoTop - window.innerHeight / 2 && latest < contactoTop && !isAnimating) {
+    // Check if scrolling up, not currently animating, and within the contacto section's scroll range AND current section is 'contacto'
+    else if (proyectosTop !== undefined && contactoTop !== undefined && previous !== undefined && latest < previous && latest >= contactoTop - window.innerHeight / 2 && latest < contactoTop && !isAnimating && currentSection === 'contacto') {
       setIsAnimating(true);
       animate(
         latest, // Animate from current scroll position
@@ -188,7 +198,10 @@ export default function Home() {
             window.scrollTo(0, value); // Update scroll position manually
           },
           onComplete: () => {
-            setIsAnimating(false);
+            setCurrentSection('proyectos'); // Update current section
+            setTimeout(() => {
+              setIsAnimating(false);
+            }, 1000); // 1 second delay
           },
         }
       );
