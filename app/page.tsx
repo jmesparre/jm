@@ -79,7 +79,7 @@ export default function Home() {
             setCurrentSection('servicios'); // Update current section
             setTimeout(() => {
               setIsAnimating(false);
-            }, 1000); // 1 second delay
+            }, 500); // 1 second delay
           },
         }
       );
@@ -100,7 +100,7 @@ export default function Home() {
             setCurrentSection('hero'); // Update current section
             setTimeout(() => {
               setIsAnimating(false);
-            }, 1000); // 1 second delay
+            }, 500); // 1 second delay
           },
          }
        );
@@ -129,7 +129,7 @@ export default function Home() {
             setCurrentSection('proyectos'); // Update current section
             setTimeout(() => {
               setIsAnimating(false);
-            }, 1000); // 1 second delay
+            }, 500); // 1 second delay
           },
         }
       );
@@ -150,7 +150,7 @@ export default function Home() {
             setCurrentSection('servicios'); // Update current section
             setTimeout(() => {
               setIsAnimating(false);
-            }, 1000); // 1 second delay
+            }, 500); // 1 second delay
           },
         }
       );
@@ -207,15 +207,17 @@ export default function Home() {
       );
     }
   });
-
+    
 
   return (
     <div className="relative">
-      <div className="absolute top-0 left-0 p-4 z-10">
-        <Image src="/logosvg.svg" alt="Logo" width={90} height={90} />
+      <div className="fixed top-0 left-0 p-8 z-10">
+        <a href="#home">
+          <Image src="/logosvgverde.svg" alt="Logo" width={50} height={50}/>
+        </a>
       </div>
       {/* Desktop Navbar */}
-      <div className="hidden md:block absolute top-0 right-0 p-4 z-10">
+      <div className="hidden md:block fixed top-0 right-0 p-4 z-10">
         <DesktopNavbar />
       </div>
       {/* Mobile Navigation */}
@@ -223,26 +225,29 @@ export default function Home() {
         <NavigationComponent />
       </div>
       <main>
-        <section className="hero h-screen flex items-end">
-          <div className="flex items-end justify-between text-white p-8 md:p-10 w-full" ref={scope}> {/* Changed layout */}
+        <section id="home" className="hero h-screen flex items-end pt-20">
+          <div className="flex items-end justify-between p-8 md:p-10 w-full" ref={scope}> {/* Changed layout */}
             <div className="flex flex-col items-start w-full"> {/* Text block */}
-              <h1 className="text-5xl md:text-7xl font-bold mb-2">Desarrollador Web</h1>
-              <div className="w-full h-1 bg-white mb-4"></div> {/* White line */}
-              <h2 className="text-lg md:text-xl mb-8 sm:w-2/3 md:w-1/3">Hola mi nombre es Juan Manuel, creo soluciones basadas en la necesidad del clientes<i className="blink pl-1">_</i></h2>
+              <h1 className="text-3xl md:text-6xl font-bold mb-2">Desarrollador Web</h1>
+              <div className="w-full h-1 bg-verde mb-4"></div> {/* White line */}
+              <h2 className="text-lg md:text-md mb-8 sm:w-2/3 md:w-2/3">Hola mi nombre es Juan Manuel, creo soluciones basadas en la necesidad del clientes<i className="blink pl-1">_</i></h2>
             </div>
             <div className="absolute right-10"> {/* Button block */}
               <button className="border border-white text-white py-2 px-6 rounded-md hover:bg-white hover:text-[#0A433A] transition-colors duration-300">Contactame</button>
             </div>
           </div>
         </section>
-        <section className="servicios h-screen flex items-end" ref={serviciosRef}> {/* Added ref */}
+        <section id="servicios" className="servicios h-screen flex items-end" ref={serviciosRef}> {/* Added ref */}
           <Preview />
         </section>
-        <section className="proyectos" ref={proyectosRef}> {/* Added ref */}
+        <section id="proyectos" className="proyectos pt-20" ref={proyectosRef}> {/* Added ref */}
           <Gallery4Demo />
         </section>
-        <section className="contacto h-screen" ref={contactoRef}> {/* Added ref */}
-          <h1>contacto</h1>
+        <section id="contacto" className="contacto h-screen bg-blue-200 flex items-center justify-center" ref={contactoRef}> {/* Added ref */}
+          <div className="flex items-center">
+            <h1 className="text-5xl text-foreground mr-4">Contacto</h1>
+            <div className="h-16 w-px bg-foreground"></div> {/* Vertical line */}
+          </div>
         </section>
       </main>
     </div>

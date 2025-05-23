@@ -7,28 +7,31 @@ import { TextRotate, TextRotateRef } from "@/components/ui/text-rotate"
 
 const exampleImages = [
   {
-    url: "https://images.unsplash.com/photo-1727341554370-80e0fe9ad082?q=80&w=2276&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    author: "Branislav Rodman",
-    link: "https://unsplash.com/photos/a-black-and-white-photo-of-a-woman-brushing-her-teeth-r1SjnJL5tf0",
-    title: "A Black and White Photo of a Woman Brushing Her Teeth",
+    url: "0",
+    author: "0",
+    link: "0",
+    title: "0",
   },
   {
-    url: "https://images.unsplash.com/photo-1640680608781-2e4199dd1579?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    url: "/web.avif",
     link: "https://unsplash.com/photos/a-painting-of-a-palm-leaf-on-a-multicolored-background-AaNPwrSNOFE",
-    title: "Neon Palm",
-    author: "Tim Mossholder",
+    author: "Desarrollo Web",
+    services: ["Sitios web corporativos", "Páginas  promocionales", "E-commerces", "Desarrollo de aplicaciones web", "Páginas autogestionables"],
   },
   {
-    url: "https://images.unsplash.com/photo-1726083085160-feeb4e1e5b00?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    url: "/diseño.avif",
     link: "https://unsplash.com/photos/a-blurry-photo-of-a-crowd-of-people-UgbxzloNGsc",
-    author: "ANDRII SOLOK",
-    title: "A blurry photo of a crowd of people",
+    author: "Servicios de Diseño",
+    title: "Servicios de Diseño",
+      services: ["Desarrollo de sitios web", "Sitios web corporativos", "Páginas  promocionales", "E-commerces", "Desarrollo de aplicaciones web", "Desarrollo en Wordpress"],
+
   },
   {
-    url: "https://images.unsplash.com/photo-1562016600-ece13e8ba570?q=80&w=2838&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    url: "/empresa.avif",
     link: "https://unsplash.com/photos/rippling-crystal-blue-water-9-OCsKoyQlk",
-    author: "Wesley Tingey",
-    title: "Rippling Crystal Blue Water",
+    author: "SEO",
+    title: "Seo",
+     services: ["Desarrollo de sitios web", "Sitios web corporativos", "Páginas  promocionales", "E-commerces", "Desarrollo de aplicaciones web", "Desarrollo en Wordpress"],
   },
 ]
 
@@ -36,11 +39,13 @@ function Item({
   index,
   image,
   link,
+  services, // Add services prop
   onInView,
 }: {
   index: number
   image: string
   link: string
+  services?: string[] // Add services prop
   onInView: (inView: boolean) => void
 }) {
   const ref = useRef<HTMLDivElement>(null)
@@ -58,7 +63,7 @@ function Item({
       key={index}
       className="h-full w-1/2 flex justify-center items-center snap-center"
     >
-      <div className="w-16 h-16 sm:w-36 sm:h-36 md:w-40 md:h-40">
+      <div className="">
         <a href={link} target="_blank" rel="noreferrer">
           <img
             src={image}
@@ -66,6 +71,16 @@ function Item({
             className="w-full h-full object-cover"
           />
         </a>
+        {/* Conditionally render services list */}
+        {isInView && services && services.length > 0 && (
+          <ul className="servicio-desc text-xs md:text-base ">
+            {services.map((service, serviceIndex) => (
+              <li key={serviceIndex} className="">
+                {service}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </section>
   )
@@ -84,12 +99,12 @@ function Preview() {
   return (
     <div className="w-full h-screen flex">
       <div className="w-full h-full relative">
-        <div className="sticky top-0 h-screen w-full flex items-center justify-end bg-white dark:text-muted text-foreground">
-          <div className="w-2/3">
+        <div className="sticky top-0 h-screen w-full flex items-center justify-end dark:text-muted text-foreground">
+          <div className="w-1/2">
             <TextRotate
               ref={textRotateRef}
               texts={slicedImages.map((image) => image.author)}
-              mainClassName="text-sm text-black sm:text-3xl md:text-4xl w-full justify-center flex pt-2"
+              mainClassName="text-sm verde sm:text-3xl md:text-4xl flex pt-2"
               splitLevelClassName="overflow-hidden pb-2"
               staggerFrom={"first"}
               animatePresenceMode="wait"
@@ -99,7 +114,7 @@ function Preview() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -50 }}
-              transition={{ type: "spring", duration: 0.6, bounce: 0 }}
+              transition={{ type: "spring", duration: 0.3, bounce: 0 }}
             />
           </div>
         </div>
@@ -110,6 +125,7 @@ function Preview() {
               index={index}
               image={image.url}
               link={image.link}
+              services={image.services} // Pass services prop
               onInView={(inView) => handleInView(index, inView)}
             />
           ))}

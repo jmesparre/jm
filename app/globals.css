@@ -1,8 +1,23 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Gambarino'; /* Puedes darle el nombre que quieras a la fuente */
+  src: url('/fonts/Gambarino-Regular.otf') format('opentype'); /* La ruta relativa al directorio public */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'General Sans';
+  src: url('/fonts/GeneralSans-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
-  --background: #F5F5ED;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #F5F5ED;
+  --redee: #f52ae7; 
   --color-primario: #004936;
 }
 
@@ -20,42 +35,82 @@
   }
 }
 
+.verde {
+  color: #004936;
+  margin-left: 2vw;
+  top: 40%;
+  position: absolute;
+  margin-top: -5vw;
+}
+
+nav , .hero h1 , .servicios , .proyectos h2{
+   font-family: 'Gambarino', serif;
+}
+
+.servicio-desc{
+  margin-left: 2vw;
+  font-family: 'General Sans', sans-serif; 
+    position: absolute;
+  left: 50%;
+  margin-top: -23vw;
+}
+
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'General Sans', sans-serif; 
   color: var(--foreground);
+}
+
+.bg-verde {
+  background-color: #004936;
+}
+
+nav a {
+  color: #004936;
 }
 
 .hero {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: var(--color-primario);
+  background-color: #F5F5ED;
+  color:  var(--color-primario);
   z-index: 1;
 }
 
-.hero::before {
+.hero::after {
   content: '';
-  height: 100%;
-  bottom: 20%;
+  height: 1500px;
+  top: -10%;
   position: absolute;
-  width: 100%;
+  width: 1500px;
+  max-width: 150%;
   opacity: 12%;
-  background-image: url('/logosvg.svg');
+  background-image: url('/logosvgverde.svg');
   background-position: center;
   background-repeat: no-repeat;
+overflow: hidden;
 }
 
 .servicios {
   z-index: 2;
-  background-color: var(--background);
+  background-color: #F5F5ED;
   color: var(--color-primario);
 }
 
 .proyectos {
-  background-color: bisque;
+  background-color: #F5F5ED;
+  color: var(--color-primario);
+  height: 100vw;
 }
+
+.contacto{
+  background-color: #9EC8F3;
+  color: red;
+}
+
 
 .scrollbar-hide::-webkit-scrollbar {
     display: none;

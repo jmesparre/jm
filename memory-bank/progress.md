@@ -5,27 +5,52 @@ This document tracks what has been built, what remains, the current status, know
 ## What Works
 
 - The basic project structure is in place, including Next.js configuration, essential dependencies (React, Tailwind CSS, TypeScript), and initial directories for components and pages.
-- The memory bank directory and core documentation files have been created and partially populated.
+- The memory bank directory and core documentation files have been created and updated to reflect the expanded project scope and plan.
 
 ## What's Left to Build
 
-- The core content of the portfolio website (Homepage, Portfolio section, About section, Contact information/form) needs to be developed.
-- Implementation of specific UI components using shadcn/ui and other libraries.
-- Styling and responsiveness across different devices.
-- SEO optimization based on the goal of achieving the best possible search engine positioning.
-- Integration of animations using the `motion` library.
-- Populating the portfolio section with actual project details.
+Based on the implementation steps outlined in the Project Brief:
+
+1.  **Wireframes & Contenido**:
+    -   Bocetar distribución de cada página.
+    -   Redactar textos SEO friendly (investigar palabras clave relevantes).
+2.  **Diseño Visual**:
+    -   Definir paleta de colores y tipografía alineada a tu branding.
+    -   Crear prototipos interactivos
+3.  **Desarrollo Front‑end**:
+    -   Configurar Next.js routes and page templates for all sections (Home, Services, Portfolio, About, Blog, Contact).
+    -   Implementar reusable components (Header, Footer, CTA, Cards, etc.).
+    -   Develop individual service pages.
+    -   Develop Portfolio/Case Studies section.
+    -   Develop About Me/Us section.
+    -   Develop Blog/Resources section.
+    -   Develop Contact page with form and scheduling integration.
+    -   Implement responsive design.
+4.  **Back‑end (if applicable)**:
+    -   Integrate contact form with a backend endpoint (Supabase or Netlify Functions).
+    -   Configure headless CMS (Sanity or Strapi) for the blog.
+5.  **SEO & Performance**:
+    -   Add metatags, sitemap.xml and robots.txt.
+    -   Optimize images and lazy‑loading.
+    -   Conduct Lighthouse tests and improve scores.
+6.  **Despliegue**:
+    -   Configure domains and SSL certificates.
+7.  **Monitoreo y Actualizaciones**:
+    -   Install Google Analytics / Hotjar.
+    -   Establish process for periodic updates to the blog and portfolio.
 
 ## Current Status
 
-The project is in the initial setup and documentation phase. The foundational structure and technical context have been established, and the memory bank is being populated to guide future development.
+The project is in the initial planning and documentation phase. The foundational structure and technical context have been established, and the memory bank has been updated to reflect the expanded scope and detailed implementation plan. The next phase involves the manual steps of wireframing and content creation, followed by frontend development.
 
 ## Known Issues
 
-- The content of the core website sections is not yet implemented.
-- Specific design details and content for the portfolio items are pending.
+- The content for all website sections (including services, portfolio items, and blog posts) is not yet created.
+- Specific design details and visual prototypes are pending.
+- The choice of backend technology for the contact form and the headless CMS for the blog are pending decisions.
 
 ## Evolution of Decisions
 
-- The decision to use Next.js, React, and Tailwind CSS appears to be the current direction based on the existing `package.json` and file structure.
-- The use of shadcn/ui components is implied and will likely be a key part of the UI development process.
+- The project scope has significantly expanded to include a blog, detailed service pages, backend integration, and a headless CMS, moving beyond a basic portfolio site.
+- The implementation plan provides a structured approach to address the increased complexity.
+- Key technical decisions regarding backend and CMS are yet to be finalized.
