@@ -37,18 +37,30 @@
 
 .verde {
   color: #004936;
-  margin-left: 2vw;
+  margin-left: 4vw;
   top: 40%;
   position: absolute;
   margin-top: -5vw;
 }
 
-nav , .hero h1 , .servicios , .proyectos h2{
+nav , .hero h1 , .servicios , .proyectos h2, .logo h3{
    font-family: 'Gambarino', serif;
+   font-weight: normal;
+}
+
+.logo h3 {
+  font-size: 1.5em;
+  position: absolute;
+  color: #004936;
+  width: 150;
+}
+
+.w-line {
+  height: 2px;
 }
 
 .servicio-desc{
-  margin-left: 2vw;
+  margin-left: 4vw;
   font-family: 'General Sans', sans-serif; 
     position: absolute;
   left: 50%;
@@ -57,7 +69,7 @@ nav , .hero h1 , .servicios , .proyectos h2{
 
 
 body {
-  background: var(--background);
+  background-color: #F5F5ED;
   color: var(--foreground);
   font-family: 'General Sans', sans-serif; 
   color: var(--foreground);
@@ -67,31 +79,22 @@ body {
   background-color: #004936;
 }
 
+nav li {
+  border-radius: 10px;
+    padding-left: 11px;
+    
+}
+
 nav a {
   color: #004936;
 }
 
-.hero {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #F5F5ED;
-  color:  var(--color-primario);
-  z-index: 1;
+nav a:hover {
+  border-bottom: 1px solid #9ec8f3;
 }
 
-.hero::after {
-  content: '';
-  height: 1500px;
-  top: -10%;
-  position: absolute;
-  width: 1500px;
-  max-width: 150%;
-  opacity: 12%;
-  background-image: url('/logosvgverde.svg');
-  background-position: center;
-  background-repeat: no-repeat;
-overflow: hidden;
+.hero {
+  color:  var(--color-primario);
 }
 
 .servicios {
@@ -103,7 +106,7 @@ overflow: hidden;
 .proyectos {
   background-color: #F5F5ED;
   color: var(--color-primario);
-  height: 100vw;
+  
 }
 
 .contacto{

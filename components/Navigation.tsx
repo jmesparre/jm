@@ -57,13 +57,21 @@ const navVariants = {
     },
 }
 
+const menuItems = [
+    { title: "Inicio", href: "#home" },
+    { title: "Servicios", href: "#servicios" },
+    { title: "Proyectos", href: "#projectos" },
+    { title: "Nosotros", href: "#blog" },
+    { title: "Contacto", href: "#contacto" },
+];
+
 const Navigation = () => (
     <motion.ul style={list} variants={navVariants}>
-        {[0, 1, 2, 3, 4].map((i) => (
-            <MenuItem i={i} key={i} />
+        {menuItems.map((item, i) => (
+            <MenuItem item={item} key={i} />
         ))}
     </motion.ul>
-)
+);
 
 const itemVariants = {
     open: {
@@ -80,12 +88,9 @@ const itemVariants = {
             y: { stiffness: 1000 },
         },
     },
-}
+};
 
-const colors = ["#ddd", "#ddd", "#ddd", "#ddd", "#ddd"]
-
-const MenuItem = ({ i }: { i: number }) => {
-    const border = `2px solid ${colors[i]}`
+const MenuItem = ({ item }: { item: { title: string; href: string } }) => {
     return (
         <motion.li
             style={listItem}
@@ -93,11 +98,12 @@ const MenuItem = ({ i }: { i: number }) => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
         >
-            <div style={{ ...iconPlaceholder, border }} />
-            <div style={{ ...textPlaceholder, border }} />
+            <a href={item.href} style={textPlaceholder}>
+                {item.title}
+            </a>
         </motion.li>
-    )
-}
+    );
+};
 
 interface PathProps {
     d?: string
@@ -109,7 +115,7 @@ const Path = (props: PathProps) => (
     <motion.path
         fill="transparent"
         strokeWidth="3"
-        stroke="hsl(0, 0%, 18%)"
+        stroke="#004936"
         strokeLinecap="round"
         {...props}
     />
@@ -179,8 +185,8 @@ const toggleContainer: React.CSSProperties = {
     MozUserSelect: "none",
     cursor: "pointer",
     position: "absolute",
-    top: 18,
-    right: 15,
+    top: 0,
+    right: 0,
     width: 50,
     height: 50,
     borderRadius: "50%",
@@ -190,7 +196,7 @@ const toggleContainer: React.CSSProperties = {
 
 const list: React.CSSProperties = {
     listStyle: "none",
-    padding: 25,
+    padding: 20,
     margin: 0,
     position: "absolute",
     top: 80,
@@ -202,26 +208,24 @@ const listItem: React.CSSProperties = {
     display: "flex",
     alignItems: "center",
     justifyContent: "flex-start",
-    padding: 0,
+    color: "#004936",
+    background: "#F5F5ED",
     margin: 0,
     listStyle: "none",
-    marginBottom: 20,
+    marginBottom: 10,
     cursor: "pointer",
-}
-
-const iconPlaceholder: React.CSSProperties = {
-    width: 40,
-    height: 40,
-    borderRadius: "50%",
-    flex: "40px 0",
-    marginRight: 20,
 }
 
 const textPlaceholder: React.CSSProperties = {
     borderRadius: 5,
-    width: 200,
-    height: 20,
+    width: "100%",
+    height: "auto",
     flex: 1,
+    padding: "10px 0",
+    fontSize: "1.2em",
+    fontWeight: "bold",
+    textDecoration: "none",
+    color: "inherit",
 }
 
 /**
