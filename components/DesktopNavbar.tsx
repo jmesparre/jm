@@ -1,15 +1,16 @@
 // components/DesktopNavbar.tsx
 import React from 'react';
+import Link from 'next/link';
 
 const DesktopNavbar = () => {
   return (
     <nav className='absolute top-5 right-8'>
       <ul className='flex space-x-4'>
-        <li><a href="#home">Inicio</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#proyectos">Proyectos</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        <li><Link href="/">Inicio</Link></li>
+        <li><Link href="/servicios">Servicios</Link></li>
+        <li><Link href="/proyectos">Proyectos</Link></li>
+        <li><Link href="/blog">Blog</Link></li>
+        <li><Link href="/contacto">Contacto</Link></li>
       </ul>
     </nav>
   );

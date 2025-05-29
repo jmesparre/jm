@@ -67,6 +67,21 @@ nav , .hero h1 , .servicios , .proyectos h2, .logo h3{
   margin-top: -23vw;
 }
 
+.servicios::before, .contacto::before {
+  content: "2";
+  width: 20px;
+  height: 130px;
+  top: -20px;
+  position: relative;
+  background-color: #004936;
+}
+
+.servicios::after {
+  content: "";
+height: 130px;
+
+  background-color: #004936;
+}
 
 body {
   background-color: #F5F5ED;
@@ -111,7 +126,6 @@ nav a:hover {
 
 .contacto{
   background-color: #9EC8F3;
-  color: red;
 }
 
 

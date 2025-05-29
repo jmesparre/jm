@@ -3,6 +3,7 @@
 import type { Variants } from "motion/react"
 import * as motion from "motion/react-client"
 import { useEffect, useRef, useState } from "react"
+import Link from "next/link"
 
 export default function NavigationComponent() {
     const [isOpen, setIsOpen] = useState(false)
@@ -20,7 +21,7 @@ export default function NavigationComponent() {
                     style={nav}
                 >
                     <motion.div style={background} variants={sidebarVariants} />
-                    <Navigation />
+                    <Navigation setIsOpen={setIsOpen} />
                     <MenuToggle toggle={() => setIsOpen(!isOpen)} />
                 </motion.nav>
             </div>
@@ -58,17 +59,17 @@ const navVariants = {
 }
 
 const menuItems = [
-    { title: "Inicio", href: "#home" },
-    { title: "Servicios", href: "#servicios" },
-    { title: "Proyectos", href: "#projectos" },
-    { title: "Nosotros", href: "#blog" },
-    { title: "Contacto", href: "#contacto" },
+    { title: "Inicio", href: "/" },
+    { title: "Servicios", href: "/servicios" },
+    { title: "Proyectos", href: "/proyectos" },
+    { title: "Blog", href: "/blog" },
+    { title: "Contacto", href: "/contacto" },
 ];
 
-const Navigation = () => (
+const Navigation = ({ setIsOpen }: { setIsOpen: (isOpen: boolean) => void }) => (
     <motion.ul style={list} variants={navVariants}>
         {menuItems.map((item, i) => (
-            <MenuItem item={item} key={i} />
+            <MenuItem item={item} key={i} setIsOpen={setIsOpen} />
         ))}
     </motion.ul>
 );
@@ -90,7 +91,7 @@ const itemVariants = {
     },
 };
 
-const MenuItem = ({ item }: { item: { title: string; href: string } }) => {
+const MenuItem = ({ item, setIsOpen }: { item: { title: string; href: string }; setIsOpen: (isOpen: boolean) => void }) => {
     return (
         <motion.li
             style={listItem}
@@ -98,9 +99,9 @@ const MenuItem = ({ item }: { item: { title: string; href: string } }) => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
         >
-            <a href={item.href} style={textPlaceholder}>
+            <Link href={item.href} style={textPlaceholder} onClick={() => setIsOpen(false)}>
                 {item.title}
-            </a>
+            </Link>
         </motion.li>
     );
 };
