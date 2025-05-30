@@ -21,7 +21,7 @@ export default function PageWrapper({ children }: PageWrapperProps) {
   const isAtBottomRef = useRef(false);
   const touchStartY = useRef(0);
   const touchMoveY = useRef(0);
-  const SWIPE_THRESHOLD = 30; // Reduced minimum vertical distance for a swipe
+  const SWIPE_THRESHOLD = 50; // Minimum vertical distance for a swipe
 
   const currentPageIndex = pageOrder.indexOf(pathname);
 
@@ -47,7 +47,7 @@ export default function PageWrapper({ children }: PageWrapperProps) {
       setTimeout(() => {
         isNavigatingRef.current = false;
         console.log("Navigation flag reset.");
-      }, 1000); // Reverted to 1-second delay to ensure animation completion
+      }, 200); // 1-second delay as requested
     } else {
       console.log("No valid next page path or already on target page.");
     }
@@ -97,11 +97,33 @@ export default function PageWrapper({ children }: PageWrapperProps) {
 
     const handleTouchStart = (event: TouchEvent) => {
       touchStartY.current = event.touches[0].clientY;
+      touchMoveY.current = event.touches[0].clientY; // Initialize touchMoveY
     };
 
     const handleTouchMove = (event: TouchEvent) => {
-      // No event.preventDefault() here. Allow native scroll during touchmove.
+      if (isNavigatingRef.current) {
+        event.preventDefault(); // Prevent scrolling if navigation is in progress
+        return;
+      }
       touchMoveY.current = event.touches[0].clientY;
+      const deltaY = touchMoveY.current - touchStartY.current;
+
+      const { scrollHeight, clientHeight } = contentRef.current || { scrollHeight: 0, clientHeight: 0 };
+      const isScrollable = scrollHeight > clientHeight;
+
+      // Prevent default scroll only if a vertical swipe gesture is potentially happening
+      // and we are at a scroll boundary, or the page is not scrollable at all.
+      if (Math.abs(deltaY) > 5) { // A small threshold to detect intentional vertical movement
+        if (isScrollable) {
+          if ((isAtTopRef.current && deltaY > 0) || // Swiping down from top
+              (isAtBottomRef.current && deltaY < 0)) { // Swiping up from bottom
+            event.preventDefault();
+          }
+        } else {
+          // If not scrollable, any vertical swipe is for navigation
+          event.preventDefault();
+        }
+      }
     };
 
     const handleTouchEnd = (event: TouchEvent) => {
@@ -132,8 +154,8 @@ export default function PageWrapper({ children }: PageWrapperProps) {
       currentContentRef.addEventListener("scroll", handleScroll);
       currentContentRef.addEventListener("wheel", handleWheel, { passive: false });
       currentContentRef.addEventListener("touchstart", handleTouchStart, { passive: false });
-      currentContentRef.addEventListener("touchmove", handleTouchMove, { passive: true }); // Keep passive: true for touchmove
-      currentContentRef.addEventListener("touchend", handleTouchEnd, { passive: false }); // Changed to passive: false
+      currentContentRef.addEventListener("touchmove", handleTouchMove, { passive: false });
+      currentContentRef.addEventListener("touchend", handleTouchEnd);
       // Initial check
       handleScroll();
     }
