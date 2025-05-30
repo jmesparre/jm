@@ -6,10 +6,10 @@ interface TiltedCardProps {
   imageSrc: React.ComponentProps<"img">["src"];
   altText?: string;
   captionText?: string;
-  containerHeight?: React.CSSProperties['height'];
-  containerWidth?: React.CSSProperties['width'];
-  imageHeight?: React.CSSProperties['height'];
-  imageWidth?: React.CSSProperties['width'];
+  containerHeight?: string | number;
+  containerWidth?: string | number;
+  imageHeight?: string | number;
+  imageWidth?: string | number;
   scaleOnHover?: number;
   rotateAmplitude?: number;
   showMobileWarning?: boolean;
@@ -28,10 +28,10 @@ export default function TiltedCard({
   imageSrc,
   altText = "Tilted card image",
   captionText = "",
-  containerHeight = "300px",
-  containerWidth = "100%",
-  imageHeight = "300px",
-  imageWidth = "300px",
+  containerHeight,
+  containerWidth,
+  imageHeight,
+  imageWidth,
   scaleOnHover = 1.1,
   rotateAmplitude = 14,
   showMobileWarning = true,

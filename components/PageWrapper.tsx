@@ -47,7 +47,7 @@ export default function PageWrapper({ children }: PageWrapperProps) {
       setTimeout(() => {
         isNavigatingRef.current = false;
         console.log("Navigation flag reset.");
-      }, 200); // 1-second delay as requested
+      }, 30); // 1-second delay as requested
     } else {
       console.log("No valid next page path or already on target page.");
     }

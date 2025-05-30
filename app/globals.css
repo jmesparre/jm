@@ -109,6 +109,7 @@ nav a:hover {
 }
 
 .hero {
+ min-height: 101vh;
   color:  var(--color-primario);
 }
 
