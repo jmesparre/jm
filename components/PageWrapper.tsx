@@ -3,7 +3,6 @@
 import React, { useEffect, useRef, useCallback } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import * as motion from "motion/react-client";
-import { useScroll, useMotionValueEvent } from "motion/react";
 import ClickSpark from "@/components/ClickSpark";
 
 const pageOrder = ["/", "/servicios", "/proyectos", "/contacto"];
@@ -16,7 +15,6 @@ export default function PageWrapper({ children }: PageWrapperProps) {
   const router = useRouter();
   const pathname = usePathname();
   const contentRef = useRef<HTMLDivElement>(null);
-  const { scrollY } = useScroll({ container: contentRef });
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const isNavigatingRef = useRef(false);
   const isAtTopRef = useRef(true);
