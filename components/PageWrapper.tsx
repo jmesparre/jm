@@ -47,7 +47,7 @@ export default function PageWrapper({ children }: PageWrapperProps) {
       setTimeout(() => {
         isNavigatingRef.current = false;
         console.log("Navigation flag reset.");
-      }, 1000); // 1-second delay as requested
+      }, 1000); // Reverted to 1-second delay to ensure animation completion
     } else {
       console.log("No valid next page path or already on target page.");
     }
@@ -97,37 +97,30 @@ export default function PageWrapper({ children }: PageWrapperProps) {
 
     const handleTouchStart = (event: TouchEvent) => {
       touchStartY.current = event.touches[0].clientY;
-      touchMoveY.current = event.touches[0].clientY; // Initialize touchMoveY
     };
 
     const handleTouchMove = (event: TouchEvent) => {
-      if (isNavigatingRef.current) {
-        event.preventDefault();
-        return;
-      }
+      // No event.preventDefault() here. Allow native scroll during touchmove.
       touchMoveY.current = event.touches[0].clientY;
-      const deltaY = touchMoveY.current - touchStartY.current;
-
-      // Prevent default scroll only if a swipe gesture is potentially happening
-      // and we are at the top/bottom, to avoid interfering with normal page scrolling
-      if (Math.abs(deltaY) > 10 && (isAtTopRef.current || isAtBottomRef.current)) {
-        event.preventDefault();
-      }
     };
 
-    const handleTouchEnd = () => {
+    const handleTouchEnd = (event: TouchEvent) => {
       if (isNavigatingRef.current) {
         return;
       }
 
       const deltaY = touchMoveY.current - touchStartY.current;
 
-      if (deltaY < -SWIPE_THRESHOLD && isAtBottomRef.current) {
-        // Swiping up and at the bottom
-        navigateToPage("down");
-      } else if (deltaY > SWIPE_THRESHOLD && isAtTopRef.current) {
-        // Swiping down and at the top
-        navigateToPage("up");
+      if (Math.abs(deltaY) > SWIPE_THRESHOLD) {
+        if (deltaY < 0 && isAtBottomRef.current) {
+          // Swiping up and at the bottom
+          navigateToPage("down");
+          event.preventDefault(); // Prevent default only when navigation is triggered
+        } else if (deltaY > 0 && isAtTopRef.current) {
+          // Swiping down and at the top
+          navigateToPage("up");
+          event.preventDefault(); // Prevent default only when navigation is triggered
+        }
       }
       // Reset touch positions
       touchStartY.current = 0;
@@ -139,8 +132,8 @@ export default function PageWrapper({ children }: PageWrapperProps) {
       currentContentRef.addEventListener("scroll", handleScroll);
       currentContentRef.addEventListener("wheel", handleWheel, { passive: false });
       currentContentRef.addEventListener("touchstart", handleTouchStart, { passive: false });
-      currentContentRef.addEventListener("touchmove", handleTouchMove, { passive: false });
-      currentContentRef.addEventListener("touchend", handleTouchEnd);
+      currentContentRef.addEventListener("touchmove", handleTouchMove, { passive: true }); // Keep passive: true for touchmove
+      currentContentRef.addEventListener("touchend", handleTouchEnd, { passive: false }); // Changed to passive: false
       // Initial check
       handleScroll();
     }
