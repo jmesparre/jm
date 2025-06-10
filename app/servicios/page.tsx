@@ -1,11 +1,27 @@
 "use client";
 
-import { Preview } from "@/components/Preview";
+import { HoverSliderDemo } from "@/components/blocks/animated-slideshow-demo";
 
 export default function ServiciosPage() {
   return (
     <section id="servicios" className="servicios ">
-      <Preview />
+      
+      <div className="px-[5%] sm:px-[5%] md:px-[12%] mt-[40vh]">
+        <h1 className="text-5xl md:text-5xl lg:text-6xl mb-6 text-pretty">Servicios</h1>
+        <p className="font-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem excepturi voluptates nisi iusto? Facere odit praesentium autem! Quod nam maxime nulla odit iste. Quo quos rerum saepe unde aperiam quam.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem excepturi voluptates nisi iusto? Facere odit praesentium autem! Quod nam maxime nulla odit iste. Quo quos rerum saepe unde aperiam quam.
+        </p>
+      </div>
+     <HoverSliderDemo />
+
+      <div className="px-[5%] sm:px-[5%] md:px-[12%] mt-10">
+        <h2>Nuestros Servicios</h2>
+        <ul>
+          <li><a href="/servicios/desarrollo-web">Desarrollo Web</a></li>
+          <li><a href="/servicios/servicios-de-diseno">Servicios de Diseño</a></li>
+          {/* Add more services here */}
+        </ul>
+      </div>
     </section>
   );
 }

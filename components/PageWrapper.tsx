@@ -5,13 +5,13 @@ import { useRouter, usePathname } from "next/navigation";
 import * as motion from "motion/react-client";
 import ClickSpark from "@/components/ClickSpark";
 
-const pageOrder = ["/", "/servicios", "/proyectos", "/contacto"];
+const pageOrder = ["/", "/servicios", "/servicios/desarrollo-web", "/servicios/servicios-de-diseno", "/proyectos", "/blog", "/contacto"];
 
 interface PageWrapperProps {
   children: React.ReactNode;
 }
 
-export default function PageWrapper({ children }: PageWrapperProps) {
+export default function   PageWrapper({ children }: PageWrapperProps) {
   const router = useRouter();
   const pathname = usePathname();
   const contentRef = useRef<HTMLDivElement>(null);

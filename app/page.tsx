@@ -1,13 +1,13 @@
 "use client";
 
-import Link from 'next/link';
 import TiltedCard from '@/components/TiltedCard';
+import { Button } from "@/components/ui/button"
 
 export default function Home() {
   return (
     <main>
-      <section id="home" className="hero relative pt-28">
-        <div className='absolute left-[5%] md:left-[13%]  sm:w-[178px] sm:h-[280px] w-[127px] h-[200px] md:w-[216px] md:h-[340px]'>
+      <section id="home" className="hero ">
+        <div className='z-10 relative sm:absolute top-[16vh] sm:top-[25%] md:top-[30vh] lg:top-[27vh] left-[5%] md:left-[11%] xl:left-[17%]  sm:w-[178px] sm:h-[280px] w-[216px] h-[340px] md:w-[216px] md:h-[340px] lg:w-[261px] lg:h-[410px]'>
           <TiltedCard
             imageSrc="/juguete.png"
             altText="Juan Manuel Esparré - Desarrollador Web"
@@ -16,33 +16,27 @@ export default function Home() {
             containerWidth="100%"
             imageHeight="100%"
             imageWidth="100%"
-            rotateAmplitude={12}
-            scaleOnHover={1.2}
+            rotateAmplitude={22}
+            scaleOnHover={1.1}
             showMobileWarning={false}
             showTooltip={true}
             displayOverlayContent={true}
             overlayContent={
-               <p className="tilted-card-demo-text">
-                
-              </p>
-              
+               <p className="tilted-card-demo-text"></p> 
             }
-           />
-          </div>
-          <div className='pl-10 absolute left-[5%] md:left-[13%] sm:ml-40 ml-28 md:ml-55 top-[20%] w-[50%]'>
-             <h1 className='text-3xl sm:text-5xl md:text-6xl font-bold pb-4 '>Hola mi nombre es Juan Manuel</h1>
-             <h2 className='text-xs sm:text-1xl md:text-base'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis doloremque a incidunt temporibus hic quas. Quam et rem, maiores dolor veritatis totam obcaecati hic nostrum consequatur adipisci, esse, odio tenetur!</h2>
-          </div>
-        <div className="absolute bottom-0 items-end justify-between p-4 md:pl-10 w-full"> {/* Changed layout */} 
-          <div className="flex flex-col items-start w-full"> {/* Text block */}
-           {/*<h1 className="text-3xl md:text-6xl font-bold mb-2">Desarrollador Web</h1>*/}
-            <div className="w-full w-line bg-verde mb-4"></div> {/* White line */}
-            <h2 className=" text-xs md:text-sm mb-6 sm:w-2/3 md:w-2/3">Hola mi nombre es Juan Manuel, creo soluciones basadas en la necesidad del clientes, creo soluciones basadas en la necesidad del clientes.</h2>
-          </div>
-          <div className="absolute bottom-10 right-4 "> {/* Button block */}
-            <Link href="/contacto" className="border text-sm cursor-pointer border-2 py-2 px-6 rounded-md hover:bg-[#9ec8f3] hover:text-[#0A433A] transition-colors duration-300">Servicios</Link>
-          </div>
+          />
         </div>
+        <div className='relative pb-20 sm:pb-0 sm:absolute top-[18vh] sm:top-[22%] md:top-[30vh] w-[80%] sm:w-[100%]'>
+            <h1 className='font-title ml-[6%] sm:ml-[41%] w-[100%] sm:w-[50%]  text-5xl sm:text-5xl md:text-6xl pb-2 sm:pb-0 '>Hola, hago Diseño y Desarrollo Web</h1>
+            <h2 className=' ml-[6%] sm:ml-[41%] pb-4 sm:pb-2  mt-[1%] sm:mt-5 w-[100%] sm:w-[47%] text-sm sm:text-1xl md:text-base lg:text-base'>
+              Hola mi nombre es Juan Manuel, Creo soluciones web, Diseñador y desarrollador web con mas de 10 años de experincia posicionamiento en los buscadore SEO Lorem ipsum, dolor sit amet consectetur amet consectetur amet Lorem ipsum.
+            </h2>
+             <div className="ml-[5%] sm:ml-[41%] flex flex-wrap items-center  gap-2 md:flex-row  mt-[1%] sm:mt-5  w-[100%] sm:w-[40%] text-sm sm:text-1xl md:text-base">
+              <Button className='bg-background text-foreground z-20 cursor-pointer' variant="outline" size="sm">Agenda una llamada  --> </Button>
+              <Button className='bg-primary z-20 cursor-pointer' variant="outline" size="sm">Button</Button>
+            </div>
+        </div>
+        <div className='relative h-full sm:h-[101vh] opacity-0'>lorema</div>
       </section>
     </main>
   );

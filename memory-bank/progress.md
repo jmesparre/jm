@@ -8,6 +8,17 @@ This document tracks what has been built, what remains, the current status, know
 - The memory bank directory and core documentation files have been created and updated to reflect the expanded project scope and plan.
 - **Scroll-based page navigation in `PageWrapper.tsx` is now functional**, allowing navigation between pages by scrolling to the top/bottom of the content.
 - The **hydration mismatch error related to `PageWrapper.tsx` has been resolved** by refactoring the component's structure and class application.
+- **New service pages have been created**: `/servicios/desarrollo-web` and `/servicios/servicios-de-diseno`.
+- **Links to new service pages are integrated**:
+    - In `app/servicios/page.tsx`.
+    - In `components/blocks/animated-slideshow-demo.tsx` for "slide-1" (Desarrollo Web) and "slide-2" (Servicios de Diseño).
+- **URL issue with special characters (`ñ`) has been resolved**: The directory `servicios-de-diseño` was renamed to `servicios-de-diseno`, and all relevant links were updated.
+- **Blog section has been added**: `/blog` page and `app/blog/page.tsx` created.
+- **Blog component integrated**: `Blog8` component (`components/blocks/blog8.tsx`) and its demo (`components/blocks/blog8-demo.tsx`) have been added.
+- **ShadCN `Card` component installed**: `components/ui/card.tsx` has been added.
+- **`lucide-react` dependency installed**.
+- **`Blog8Demo` component integrated into `app/proyectos/page.tsx`**.
+- **`memory-bank/ShadCN-context.md` updated** to include `Card`.
 
 ## What's Left to Build
 
@@ -20,14 +31,11 @@ Based on the implementation steps outlined in the Project Brief:
     -   Definir paleta de colores y tipografía alineada a tu branding.
     -   Crear prototipos interactivos
 3.  **Desarrollo Front‑end**:
-    -   Configurar Next.js routes and page templates for all sections (Home, Services, Portfolio, About, Blog, Contact).
-    -   Implementar reusable components (Header, Footer, CTA, Cards, etc.).
-    -   Develop individual service pages.
-    -   Develop Portfolio/Case Studies section.
+    -   Configurar Next.js routes and page templates for all remaining sections (Home, About, Contact).
+    -   Implement reusable components (Header, Footer, CTA, etc.).
     -   Develop About Me/Us section.
-    -   Develop Blog/Resources section.
     -   Develop Contact page with form and scheduling integration.
-    -   Implement responsive design.
+    -   Implement responsive design for all new content.
     -   **Implement a 1-second debounce/timer for scroll-based page navigation** to prevent rapid page skipping.
 4.  **Back‑end (if applicable)**:
     -   Integrate contact form with a backend endpoint (Supabase or Netlify Functions).
@@ -44,11 +52,11 @@ Based on the implementation steps outlined in the Project Brief:
 
 ## Current Status
 
-The project is in the development phase. The foundational structure and technical context have been established, and the memory bank has been updated. Scroll-based page navigation has been implemented and is functional, but requires further refinement for user experience.
+The project is actively under development. Significant progress has been made on setting up the core structure, adding new service and blog pages, and integrating new components. The memory bank has been thoroughly updated to reflect these changes.
 
 ## Known Issues
 
-- The content for all website sections (including services, portfolio items, and blog posts) is not yet created.
+- The content for all website sections (including services, portfolio items, and blog posts) is still placeholder and needs to be created.
 - Specific design details and visual prototypes are pending.
 - The choice of backend technology for the contact form and the headless CMS for the blog are pending decisions.
 - **Scroll-based page navigation is too sensitive**, leading to rapid page skipping when scrolling quickly. A debounce/timer is needed.
@@ -59,3 +67,4 @@ The project is in the development phase. The foundational structure and technica
 - The implementation plan provides a structured approach to address the increased complexity.
 - Key technical decisions regarding backend and CMS are yet to be finalized.
 - The scroll-based navigation was initially implemented with a threshold, then refined to trigger at the absolute top/bottom of content, and now requires a debounce to improve user experience.
+- The issue with special characters in URLs was identified and resolved by standardizing directory and link names to ASCII-compatible versions.

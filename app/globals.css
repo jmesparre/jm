@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: 'Gambarino'; /* Puedes darle el nombre que quieras a la fuente */
-  src: url('/fonts/Gambarino-Regular.otf') format('opentype'); /* La ruta relativa al directorio public */
+  font-family: 'Gambarino';
+  src: url('/fonts/Gambarino-Regular.otf') format('opentype'); 
   font-weight: normal;
   font-style: normal;
 }
@@ -14,8 +14,15 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'General Sans';
+  src: url('/fonts/GeneralSans-bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: bold;
+}
+
 :root {
-  --background: #0a0a0a;
+  --background:  #004936;
   --foreground: #F5F5ED;
   --redee: #f52ae7; 
   --color-primario: #004936;
@@ -30,9 +37,17 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background:  #004936;
     --foreground: #F5F5ED;
   }
+}
+
+.font-base {
+ font-family: 'General Sans';
+}
+
+.font-title {
+ font-family: 'Gambarino';
 }
 
 .verde {
@@ -43,16 +58,21 @@
   margin-top: -5vw;
 }
 
-nav , .hero h1 , .servicios , .proyectos h2, .logo h3{
+nav , .servicios , .proyectos h2, .logo h3{
    font-family: 'Gambarino', serif;
    font-weight: normal;
 }
 
-.logo h3 {
-  font-size: 1.5em;
+.servicios-titulo{
+  font-family: 'General Sans', sans-serif; 
+  font-weight: bold;
+}
+
+.logo-text {
+  font-size: 1.4em;
   position: absolute;
   color: #004936;
-  width: 150;
+  width: 160px;
 }
 
 .w-line {
@@ -67,21 +87,7 @@ nav , .hero h1 , .servicios , .proyectos h2, .logo h3{
   margin-top: -23vw;
 }
 
-.servicios::before, .contacto::before {
-  content: "2";
-  width: 20px;
-  height: 130px;
-  top: -20px;
-  position: relative;
-  background-color: #004936;
-}
 
-.servicios::after {
-  content: "";
-height: 130px;
-
-  background-color: #004936;
-}
 
 body {
   background-color: #F5F5ED;
@@ -122,11 +128,11 @@ nav a:hover {
 .proyectos {
   background-color: #F5F5ED;
   color: var(--color-primario);
-  
 }
 
 .contacto{
-  background-color: #9EC8F3;
+  color: var(--background);
+  padding-top: 100px;
 }
 
 

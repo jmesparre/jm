@@ -50,8 +50,8 @@ const demoData: Gallery4Props = {
   ],
 };
 
-function Gallery4Demo() {
+function GalleryBlog() {
   return <Gallery4 {...demoData} />;
 }
 
-export { Gallery4Demo };
+export { GalleryBlog };

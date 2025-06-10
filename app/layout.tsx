@@ -32,22 +32,22 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased h-full`}>
         <div className="relative logo h-full">
-          <div className="fixed top-0 left-0 z-10">
-            <Link href="/">
-              <Image src="/logosvgverde.svg" alt="Logo" width={50} height={50} className="mt-3 ml-5"/>
-              <h3 className="top-3 left-22">Juan Manuel</h3>
-            </Link>
+            <div className="fixed top-0 left-0 z-10 ">
+              <Link href="/">
+                <Image src="/logosvgverde.svg" alt="Logo" width={50} height={50} className="mt-3 ml-5"/>
+                <h2 className="top-3.5 sm:top-3 left-18 logo-text">Desarrollo Web</h2>
+              </Link>
+            </div>
+            {/* Desktop Navbar */}
+            <div className="hidden md:block fixed top-0 right-0 z-10">
+              <DesktopNavbar />
+            </div>
+            {/* Mobile Navigation */}
+            <div className="md:hidden fixed top-2 right-0 z-10">
+              <NavigationComponent />
+            </div>
+            <PageWrapper>{children}</PageWrapper>
           </div>
-          {/* Desktop Navbar */}
-          <div className="hidden md:block fixed top-0 right-0 z-10">
-            <DesktopNavbar />
-          </div>
-          {/* Mobile Navigation */}
-          <div className="md:hidden fixed top-2 right-0 z-10">
-            <NavigationComponent />
-          </div>
-          <PageWrapper>{children}</PageWrapper>
-        </div>
       </body>
     </html>
   );

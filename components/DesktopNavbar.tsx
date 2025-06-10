@@ -2,9 +2,10 @@
 import React from 'react';
 import Link from 'next/link';
 
+
 const DesktopNavbar = () => {
   return (
-    <nav className='absolute top-5 right-8'>
+    <nav className='absolute top-5 right-8 z-20'>
       <ul className='flex space-x-4'>
         <li><Link href="/">Inicio</Link></li>
         <li><Link href="/servicios">Servicios</Link></li>
