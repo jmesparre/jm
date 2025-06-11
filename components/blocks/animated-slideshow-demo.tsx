@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation"
     id: "slide-1",
     title: "Desarrollo Web",
     imageUrl:
-      "https://images.unsplash.com/photo-1654618977232-a6c6dea9d1e8?q=80&w=2486&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "test.png",
   },
   {
     id: "slide-2",
@@ -50,15 +50,15 @@ export function HoverSliderDemo () {
     };
 
     return (
-        <HoverSlider className="py-20 place-content-center md:px-12  text-[#3d3929]">
+        <HoverSlider className="py-20 px-[5%] md:px-[12%] text-[#3d3929]">
       
-      <div className="flex pl-[5%]  flex-wrap md:items-center justify-baseline md:justify-evenly gap-6 md:gap-12">
-        <div className="flex  flex-col space-y-2 md:space-y-3">
+      <div className="flex  flex-wrap md:items-center justify-baseline gap-6 md:gap-12">
+        <div className="flex  flex-col space-y-2 md:space-y-3 ">
           {SLIDES.map((slide, index) => (
             <TextStaggerHover
               key={slide.title}
               index={index}
-              className="cursor-pointer servicios-titulo text-[#004936] text-3xl sm:text-3xl font-bold uppercase tracking-tight"
+              className="cursor-pointer servicios-titulo text-[#004936] text-3xl sm:text-2xl md:text-3xl font-bold uppercase tracking-tight"
               text={slide.title}
               onClick={() => handleSlideClick(slide.id)}
             />

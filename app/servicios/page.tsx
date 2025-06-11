@@ -8,7 +8,7 @@ export default function ServiciosPage() {
       
       <div className="px-[5%] sm:px-[5%] md:px-[12%] mt-[40vh]">
         <h1 className="text-5xl md:text-5xl lg:text-6xl mb-6 text-pretty">Servicios</h1>
-        <p className="font-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem excepturi voluptates nisi iusto? Facere odit praesentium autem! Quod nam maxime nulla odit iste. Quo quos rerum saepe unde aperiam quam.
+        <p className="font-base ml-[0%]  sm:ml-[39%] mt-[0px] sm:mt-[-140px] md:mt-[-130px] xl:mt-[-120px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem excepturi voluptates nisi iusto? Facere odit praesentium autem! Quod nam maxime nulla odit iste. Quo quos rerum saepe unde aperiam quam.
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem excepturi voluptates nisi iusto? Facere odit praesentium autem! Quod nam maxime nulla odit iste. Quo quos rerum saepe unde aperiam quam.
         </p>
       </div>

@@ -16,7 +16,7 @@
 
 @font-face {
   font-family: 'General Sans';
-  src: url('/fonts/GeneralSans-bold.otf') format('opentype');
+  src: url('/fonts/GeneralSans-Semibold.otf') format('opentype');
   font-weight: bold;
   font-style: bold;
 }
@@ -50,15 +50,7 @@
  font-family: 'Gambarino';
 }
 
-.verde {
-  color: #004936;
-  margin-left: 4vw;
-  top: 40%;
-  position: absolute;
-  margin-top: -5vw;
-}
-
-nav , .servicios , .proyectos h2, .logo h3{
+nav , .servicios , .proyectos h2 {
    font-family: 'Gambarino', serif;
    font-weight: normal;
 }
@@ -69,10 +61,10 @@ nav , .servicios , .proyectos h2, .logo h3{
 }
 
 .logo-text {
-  font-size: 1.4em;
+  font-size: 1.1em;
   position: absolute;
   color: #004936;
-  width: 160px;
+  width: 170px;
 }
 
 .w-line {
