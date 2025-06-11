@@ -21,9 +21,7 @@ export default function Home() {
             showMobileWarning={false}
             showTooltip={true}
             displayOverlayContent={true}
-            overlayContent={
-               <p className="tilted-card-demo-text"></p> 
-            }
+            overlayContent={null}
           />
         </div>
         <div className='relative pb-20 sm:pb-0 sm:absolute top-[18vh] sm:top-[22%] md:top-[30vh] w-[80%] sm:w-[100%]'>
@@ -32,7 +30,7 @@ export default function Home() {
               Hola mi nombre es Juan Manuel, Creo soluciones web, Diseñador y desarrollador web con mas de 10 años de experincia posicionamiento en los buscadore SEO Lorem ipsum, dolor sit amet consectetur amet consectetur amet Lorem ipsum.
             </h2>
              <div className="ml-[5%] sm:ml-[41%] flex flex-wrap items-center  gap-2 md:flex-row  mt-[1%] sm:mt-5  w-[100%] sm:w-[40%] text-sm sm:text-1xl md:text-base">
-              <Button className='bg-background text-foreground z-20 cursor-pointer' variant="outline" size="sm">Agenda una llamada  --> </Button>
+              <Button className='bg-background text-foreground z-20 cursor-pointer' variant="outline" size="sm">Agenda una llamada</Button>
               <Button className='bg-primary z-20 cursor-pointer' variant="outline" size="sm">Button</Button>
             </div>
         </div>
