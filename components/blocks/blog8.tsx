@@ -22,7 +22,7 @@ interface Blog8Props {
 
 const Blog8 = ({
   heading = "Blog Postsaaa",
-  description = "Discover the latest insights and tutorials about modern web development, UI design, and component-driven architecture.",
+  description = "Dasdaser the latest insights and tutorials about modern web development, UI design, and component-driven architecture.",
   posts = [
     {
       id: "post-1",
@@ -52,13 +52,13 @@ const Blog8 = ({
   ],
 }: Blog8Props) => {
   return (
-    <section className="mt-[39vh] pb-100 w-full">
+    <section className="mt-[38vh] pb-100 w-full">
       <div className=" flex flex-col gap-16">
-        <div className="">
-          <h2 className=" mb-6 text-pretty px-[12%] text-5xl md:text-5xl lg:text-6xl lg:max-w-3xl">
+        <div className="px-[5%] sm:px-[5%] md:px-[12%] pb-20">
+          <h2 className=" mb-6 text-pretty text-5xl md:text-5xl lg:text-6xl lg:max-w-3xl">
             {heading}
           </h2>
-          <p className="px-[12%] ">
+          <p className="font-base ml-[0%] sm:ml-[39%] mt-[0px] sm:mt-[-140px] md:mt-[-130px] xl:mt-[-120px]">
             {description}
           </p>
         </div>

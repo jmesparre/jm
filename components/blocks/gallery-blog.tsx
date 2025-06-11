@@ -3,7 +3,7 @@ import { Gallery4, Gallery4Props } from "@/components/blocks/gallery4"
 const demoData: Gallery4Props = {
   title: "Blog",
   description:
-    "Discover how leading companies and developers are leveraging modern web technologies to build.",
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem excepturi voluptates nisi iusto? Facere odit praesentium autem! Quod nam maxime nulla odit iste. Quo quos rerum saepe unde aperiam quam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem excepturi voluptates nisi iusto? Facere odit praesentium autem! Quod nam maxime nulla odit iste. Quo quos rerum saepe unde aperiam quam.",
   items: [
     {
       id: "arami",
@@ -12,7 +12,7 @@ const demoData: Gallery4Props = {
         "Pagina web con wordpress para estudio de Diseño Industrial",
       href: "/",
       image:
-        "/arami.png"
+        "arami.png"
       },
     {
       id: "coyuyo",

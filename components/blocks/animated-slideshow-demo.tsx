@@ -7,13 +7,13 @@ import { useRouter } from "next/navigation"
   const SLIDES = [
   {
     id: "slide-1",
-    title: "Desarrollo Web",
+    title: "Diseño Gráfico",
     imageUrl:
       "test.png",
   },
   {
     id: "slide-2",
-    title: "Servicios de Diseño",
+    title: "Desarrollo Web",
     imageUrl:
       "https://images.unsplash.com/photo-1624996752380-8ec242e0f85d?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
@@ -25,13 +25,13 @@ import { useRouter } from "next/navigation"
   },
   {
     id: "slide-3",
-    title: "Edicion de Video",
+    title: "Marketing Digital",
     imageUrl:
       "https://images.unsplash.com/photo-1574717025058-2f8737d2e2b7?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: "slide-4",
-    title: "SEO optimization",
+    title: "Precios Fijos",
     imageUrl:
       "https://images.unsplash.com/photo-1726066012698-bb7a3abce786?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
@@ -58,7 +58,7 @@ export function HoverSliderDemo () {
             <TextStaggerHover
               key={slide.title}
               index={index}
-              className="cursor-pointer servicios-titulo text-[#004936] text-3xl sm:text-2xl md:text-3xl font-bold uppercase tracking-tight"
+              className="cursor-pointer servicios-titulo text-[#004936] text-3xl sm:text-2xl md:text-4xl font-bold  tracking-tight"
               text={slide.title}
               onClick={() => handleSlideClick(slide.id)}
             />

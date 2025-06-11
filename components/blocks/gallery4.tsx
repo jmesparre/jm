@@ -52,14 +52,14 @@ const Gallery4 = ({
   }, [carouselApi]);
 
   return (
-    <section className="mt-[39vh] pb-20">
+    <section className="mt-[39vh] pb-20 w-full">
       <div className="px-[5%] sm:px-[5%] md:px-[12%]">
-        <div className="mb-8 flex items-end justify-between md:mb-14 lg:mb-16">
-          <div className="flex flex-col gap-4">
+        <div className="mb-8 md:mb-14 lg:mb-16">
+          <div className="flex flex-col gap-4 mb-20">
             <h2 className="text-5xl md:text-5xl lg:text-6xl pb-1">
               {title}
             </h2>
-            <p className="max-w-lg mb-24 text-muted-foreground">{description}</p>
+            <p className="font-base ml-[0%] sm:ml-[39%] mt-[0px] sm:mt-[-140px] md:mt-[-130px] xl:mt-[-120px] ">{description}</p>
           </div>
           <div className="shrink-0 gap-2 md:flex">
             <Button

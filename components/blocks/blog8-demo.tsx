@@ -3,7 +3,7 @@ import { Blog8 } from "@/components/blocks/blog8"
 const demoData = {
   heading: "Proyectos",
   description:
-    "Discover the latest insights and tutorials about modern web development, UI design, and component-driven architecture.",
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem excepturi voluptates nisi iusto? Facere odit praesentium autem! Quod nam maxime nulla odit iste. Quo quos rerum saepe unde aperiam quam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem excepturi voluptates nisi iusto? Facere odit praesentium autem! Quod nam maxime nulla odit iste. Quo quos rerum saepe unde aperiam quam.",
   posts: [
     {
       id: "post-1",
@@ -15,7 +15,7 @@ const demoData = {
       author: "Sarah Chen",
       published: "15 Feb 2024",
       url: "https://shadcnblocks.com",
-      image: "https://www.shadcnblocks.com/images/block/placeholder-dark-1.svg",
+      image: "test.png",
       tags: ["Diseño Web", "UI Development"],
     },
     {
@@ -27,7 +27,7 @@ const demoData = {
       author: "Michael Park",
       published: "22 Feb 2024",
       url: "https://shadcnblocks.com",
-      image: "https://www.shadcnblocks.com/images/block/placeholder-dark-1.svg",
+      image: "test.png",
       tags: ["Diseño Web", "CSS"],
     },
      {
@@ -39,7 +39,7 @@ const demoData = {
       author: "Michael Park",
       published: "22 Feb 2024",
       url: "https://shadcnblocks.com",
-      image: "https://www.shadcnblocks.com/images/block/placeholder-dark-1.svg",
+      image: "test.png",
       tags: ["Diseño Web", "CSS"],
     },
   ],
