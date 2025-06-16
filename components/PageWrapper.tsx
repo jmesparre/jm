@@ -5,7 +5,7 @@ import { useRouter, usePathname } from "next/navigation";
 import * as motion from "motion/react-client";
 import ClickSpark from "@/components/ClickSpark";
 
-const pageOrder = ["/", "/servicios", "/servicios/desarrollo-web", "/servicios/servicios-de-diseno", "/proyectos", "/blog", "/contacto"];
+const pageOrder = ["/", "/servicios", "/servicios/desarrollo-web", "/servicios/servicios-de-diseno", "/servicios/e-commerce", "/servicios/posicionamiento-web", "/servicios/herramientas-de-gestion" , "/servicios/precios-fijos","/proyectos", "/blog", "/contacto"];
 
 interface PageWrapperProps {
   children: React.ReactNode;

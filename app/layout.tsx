@@ -31,7 +31,7 @@ export default function RootLayout({
     <html lang="en" className="h-full">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased h-full`}>
-        <div className="relative logo h-full">
+        <div className="relative logo h-full bg-red">
             <div className="fixed top-1 sm:top-0 left-4 sm:left-11.5 z-10 ">
               <Link href="/">
                 <Image src="/logosvgverde.svg" alt="Logo" width={50} height={50} className="mt-2"/>

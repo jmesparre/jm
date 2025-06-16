@@ -12,7 +12,7 @@ const demoData: Gallery4Props = {
         "Pagina web con wordpress para estudio de Diseño Industrial",
       href: "/",
       image:
-        "arami.png"
+        "arami-proyecto.png"
       },
     {
       id: "coyuyo",

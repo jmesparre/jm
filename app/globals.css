@@ -50,14 +50,9 @@
  font-family: 'Gambarino';
 }
 
-nav , .servicios , .proyectos h2 {
+nav , .proyectos h2 {
    font-family: 'Gambarino', serif;
    font-weight: normal;
-}
-
-.servicios-titulo{
-  font-family: 'General Sans', sans-serif; 
-  font-weight: bold;
 }
 
 .logo-text {

@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image'; // Import Image from next/image
 import { Activity, DraftingCompass, Mail, Zap } from 'lucide-react'
 
-const ServiciosDeDisenoPage = () => {
+const PosicionamientoWebPage = () => {
   return (
     <div>
       <section className="py-26 md:py-36 text-background">
@@ -34,7 +34,7 @@ const ServiciosDeDisenoPage = () => {
                   </div>
                   <div className="relative  p-3 lg:col-span-3">
                       <div className="aspect-76/59 relative">
-                          <Image src="/servicio-diseño-grafico-argentina.png" alt="payments illustration light" width={1207} height={929} />
+                          <Image src="/servicio-posicionamiento-web-seo-argentina.png" alt="payments illustration light" width={1207} height={89} />
                       </div>
                   </div>
               </div>
@@ -44,4 +44,4 @@ const ServiciosDeDisenoPage = () => {
   );
 };
 
-export default ServiciosDeDisenoPage;
+export default PosicionamientoWebPage;

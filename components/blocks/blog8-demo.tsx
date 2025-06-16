@@ -15,7 +15,7 @@ const demoData = {
       author: "Sarah Chen",
       published: "15 Feb 2024",
       url: "https://shadcnblocks.com",
-      image: "test.png",
+      image: "arami-proyecto.png",
       tags: ["Diseño Web", "UI Development"],
     },
     {
@@ -27,7 +27,7 @@ const demoData = {
       author: "Michael Park",
       published: "22 Feb 2024",
       url: "https://shadcnblocks.com",
-      image: "test.png",
+      image: "arami-proyecto.png",
       tags: ["Diseño Web", "CSS"],
     },
      {
@@ -39,7 +39,7 @@ const demoData = {
       author: "Michael Park",
       published: "22 Feb 2024",
       url: "https://shadcnblocks.com",
-      image: "test.png",
+      image: "arami-proyecto.png",
       tags: ["Diseño Web", "CSS"],
     },
   ],
