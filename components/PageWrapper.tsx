@@ -21,7 +21,7 @@ export default function   PageWrapper({ children }: PageWrapperProps) {
   const isAtBottomRef = useRef(false);
   const touchStartY = useRef(0);
   const touchMoveY = useRef(0);
-  const SWIPE_THRESHOLD = 50; // Minimum vertical distance for a swipe
+  const SWIPE_THRESHOLD = 20; // Minimum vertical distance for a swipe
 
   const currentPageIndex = pageOrder.indexOf(pathname);
 
@@ -47,7 +47,7 @@ export default function   PageWrapper({ children }: PageWrapperProps) {
       setTimeout(() => {
         isNavigatingRef.current = false;
         console.log("Navigation flag reset.");
-      }, 30); // 1-second delay as requested
+      }, 590); // 1-second delay as requested
     } else {
       console.log("No valid next page path or already on target page.");
     }

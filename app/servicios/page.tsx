@@ -4,11 +4,9 @@ import { PackageOpen, Globe, PenTool, ChartNetwork, CircleDollarSign, Cog } from
 
 export default function ServiciosPage() {
   return (
-    <section id="servicios" className="servicios ">
-      
-      
+    <section id="servicios" className="servicioss"> 
        <div>
-             <section className="py-[22vh] text-background min-h-[140vh]">
+             <section className="py-[22vh] sm:py-[33vh] text-background min-h-[140vh]">
                  <div className="mx-auto px-[5%] sm:px-[5%] md:px-[11%]">
                      <div className="grid items-center gap-12 md:grid-cols-2 md:gap-12 lg:grid-cols-5 lg:gap-24">                 
                         <div className="lg:col-span-2">
@@ -18,27 +16,27 @@ export default function ServiciosPage() {
                             </div>
                             <ul className="mt-8 text-lg divide-y border-y *:flex *:items-center *:gap-3 *:py-3">
                                 <li>
-                                    <Globe className="size-5.5" />
+                                    <Globe className="size-5" />
                                    <a href="/servicios/desarrollo-web">Desarrollo Web</a> 
                                 </li>
                                 <li>
-                                    <PenTool className="size-5.5" />
+                                    <PenTool className="size-5" />
                                     <a href="/servicios/servicios-de-diseño">Servicios de Diseño</a> 
                                 </li>
                                 <li>
-                                    <CircleDollarSign className="size-5.5" />
+                                    <CircleDollarSign className="size-5" />
                                     <a href="/servicios/e-commerce">Tiendas Virtuales</a> 
                                 </li>
                                 <li>
-                                    <ChartNetwork className="size-5.5" />
+                                    <ChartNetwork className="size-5" />
                                     <a href="/servicios/posicionamiento-web">Posicionamiento Web</a> 
                                 </li>
                                  <li>
-                                    <Cog className="size-5.5" />
+                                    <Cog className="size-5" />
                                     <a href="/servicios/herramientas-de-gestion">Herramientas de gestion</a> 
                                 </li>
                                 <li>
-                                    <PackageOpen className="size-5.5" />
+                                    <PackageOpen className="size-5" />
                                     <a href="/servicios/precios-fijos">Paquetes para Negocios</a> 
                                 </li>
                             </ul>
