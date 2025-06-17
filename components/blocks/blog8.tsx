@@ -112,7 +112,7 @@ const Blog8 = ({
                       <img
                         src={post.image}
                         alt={post.title}
-                        className="h-full w-full transition-opacity duration-200 fade-in hover:opacity-70"
+                        className="w-full transition-opacity duration-200 fade-in hover:opacity-70"
                       />
                     </div>
                   </a>

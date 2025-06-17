@@ -1,8 +1,24 @@
-import React from 'react';
+"use client";
+
+import React, { useEffect, useRef } from 'react';
 import Image from 'next/image'; // Import Image from next/image
 import { Activity, DraftingCompass, Mail, Zap } from 'lucide-react'
+import { animate, spring } from 'motion'
+
 
 const ServiciosDeDisenoPage = () => {
+  const boxRef = useRef(null);
+
+  useEffect(() => {
+    if (boxRef.current) {
+      animate(
+        boxRef.current,
+        { scale: [0, 1] },
+        { type: spring, stiffness: 260, damping: 60 }
+      );
+    }
+  }, []);
+
   return (
     <div>
       <section className="py-[22vh] text-background min-h-[140vh]">
@@ -33,7 +49,7 @@ const ServiciosDeDisenoPage = () => {
                       </ul>
                   </div>
                   <div className="relative  p-3 lg:col-span-3">
-                      <div className="aspect-76/59 relative">
+                      <div ref={boxRef} className="aspect-76/59 relative">
                           <Image src="/servicio-diseño-grafico-argentina.png" alt="payments illustration light" width={1207} height={929} />
                       </div>
                   </div>

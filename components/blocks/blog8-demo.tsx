@@ -15,7 +15,7 @@ const demoData = {
       author: "Sarah Chen",
       published: "15 Feb 2024",
       url: "https://shadcnblocks.com",
-      image: "arami-proyecto.png",
+      image: "monitor1.avif",
       tags: ["Diseño Web", "UI Development"],
     },
     {

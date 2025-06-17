@@ -16,7 +16,7 @@ export default function ServiciosPage() {
                                 <h2 className="text-4xl sm:text-5xl lg:text-6xl font-title pb-2">Servicios</h2>
                                 <p className="mt-6 text-sm xl:text-md ">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem aperiam architecto facilis error earum quasi, totam, in impedit quam repudiandae minima. Deleniti eum provident impedit voluptatibus deserunt ratione est dolore. Orrupti aut temporibus assumenda atque ab, accusamus sit, molestiae veniam laboriosam pariatur.</p>
                             </div>
-                            <ul className="mt-8 text-md divide-y border-y *:flex *:items-center *:gap-3 *:py-3">
+                            <ul className="mt-8 text-lg divide-y border-y *:flex *:items-center *:gap-3 *:py-3">
                                 <li>
                                     <Globe className="size-5.5" />
                                    <a href="/servicios/desarrollo-web">Desarrollo Web</a> 
