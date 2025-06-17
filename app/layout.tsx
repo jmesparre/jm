@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "JM Desarrollo Web",
+  title: "Juan Desarrollador Web",
   description: "portofilo de desarrollo web",
 };
 
@@ -31,11 +31,11 @@ export default function RootLayout({
     <html lang="en" className="h-full">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased h-full`}>
-        <div className="relative logo h-full bg-red">
+        <div className="relative logo h-full">
             <div className="fixed top-1 sm:top-0 left-4 sm:left-11.5 z-10 ">
               <Link href="/">
-                <Image src="/logosvgverde.svg" alt="Logo" width={50} height={50} className="mt-2"/>
-                <h2 className="top-3.5 ml-14 logo-text font-bold">Desarrollo Web</h2>
+                <Image src="/logosvg.svg" alt="Logo-juan-manuel-esparre-desarrollador-web" width={40} height={40} className="mt-3"/>
+                <h2 className="top-4 ml-12 logo-text font-bold">Desarrollo Web</h2>
               </Link>
             </div>
             {/* Desktop Navbar */}
@@ -44,7 +44,7 @@ export default function RootLayout({
             </div>
             {/* Mobile Navigation */}
             <div className="md:hidden fixed top-2 right-0 z-10">
-              <NavigationComponent />
+  <p>a</p>
             </div>
             <PageWrapper>{children}</PageWrapper>
           </div>
