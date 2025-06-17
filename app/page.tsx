@@ -33,7 +33,7 @@ export default function Home() {
               <Button className='bg-primary z-5 cursor-pointer' variant="outline" size="sm">Button Ya!</Button>
             </div>
         </div>
-        <div className='relative h-full sm:h-[101vh] opacity-0'>scroll</div>
+        <div className='relative h-full sm:h-[111vh] opacity-0'>scroll</div>
       </section>
     </main>
   );
