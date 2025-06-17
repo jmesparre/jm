@@ -10,31 +10,31 @@ const PreciosFijosPage = () => {
               <div className="grid items-center gap-12 md:grid-cols-2 md:gap-12 lg:grid-cols-5 lg:gap-24">
                   <div className="lg:col-span-2">
                       <div className="md:pr-6 lg:pr-0">
-                          <h2 className="text-4xl font-semibold sm:text-3xl lg:text-4xl">Servicios de Diseño</h2>
-                          <p className="mt-6 text-sm ">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem aperiam architecto facilis error earum quasi, totam, in impedit quam repudiandae minima. Deleniti eum provident impedit voluptatibus deserunt ratione est dolore. Orrupti aut temporibus assumenda atque ab, accusamus sit, molestiae veniam laboriosam pariatur.</p>
+                          <h2 className="text-4xl font-semibold sm:text-3xl lg:text-4xl">Paquetes Web con Precios Fijos: Soluciones Claras</h2>
+                          <p className="mt-6 text-sm ">Ofrecemos paquetes de desarrollo web con precios fijos, diseñados para brindarte transparencia y control sobre tu inversión. Ideal para emprendedores y pequeñas empresas que buscan una presencia online profesional sin costos ocultos. Elige el paquete que mejor se adapte a tus necesidades y comienza a construir tu éxito digital con confianza.</p>
                       </div>
                       <ul className="mt-8 divide-y border-y *:flex *:items-center *:gap-3 *:py-3">
                           <li>
                               <Mail className="size-5" />
-                              aEmail and web support
+                              Presupuestos claros
                           </li>
                           <li>
                               <Zap className="size-5" />
-                              Fast response time
+                              Entrega rápida y eficiente
                           </li>
                           <li>
                               <Activity className="size-5" />
-                              Menitoring and analytics
+                              Diseños modernos y adaptables a cualquier dispositivo
                           </li>
                           <li>
                               <DraftingCompass className="size-5" />
-                              Architectural reviewww
+                              Soporte y mantenimiento post-lanzamiento
                           </li>
                       </ul>
                   </div>
                   <div className="relative  p-3 lg:col-span-3">
                       <div className="aspect-76/59 relative align-middle">
-                          <Image src="/servicios-web-precios-fijos.png" alt="payments illustration light" width={370} height={400} />
+                          <Image src="/servicios-web-precios-fijos.png" alt="Paquetes Web con Precios Fijos para Emprendedores y Empresas" width={400} height={400} />
                       </div>
                   </div>
               </div>

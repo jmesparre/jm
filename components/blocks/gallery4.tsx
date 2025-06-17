@@ -59,7 +59,7 @@ const Gallery4 = ({
             <h2 className="text-5xl md:text-5xl lg:text-6xl pb-1">
               {title}
             </h2>
-            <p className="font-base ml-[0%] sm:ml-[39%] mt-[0px] sm:mt-[-140px] md:mt-[-130px] xl:mt-[-120px] ">{description}</p>
+            <p className="font-base ml-[0%] sm:ml-[39%] mt-[0px] sm:mt-[-140px] md:mt-[-90px] xl:mt-[-120px] ">{description}</p>
           </div>
           <div className="shrink-0 gap-2 md:flex">
             <Button

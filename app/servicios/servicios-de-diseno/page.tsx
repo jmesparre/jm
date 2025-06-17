@@ -26,31 +26,31 @@ const ServiciosDeDisenoPage = () => {
               <div className="grid items-center gap-12 md:grid-cols-2 md:gap-12 lg:grid-cols-5 lg:gap-24">
                   <div className="lg:col-span-2">
                       <div className="md:pr-6 lg:pr-0 ">
-                          <h2 className="text-4xl font-semibold sm:text-3xl lg:text-4xl">Servicios de Diseño</h2>
-                          <p className="mt-6 text-sm ">Lorem iaaapsum dolor, sit amet consectetur adipisicing elit. Voluptatem aperiam architecto facilis error earum quasi, totam, in impedit quam repudiandae minima. Deleniti eum provident impedit voluptatibus deserunt ratione est dolore. Orrupti aut temporibus assumenda atque ab, accusamus sit, molestiae veniam laboriosam pariatur.</p>
+                          <h2 className="text-4xl font-semibold sm:text-3xl lg:text-4xl">Servicios de Diseño Gráfico y UX/UI: Impacto Visual para tu Marca</h2>
+                          <p className="mt-6 text-sm ">Transformamos tus ideas en experiencias visuales impactantes. Ofrecemos servicios de diseño gráfico y UX/UI que abarcan desde la creación de identidad de marca y logotipos, hasta el diseño de interfaces de usuario intuitivas y atractivas para sitios web y aplicaciones. Nuestro enfoque se centra en la estética y la funcionalidad para conectar con tu audiencia.</p>
                       </div>
                       <ul className="mt-8 divide-y border-y *:flex *:items-center *:gap-3 *:py-3">
                           <li>
                               <Mail className="size-5" />
-                              Email and web support
+                              Diseño de identidad de marca y logotipos
                           </li>
                           <li>
                               <Zap className="size-5" />
-                              Fast response time
+                              Diseño UX/UI para interfaces intuitivas
                           </li>
                           <li>
                               <Activity className="size-5" />
-                              Menitoring and analytics
+                              Creación de material gráfico para web y redes sociales
                           </li>
                           <li>
                               <DraftingCompass className="size-5" />
-                              Architectural reviewww
+                              Prototipado y wireframing para experiencias de usuario
                           </li>
                       </ul>
                   </div>
                   <div className="relative  p-3 lg:col-span-3">
                       <div ref={boxRef} className="aspect-76/59 relative">
-                          <Image src="/servicio-diseño-grafico-argentina.png" alt="payments illustration light" width={1207} height={929} />
+                          <Image src="/servicio-diseño-grafico-argentina.png" alt="Servicios de Diseño Gráfico y UX/UI en Argentina" width={1207} height={929} />
                       </div>
                   </div>
               </div>

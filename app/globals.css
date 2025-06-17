@@ -24,7 +24,6 @@
 :root {
   --background:  #004936;
   --foreground: #F5F5ED;
-  --redee: #f52ae7; 
   --color-primario: #004936;
 }
 
@@ -97,9 +96,6 @@ nav a {
   color: #004936;
 }
 
-nav a:hover {
-  border-bottom: 1px solid #9ec8f3;
-}
 
 .hero {
  min-height: 101vh;

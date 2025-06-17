@@ -3,50 +3,43 @@ import { Gallery4, Gallery4Props } from "@/components/blocks/gallery4"
 const demoData: Gallery4Props = {
   title: "Blog",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem excepturi voluptates nisi iusto? Facere odit praesentium autem! Quod nam maxime nulla odit iste. Quo quos rerum saepe unde aperiam quam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem excepturi voluptates nisi iusto? Facere odit praesentium autem! Quod nam maxime nulla odit iste. Quo quos rerum saepe unde aperiam quam.",
+    "Explora nuestros artículos y guías sobre desarrollo web, diseño, SEO y estrategias digitales. Mantente al día con las últimas tendencias y consejos para potenciar tu presencia online y hacer crecer tu negocio.",
   items: [
     {
-      id: "arami",
-      title: "Estudio Arami - Wordpress",
-      description:
-        "Pagina web con wordpress para estudio de Diseño Industrial",
-      href: "/",
-      image:
-        "arami-proyecto.png"
-      },
-    {
-      id: "coyuyo",
-      title: "Fundacion Coyuyo",
-      description:
-        "Branding, Diseño web, React ",
-      href: "/",
-      image: "coyuyo.png"
+      id: "seo-para-emprendedores",
+      title: "SEO para Emprendedores: Guía Básica para Posicionar tu Negocio",
+      description: "Descubre los fundamentos del SEO y cómo aplicarlos para que tu pequeño negocio aparezca en los primeros resultados de Google. Consejos prácticos y fáciles de implementar.",
+      href: "/blog/seo-para-emprendedores",
+      image: "/servicio-posicionamiento-web-seo-argentina.png"
     },
     {
-      id: "Kesug",
-      title: "Tienda Virtual - Wordpress",
-      description:
-      "Pagina web con wordpress para estudio de Diseño Industrial",
-      href: "/",
-      image:
-        "/kesug.png"
-       },
+      id: "elegir-cms-headless",
+      title: "¿Cómo Elegir el Mejor CMS Headless para tu Proyecto?",
+      description: "Analizamos las ventajas y desventajas de los CMS headless como Sanity y Strapi, y te ayudamos a decidir cuál es la mejor opción para gestionar tu contenido de forma flexible y escalable.",
+      href: "/blog/elegir-cms-headless",
+      image: "/servicio-herramientas-de-gestion-empresas.png"
+    },
     {
-      id: "nextjs",
-      title: "Next.js: The React Framework for Production",
-      description:
-        "Explore how Next.js has become the go-to framework for building full-stack React applications, offering features like server components, file-based routing, and automatic optimization.",
-      href: "https://nextjs.org",
-      image: "coyuyo.png"
-     },
-     {
-      id: "nextj2s",
-      title: "Next.js: The React Framework for Production",
-      description:
-        "Explore how Next.js has become the go-to framework for building full-stack React applications, offering features like server components, file-based routing, and automatic optimization.",
-      href: "https://nextjs.org",
-      image: "coyuyo.png"
-     },
+      id: "tendencias-diseno-web-2024",
+      title: "Tendencias de Diseño Web 2024: Lo que Necesitas Saber",
+      description: "Explora las últimas tendencias en diseño UX/UI, desde el minimalismo hasta las animaciones interactivas, y cómo pueden mejorar la experiencia de usuario de tu sitio web.",
+      href: "/blog/tendencias-diseno-web-2024",
+      image: "/servicio-diseño-grafico-argentina.png"
+    },
+    {
+      id: "ventajas-nextjs",
+      title: "Next.js: Por Qué es el Framework Ideal para tu Próximo Proyecto Web",
+      description: "Profundiza en las características clave de Next.js, como el renderizado híbrido, la optimización de imágenes y las rutas API, que lo convierten en una potente herramienta para el desarrollo moderno.",
+      href: "/blog/ventajas-nextjs",
+      image: "/servicio-desarrollo-web-argentina.png"
+    },
+    {
+      id: "estrategias-e-commerce",
+      title: "Estrategias Clave para Impulsar las Ventas de tu E-commerce",
+      description: "Aprende sobre las mejores prácticas para optimizar tu tienda virtual, desde la experiencia de compra hasta la implementación de pasarelas de pago y la gestión de productos.",
+      href: "/blog/estrategias-e-commerce",
+      image: "/servicio-e-commerce-argentina.png"
+    }
   ],
 };
 
