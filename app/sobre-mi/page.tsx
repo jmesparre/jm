@@ -1,5 +1,6 @@
 import React from 'react';
 import PageWrapper from '@/components/PageWrapper';
+import { motion, useMotionValue, useTransform } from "motion";
 
 const SobreMiPage = () => {
   return (
