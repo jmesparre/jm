@@ -41,6 +41,13 @@
   }
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* opcional, si quieres desactivar el scroll del body */
+}
+
 .font-base {
  font-family: 'General Sans';
 }

@@ -5,13 +5,17 @@ import { useRouter, usePathname } from "next/navigation";
 import * as motion from "motion/react-client";
 import ClickSpark from "@/components/ClickSpark";
 
-const pageOrder = ["/", "/servicios", "/servicios/desarrollo-web", "/servicios/servicios-de-diseno", "/servicios/e-commerce", "/servicios/posicionamiento-web", "/servicios/herramientas-de-gestion" , "/servicios/precios-fijos","/proyectos", "/sobre-mi", "/blog", "/contacto"];
+const pageOrder = [
+  "/", "/servicios", "/servicios/desarrollo-web", "/servicios/servicios-de-diseno",
+  "/servicios/e-commerce", "/servicios/posicionamiento-web", "/servicios/herramientas-de-gestion",
+  "/servicios/precios-fijos", "/proyectos", "/sobre-mi", "/blog", "/contacto"
+];
 
 interface PageWrapperProps {
   children: React.ReactNode;
 }
 
-export default function   PageWrapper({ children }: PageWrapperProps) {
+export default function PageWrapper({ children }: PageWrapperProps) {
   const router = useRouter();
   const pathname = usePathname();
   const contentRef = useRef<HTMLDivElement>(null);
@@ -21,15 +25,12 @@ export default function   PageWrapper({ children }: PageWrapperProps) {
   const isAtBottomRef = useRef(false);
   const touchStartY = useRef(0);
   const touchMoveY = useRef(0);
-  const SWIPE_THRESHOLD = 20; // Minimum vertical distance for a swipe
+  const SWIPE_THRESHOLD = 20;
 
   const currentPageIndex = pageOrder.indexOf(pathname);
 
   const navigateToPage = useCallback((direction: "up" | "down") => {
-    if (isNavigatingRef.current) {
-      console.log("Navigation already in progress, returning.");
-      return;
-    }
+    if (isNavigatingRef.current) return;
 
     let nextPagePath = "";
     if (direction === "down" && currentPageIndex < pageOrder.length - 1) {
@@ -39,17 +40,12 @@ export default function   PageWrapper({ children }: PageWrapperProps) {
     }
 
     if (nextPagePath && nextPagePath !== pathname) {
-      console.log(`Attempting to navigate to: ${nextPagePath}`);
       isNavigatingRef.current = true;
       router.push(nextPagePath);
-      window.scrollTo(0, 0); // Scroll to top of the new page
-      // Reset navigation flag after a short delay to allow animation to complete
+      window.scrollTo(0, 0);
       setTimeout(() => {
         isNavigatingRef.current = false;
-        console.log("Navigation flag reset.");
-      }, 500); // 1-second delay as requested
-    } else {
-      console.log("No valid next page path or already on target page.");
+      }, 500);
     }
   }, [currentPageIndex, pathname, router]);
 
@@ -59,92 +55,78 @@ export default function   PageWrapper({ children }: PageWrapperProps) {
         const { scrollTop, scrollHeight, clientHeight } = contentRef.current;
         const isScrollable = scrollHeight > clientHeight;
 
-        isAtTopRef.current = scrollTop <= 5; // Allow a small buffer from the top
-        isAtBottomRef.current = scrollTop + clientHeight >= scrollHeight - 100; // Allow a small buffer from the bottom
+        isAtTopRef.current = scrollTop <= 10;
+        isAtBottomRef.current = scrollTop + clientHeight >= scrollHeight - 10;
 
-        // If content is not scrollable, consider it at both top and bottom
         if (!isScrollable) {
           isAtTopRef.current = true;
           isAtBottomRef.current = true;
         }
-        // console.log(`Scroll: scrollTop=${scrollTop}, scrollHeight=${scrollHeight}, clientHeight=${clientHeight}, isAtTop=${isAtTopRef.current}, isAtBottom=${isAtBottomRef.current}`);
       }
     };
 
     const handleWheel = (event: WheelEvent) => {
       if (isNavigatingRef.current) {
-        event.preventDefault(); // Prevent scrolling if navigation is in progress
+        event.preventDefault();
         return;
       }
 
-      // Debounce wheel events
-      if (scrollTimeoutRef.current) {
-        clearTimeout(scrollTimeoutRef.current);
-      }
+      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
 
       scrollTimeoutRef.current = setTimeout(() => {
         if (event.deltaY > 0 && isAtBottomRef.current) {
-          // Scrolling down and at the bottom
           navigateToPage("down");
-          event.preventDefault(); // Prevent default scroll
+          event.preventDefault();
         } else if (event.deltaY < 0 && isAtTopRef.current) {
-          // Scrolling up and at the top
           navigateToPage("up");
-          event.preventDefault(); // Prevent default scroll
+          event.preventDefault();
         }
-      }, 50); // Short debounce for responsiveness
+      }, 50);
     };
 
     const handleTouchStart = (event: TouchEvent) => {
       touchStartY.current = event.touches[0].clientY;
-      touchMoveY.current = event.touches[0].clientY; // Initialize touchMoveY
+      touchMoveY.current = event.touches[0].clientY;
     };
 
     const handleTouchMove = (event: TouchEvent) => {
       if (isNavigatingRef.current) {
-        event.preventDefault(); // Prevent scrolling if navigation is in progress
+        event.preventDefault();
         return;
       }
+
       touchMoveY.current = event.touches[0].clientY;
       const deltaY = touchMoveY.current - touchStartY.current;
 
-      const { scrollHeight, clientHeight } = contentRef.current || { scrollHeight: 0, clientHeight: 0 };
-      const isScrollable = scrollHeight > clientHeight;
+      if (Math.abs(deltaY) > 5) {
+        const { scrollHeight, clientHeight } = contentRef.current || { scrollHeight: 0, clientHeight: 0 };
+        const isScrollable = scrollHeight > clientHeight;
 
-      // Prevent default scroll only if a vertical swipe gesture is potentially happening
-      // and we are at a scroll boundary, or the page is not scrollable at all.
-      if (Math.abs(deltaY) > 5) { // A small threshold to detect intentional vertical movement
         if (isScrollable) {
-          if ((isAtTopRef.current && deltaY > 0) || // Swiping down from top
-              (isAtBottomRef.current && deltaY < 0)) { // Swiping up from bottom
+          if ((isAtTopRef.current && deltaY > 0) || (isAtBottomRef.current && deltaY < 0)) {
             event.preventDefault();
           }
         } else {
-          // If not scrollable, any vertical swipe is for navigation
           event.preventDefault();
         }
       }
     };
 
     const handleTouchEnd = (event: TouchEvent) => {
-      if (isNavigatingRef.current) {
-        return;
-      }
+      if (isNavigatingRef.current) return;
 
       const deltaY = touchMoveY.current - touchStartY.current;
 
       if (Math.abs(deltaY) > SWIPE_THRESHOLD) {
         if (deltaY < 0 && isAtBottomRef.current) {
-          // Swiping up and at the bottom
           navigateToPage("down");
-          event.preventDefault(); // Prevent default only when navigation is triggered
+          event.preventDefault();
         } else if (deltaY > 0 && isAtTopRef.current) {
-          // Swiping down and at the top
-          navigateToPage("up"); // Reverted to original logic: should navigate up on downward swipe
-          event.preventDefault(); // Prevent default only when navigation is triggered
+          navigateToPage("up");
+          event.preventDefault();
         }
       }
-      // Reset touch positions
+
       touchStartY.current = 0;
       touchMoveY.current = 0;
     };
@@ -154,9 +136,8 @@ export default function   PageWrapper({ children }: PageWrapperProps) {
       currentContentRef.addEventListener("scroll", handleScroll);
       currentContentRef.addEventListener("wheel", handleWheel, { passive: false });
       currentContentRef.addEventListener("touchstart", handleTouchStart, { passive: true });
-      currentContentRef.addEventListener("touchmove", handleTouchMove, { passive: true });
-      currentContentRef.addEventListener("touchend", handleTouchEnd);
-      // Initial check
+      currentContentRef.addEventListener("touchmove", handleTouchMove, { passive: false });
+      currentContentRef.addEventListener("touchend", handleTouchEnd, { passive: false });
       handleScroll();
     }
 
@@ -171,22 +152,30 @@ export default function   PageWrapper({ children }: PageWrapperProps) {
     };
   }, [pathname, navigateToPage]);
 
+  // Forzar scroll al top cuando cambia la ruta
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <ClickSpark
-      sparkColor='#004936'
+      sparkColor="#004936"
       sparkSize={10}
       sparkRadius={15}
       sparkCount={8}
       duration={400}
     >
-      <div ref={contentRef} className="w-full h-full overflow-y-auto">
+      <div
+        ref={contentRef}
+        className="w-full h-screen overflow-y-auto touch-none" // touch-none evita gestos del navegador
+      >
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -50 }}
           transition={{ duration: 0.25 }}
-          key={pathname} // Key is crucial for AnimatePresence-like behavior
-          className="w-full h-full" // Removed overflow-y-auto from here
+          key={pathname}
+          className="w-full min-h-screen"
         >
           {children}
         </motion.div>
