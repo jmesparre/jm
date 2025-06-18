@@ -21,7 +21,7 @@ export default function   PageWrapper({ children }: PageWrapperProps) {
   const isAtBottomRef = useRef(false);
   const touchStartY = useRef(0);
   const touchMoveY = useRef(0);
-  const SWIPE_THRESHOLD = 50; // Minimum vertical distance for a swipe
+  const SWIPE_THRESHOLD = 0; // Minimum vertical distance for a swipe
 
   const currentPageIndex = pageOrder.indexOf(pathname);
 
@@ -59,15 +59,15 @@ export default function   PageWrapper({ children }: PageWrapperProps) {
         const { scrollTop, scrollHeight, clientHeight } = contentRef.current;
         const isScrollable = scrollHeight > clientHeight;
 
-        isAtTopRef.current = scrollTop <= 5; // Allow a small buffer from the top
-        isAtBottomRef.current = scrollTop + clientHeight >= scrollHeight - 5; // Allow a small buffer from the bottom
+        isAtTopRef.current = scrollTop <= 20; // Allow a small buffer from the top
+        isAtBottomRef.current = scrollTop + clientHeight >= scrollHeight - 20; // Allow a small buffer from the bottom
 
         // If content is not scrollable, consider it at both top and bottom
         if (!isScrollable) {
           isAtTopRef.current = true;
           isAtBottomRef.current = true;
         }
-        // console.log(`Scroll: scrollTop=${scrollTop}, scrollHeight=${scrollHeight}, clientHeight=${clientHeight}, isAtTop=${isAtTopRef.current}, isAtBottom=${isAtBottomRef.current}`);
+        console.log(`Scroll: scrollTop=${scrollTop}, scrollHeight=${scrollHeight}, clientHeight=${clientHeight}, isAtTop=${isAtTopRef.current}, isAtBottom=${isAtBottomRef.current}`);
       }
     };
 
@@ -115,10 +115,7 @@ export default function   PageWrapper({ children }: PageWrapperProps) {
       // and we are at a scroll boundary, or the page is not scrollable at all.
       if (Math.abs(deltaY) > 5) { // A small threshold to detect intentional vertical movement
         if (isScrollable) {
-          if ((isAtTopRef.current && deltaY > 0) || // Swiping down from top
-              (isAtBottomRef.current && deltaY < 0)) { // Swiping up from bottom
-            event.preventDefault();
-          }
+          event.preventDefault(); // Prevent native scroll if a swipe is detected on a scrollable page
         } else {
           // If not scrollable, any vertical swipe is for navigation
           event.preventDefault();
@@ -134,6 +131,7 @@ export default function   PageWrapper({ children }: PageWrapperProps) {
       const deltaY = touchMoveY.current - touchStartY.current;
 
       if (Math.abs(deltaY) > SWIPE_THRESHOLD) {
+        console.log(`handleTouchEnd: deltaY=${deltaY}, isAtBottom=${isAtBottomRef.current}, isAtTop=${isAtTopRef.current}`);
         if (deltaY < 0 && isAtBottomRef.current) {
           // Swiping up and at the bottom
           navigateToPage("down");
