@@ -14,7 +14,7 @@ const ServiciosDeDisenoPage = () => {
       animate(
         boxRef.current,
         { scale: [0, 1] },
-        { type: spring, stiffness: 260, damping: 60 }
+        { type: spring, stiffness: 170, damping: 20 }
       );
     }
   }, []);

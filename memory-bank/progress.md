@@ -19,6 +19,8 @@ This document tracks what has been built, what remains, the current status, know
 - **`lucide-react` dependency installed**.
 - **`Blog8Demo` component integrated into `app/proyectos/page.tsx`**.
 - **`memory-bank/ShadCN-context.md` updated** to include `Card`.
+- **Scroll-based page navigation on mobile now correctly navigates on scroll down.**
+- **A 1-second debounce/timer has been implemented for scroll-based page navigation** to prevent rapid page skipping.
 
 ## What's Left to Build
 
@@ -36,7 +38,6 @@ Based on the implementation steps outlined in the Project Brief:
     -   Develop About Me/Us section.
     -   Develop Contact page with form and scheduling integration.
     -   Implement responsive design for all new content.
-    -   **Implement a 1-second debounce/timer for scroll-based page navigation** to prevent rapid page skipping.
 4.  **Back‑end (if applicable)**:
     -   Integrate contact form with a backend endpoint (Supabase or Netlify Functions).
     -   Configure headless CMS (Sanity or Strapi) for the blog.
@@ -52,19 +53,18 @@ Based on the implementation steps outlined in the Project Brief:
 
 ## Current Status
 
-The project is actively under development. Significant progress has been made on setting up the core structure, adding new service and blog pages, and integrating new components. The memory bank has been thoroughly updated to reflect these changes.
+The project is actively under development. Significant progress has been made on setting up the core structure, adding new service and blog pages, and integrating new components. The memory bank has been thoroughly updated to reflect these changes. The mobile scroll navigation issue has been addressed.
 
 ## Known Issues
 
 - The content for all website sections (including services, portfolio items, and blog posts) is still placeholder and needs to be created.
 - Specific design details and visual prototypes are pending.
 - The choice of backend technology for the contact form and the headless CMS for the blog are pending decisions.
-- **Scroll-based page navigation is too sensitive**, leading to rapid page skipping when scrolling quickly. A debounce/timer is needed.
 
 ## Evolution of Decisions
 
 - The project scope has significantly expanded to include a blog, detailed service pages, backend integration, and a headless CMS, moving beyond a basic portfolio site.
 - The implementation plan provides a structured approach to address the increased complexity.
 - Key technical decisions regarding backend and CMS are yet to be finalized.
-- The scroll-based navigation was initially implemented with a threshold, then refined to trigger at the absolute top/bottom of content, and now requires a debounce to improve user experience.
+- The scroll-based navigation was initially implemented with a threshold, then refined to trigger at the absolute top/bottom of content, and now includes a debounce to improve user experience and correct navigation direction.
 - The issue with special characters in URLs was identified and resolved by standardizing directory and link names to ASCII-compatible versions.

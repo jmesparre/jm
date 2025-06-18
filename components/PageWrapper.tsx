@@ -47,7 +47,7 @@ export default function   PageWrapper({ children }: PageWrapperProps) {
       setTimeout(() => {
         isNavigatingRef.current = false;
         console.log("Navigation flag reset.");
-      }, 590); // 1-second delay as requested
+      }, 1000); // 1-second delay as requested
     } else {
       console.log("No valid next page path or already on target page.");
     }
@@ -140,7 +140,7 @@ export default function   PageWrapper({ children }: PageWrapperProps) {
           event.preventDefault(); // Prevent default only when navigation is triggered
         } else if (deltaY > 0 && isAtTopRef.current) {
           // Swiping down and at the top
-          navigateToPage("up");
+          navigateToPage("down"); // Corrected: should navigate down on downward swipe
           event.preventDefault(); // Prevent default only when navigation is triggered
         }
       }

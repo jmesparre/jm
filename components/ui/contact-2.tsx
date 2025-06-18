@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import Image from "next/image";
+
 
 interface Contact2Props {
   title?: string;
@@ -21,15 +23,18 @@ export const Contact2 = ({
   web = { label: "shadcnblocks.com", url: "https://shadcnblocks.com" },
 }: Contact2Props) => {
   return (
-    <section className="pt-100 lg:pt-40 pb-32 px-32">
+    <section className="pt-[82vh] pb-[22vh] text-background min-h-[110vh] sm:min-h-[101vh]">
       <div className="container">
         <div className="flex flex-col justify-between gap-10 lg:flex-row lg:gap-20">
           <div className="mx-auto flex flex-col justify-between gap-10">
-            <div className="text-center lg:text-left">
-              <h1 className="mb-2 pb-1 text-2xl md:text-3xl lg:text-4xl font-title">
+            <div className="text-center lg:text-left mt-[-100px]">
+              <h1 className="mb-2 pb-1 text-2xl md:text-3xl lg:text-6xl font-title">
                 {title}
               </h1>
-              <p className="text-muted-foreground">{description}</p>
+              <p className="text-muted-foreground w-[60%]">{description}</p>
+              <div className="max-w-120 mt-10">
+                   <Image src="/contacto-juan-manuel-esparre.png" alt="Servicios de Diseño Gráfico y UX/UI en Argentina" width={1207} height={929} />
+              </div>
             </div>
             <div className="mx-auto w-fit lg:mx-0">
               <ul className="ml-4 list-none">
