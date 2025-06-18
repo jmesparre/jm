@@ -21,7 +21,7 @@ export default function   PageWrapper({ children }: PageWrapperProps) {
   const isAtBottomRef = useRef(false);
   const touchStartY = useRef(0);
   const touchMoveY = useRef(0);
-  const SWIPE_THRESHOLD = 10; // Minimum vertical distance for a swipe
+  const SWIPE_THRESHOLD = 20; // Minimum vertical distance for a swipe
 
   const currentPageIndex = pageOrder.indexOf(pathname);
 
@@ -59,15 +59,15 @@ export default function   PageWrapper({ children }: PageWrapperProps) {
         const { scrollTop, scrollHeight, clientHeight } = contentRef.current;
         const isScrollable = scrollHeight > clientHeight;
 
-        isAtTopRef.current = scrollTop <= 5; // Allow a small buffer from the top
-        isAtBottomRef.current = scrollTop + clientHeight >= scrollHeight - 5; // Allow a small buffer from the bottom
+        isAtTopRef.current = scrollTop <= 50; // Allow a small buffer from the top
+        isAtBottomRef.current = scrollTop + clientHeight >= scrollHeight - 50; // Allow a small buffer from the bottom
 
         // If content is not scrollable, consider it at both top and bottom
         if (!isScrollable) {
           isAtTopRef.current = true;
           isAtBottomRef.current = true;
         }
-        console.log(`Scroll: scrollTop=${scrollTop}, scrollHeight=${scrollHeight}, clientHeight=${clientHeight}, isAtTop=${isAtTopRef.current}, isAtBottom=${isAtBottomRef.current}`);
+        // console.log(`Scroll: scrollTop=${scrollTop}, scrollHeight=${scrollHeight}, clientHeight=${clientHeight}, isAtTop=${isAtTopRef.current}, isAtBottom=${isAtBottomRef.current}`);
       }
     };
 
@@ -108,15 +108,10 @@ export default function   PageWrapper({ children }: PageWrapperProps) {
       touchMoveY.current = event.touches[0].clientY;
       const deltaY = touchMoveY.current - touchStartY.current;
 
-      const { scrollHeight, clientHeight } = contentRef.current || { scrollHeight: 0, clientHeight: 0 };
-      const isScrollable = scrollHeight > clientHeight;
-
-      console.log(`handleTouchMove: deltaY=${deltaY}, isScrollable=${isScrollable}`);
-
-      // Prevent default scroll only if a vertical swipe gesture is potentially happening
-      // and we are at a scroll boundary, or the page is not scrollable at all.
+      // Prevent default scroll if a vertical swipe gesture is potentially happening
+      // This gives our custom logic full control over scrolling.
       if (Math.abs(deltaY) > 5) { // A small threshold to detect intentional vertical movement
-        event.preventDefault(); // Always prevent native scroll if a swipe is detected
+        event.preventDefault();
       }
     };
 
@@ -128,14 +123,14 @@ export default function   PageWrapper({ children }: PageWrapperProps) {
       const deltaY = touchMoveY.current - touchStartY.current;
 
       if (Math.abs(deltaY) > SWIPE_THRESHOLD) {
-        event.preventDefault(); // Prevent default scroll if a swipe is detected
-        console.log(`handleTouchEnd: deltaY=${deltaY}, isAtBottom=${isAtBottomRef.current}, isAtTop=${isAtTopRef.current}`);
         if (deltaY < 0 && isAtBottomRef.current) {
           // Swiping up and at the bottom
           navigateToPage("down");
+          event.preventDefault(); // Prevent default only when navigation is triggered
         } else if (deltaY > 0 && isAtTopRef.current) {
           // Swiping down and at the top
-          navigateToPage("up");
+          navigateToPage("up"); // Reverted to original logic: should navigate up on downward swipe
+          event.preventDefault(); // Prevent default only when navigation is triggered
         }
       }
       // Reset touch positions
@@ -173,10 +168,7 @@ export default function   PageWrapper({ children }: PageWrapperProps) {
       sparkCount={8}
       duration={400}
     >
-      <div
-        ref={contentRef}
-        className={`w-full h-full overflow-y-auto touch-action-none ${isAtBottomRef.current ? 'border-4 border-red-500' : ''}`} // Temporary visual indicator
-      >
+      <div ref={contentRef} className="w-full h-full overflow-y-auto touch-action-none">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
