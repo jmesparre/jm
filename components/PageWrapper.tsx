@@ -102,17 +102,11 @@ export default function   PageWrapper({ children }: PageWrapperProps) {
 
     const handleTouchMove = (event: TouchEvent) => {
       if (isNavigatingRef.current) {
-        event.preventDefault(); // Prevent scrolling if navigation is in progress
+        // If navigation is in progress, do nothing and don't prevent default
         return;
       }
       touchMoveY.current = event.touches[0].clientY;
-      const deltaY = touchMoveY.current - touchStartY.current;
-
-      // Prevent default scroll if a vertical swipe gesture is potentially happening
-      // This gives our custom logic full control over scrolling.
-      if (Math.abs(deltaY) > 5) { // A small threshold to detect intentional vertical movement
-        event.preventDefault();
-      }
+      // No event.preventDefault() here. touch-action-none handles preventing native scroll.
     };
 
     const handleTouchEnd = (event: TouchEvent) => {
@@ -123,6 +117,7 @@ export default function   PageWrapper({ children }: PageWrapperProps) {
       const deltaY = touchMoveY.current - touchStartY.current;
 
       if (Math.abs(deltaY) > SWIPE_THRESHOLD) {
+        // Only prevent default if a navigation is actually triggered
         if (deltaY < 0 && isAtBottomRef.current) {
           // Swiping up and at the bottom
           navigateToPage("down");
