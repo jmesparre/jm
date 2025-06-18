@@ -21,6 +21,7 @@ This document tracks what has been built, what remains, the current status, know
 - **`memory-bank/ShadCN-context.md` updated** to include `Card`.
 - **Scroll-based page navigation on mobile now correctly navigates on scroll down.**
 - **A 1-second debounce/timer has been implemented for scroll-based page navigation** to prevent rapid page skipping.
+- **Scroll boundary detection has been made more forgiving** in `PageWrapper.tsx` to improve mobile navigation.
 
 ## What's Left to Build
 
@@ -53,7 +54,7 @@ Based on the implementation steps outlined in the Project Brief:
 
 ## Current Status
 
-The project is actively under development. Significant progress has been made on setting up the core structure, adding new service and blog pages, and integrating new components. The memory bank has been thoroughly updated to reflect these changes. The mobile scroll navigation issue has been addressed.
+The project is actively under development. Significant progress has been made on setting up the core structure, adding new service and blog pages, and integrating new components. The memory bank has been thoroughly updated to reflect these changes. The mobile scroll navigation issue has been addressed with multiple refinements.
 
 ## Known Issues
 
@@ -66,5 +67,5 @@ The project is actively under development. Significant progress has been made on
 - The project scope has significantly expanded to include a blog, detailed service pages, backend integration, and a headless CMS, moving beyond a basic portfolio site.
 - The implementation plan provides a structured approach to address the increased complexity.
 - Key technical decisions regarding backend and CMS are yet to be finalized.
-- The scroll-based navigation was initially implemented with a threshold, then refined to trigger at the absolute top/bottom of content, and now includes a debounce to improve user experience and correct navigation direction.
+- The scroll-based navigation was initially implemented with a threshold, then refined to trigger at the absolute top/bottom of content, and now includes a debounce to improve user experience and correct navigation direction, along with more forgiving scroll boundary detection.
 - The issue with special characters in URLs was identified and resolved by standardizing directory and link names to ASCII-compatible versions.

@@ -59,8 +59,8 @@ export default function   PageWrapper({ children }: PageWrapperProps) {
         const { scrollTop, scrollHeight, clientHeight } = contentRef.current;
         const isScrollable = scrollHeight > clientHeight;
 
-        isAtTopRef.current = scrollTop === 0;
-        isAtBottomRef.current = scrollTop + clientHeight >= scrollHeight - 1; // Added a small buffer for bottom detection
+        isAtTopRef.current = scrollTop <= 5; // Allow a small buffer from the top
+        isAtBottomRef.current = scrollTop + clientHeight >= scrollHeight - 5; // Allow a small buffer from the bottom
 
         // If content is not scrollable, consider it at both top and bottom
         if (!isScrollable) {
@@ -140,7 +140,7 @@ export default function   PageWrapper({ children }: PageWrapperProps) {
           event.preventDefault(); // Prevent default only when navigation is triggered
         } else if (deltaY > 0 && isAtTopRef.current) {
           // Swiping down and at the top
-          navigateToPage("down"); // Corrected: should navigate down on downward swipe
+          navigateToPage("up"); // Reverted to original logic: should navigate up on downward swipe
           event.preventDefault(); // Prevent default only when navigation is triggered
         }
       }
