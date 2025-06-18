@@ -5,7 +5,7 @@ import { useRouter, usePathname } from "next/navigation";
 import * as motion from "motion/react-client";
 import ClickSpark from "@/components/ClickSpark";
 
-const pageOrder = ["/", "/servicios", "/servicios/desarrollo-web", "/servicios/servicios-de-diseno", "/servicios/e-commerce", "/servicios/posicionamiento-web", "/servicios/herramientas-de-gestion" , "/servicios/precios-fijos","/proyectos", "/blog", "/contacto"];
+const pageOrder = ["/", "/servicios", "/servicios/desarrollo-web", "/servicios/servicios-de-diseno", "/servicios/e-commerce", "/servicios/posicionamiento-web", "/servicios/herramientas-de-gestion" , "/servicios/precios-fijos","/proyectos", "/sobre-mi", "/blog", "/contacto"];
 
 interface PageWrapperProps {
   children: React.ReactNode;
@@ -21,7 +21,7 @@ export default function   PageWrapper({ children }: PageWrapperProps) {
   const isAtBottomRef = useRef(false);
   const touchStartY = useRef(0);
   const touchMoveY = useRef(0);
-  const SWIPE_THRESHOLD = 20; // Minimum vertical distance for a swipe
+  const SWIPE_THRESHOLD = 2; // Minimum vertical distance for a swipe
 
   const currentPageIndex = pageOrder.indexOf(pathname);
 
@@ -47,7 +47,7 @@ export default function   PageWrapper({ children }: PageWrapperProps) {
       setTimeout(() => {
         isNavigatingRef.current = false;
         console.log("Navigation flag reset.");
-      }, 1000); // 1-second delay as requested
+      }, 500); // 1-second delay as requested
     } else {
       console.log("No valid next page path or already on target page.");
     }
@@ -184,7 +184,7 @@ export default function   PageWrapper({ children }: PageWrapperProps) {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -50 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.25 }}
           key={pathname} // Key is crucial for AnimatePresence-like behavior
           className="w-full h-full" // Removed overflow-y-auto from here
         >

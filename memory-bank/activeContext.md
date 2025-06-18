@@ -18,6 +18,8 @@ Maintaining and updating the project structure and components based on user requ
 - Created the `/blog` page and `app/blog/page.tsx`.
 - Added the `Blog8` component (`components/blocks/blog8.tsx`) and its demo (`components/blocks/blog8-demo.tsx`).
 - Added the `Card` ShadCN UI component (`components/ui/card.tsx`).
+- Created the `/sobre-mi` page (`app/sobre-mi/page.tsx`).
+- Updated `components/PageWrapper.tsx` to include `/sobre-mi` in the navigation order.
 - Installed `lucide-react` as a dependency.
 - Integrated `Blog8Demo` into `app/proyectos/page.tsx`.
 - Updated `memory-bank/ShadCN-context.md` to include `Card`.
@@ -25,6 +27,7 @@ Maintaining and updating the project structure and components based on user requ
 ## Next Steps
 
 - Continue to implement remaining sections and features as outlined in `projectbrief.md` and `progress.md`.
+- Develop content for the "Sobre Mí" page.
 - Address any new user requests for modifications or additions.
 - Ensure all new components and pages are properly integrated and functional.
 - Regularly update memory bank files to reflect project status and decisions.

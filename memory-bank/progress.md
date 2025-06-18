@@ -13,6 +13,7 @@ This document tracks what has been built, what remains, the current status, know
     - In `app/servicios/page.tsx`.
     - In `components/blocks/animated-slideshow-demo.tsx` for "slide-1" (Desarrollo Web) and "slide-2" (Servicios de Diseño).
 - **URL issue with special characters (`ñ`) has been resolved**: The directory `servicios-de-diseño` was renamed to `servicios-de-diseno`, and all relevant links were updated.
+- **"Sobre Mí" section has been added**: `/sobre-mi` page and `app/sobre-mi/page.tsx` created.
 - **Blog section has been added**: `/blog` page and `app/blog/page.tsx` created.
 - **Blog component integrated**: `Blog8` component (`components/blocks/blog8.tsx`) and its demo (`components/blocks/blog8-demo.tsx`) have been added.
 - **ShadCN `Card` component installed**: `components/ui/card.tsx` has been added.
@@ -36,7 +37,6 @@ Based on the implementation steps outlined in the Project Brief:
 3.  **Desarrollo Front‑end**:
     -   Configurar Next.js routes and page templates for all remaining sections (Home, About, Contact).
     -   Implement reusable components (Header, Footer, CTA, etc.).
-    -   Develop About Me/Us section.
     -   Develop Contact page with form and scheduling integration.
     -   Implement responsive design for all new content.
 4.  **Back‑end (if applicable)**:

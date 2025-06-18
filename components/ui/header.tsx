@@ -57,6 +57,11 @@ function Header1() {
             description: "Descubre nuestros proyectos destacados.",
         },
         {
+            title: "Sobre Mi",
+            href: "/sobre-mi",
+            description: "",
+        },
+        {
             title: "Blog",
             href: "/blog",
             description: "Lee nuestros últimos artículos y noticias.",
@@ -98,13 +103,13 @@ function Header1() {
                                                 <div className="flex flex-col lg:grid grid-cols-2 gap-4">
                                                     <div className="flex flex-col h-full justify-between">
                                                         <div className="flex flex-col">
-                                                            <p className="text-base">{item.title}</p>
-                                                            <p className="text-muted-foreground text-sm font-base">
+                                                            <p className="text-2xl">{item.title}</p>
+                                                            <p className="text-muted-foreground text-xs mt-2 font-base">
                                                                 {item.description}
                                                             </p>
                                                         </div>
                                                         <Button size="sm" className="mt-10">
-                                                            Book a call today
+                                                            Contactame
                                                         </Button>
                                                     </div>
                                                     <div className="flex flex-col text-sm h-full justify-end">

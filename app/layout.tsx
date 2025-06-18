@@ -5,7 +5,7 @@ import { Header1 } from "@/components/ui/header";
 
 export const metadata: Metadata = {
   title: "Juan Desarrollador Web",
-  description: "portofilo de desarrollo web",
+  description: "Portfolio de desarrollo web",
 };
 
 export default function RootLayout({
