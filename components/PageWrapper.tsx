@@ -21,7 +21,7 @@ export default function   PageWrapper({ children }: PageWrapperProps) {
   const isAtBottomRef = useRef(false);
   const touchStartY = useRef(0);
   const touchMoveY = useRef(0);
-  const SWIPE_THRESHOLD = 2; // Minimum vertical distance for a swipe
+  const SWIPE_THRESHOLD = 50; // Minimum vertical distance for a swipe
 
   const currentPageIndex = pageOrder.indexOf(pathname);
 
