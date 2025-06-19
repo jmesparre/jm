@@ -1,47 +1,28 @@
-"use client"
-
 import React from 'react';
-import PageWrapper from '@/components/PageWrapper';
+import Image from 'next/image';
 
 const SobreMiPage = () => {
   return (
-      <div className="py-[22vh] text-background min-h-[110vh] sm:min-h-[140vh]">
-            <div className="container mx-auto px-4 py-12 md:py-24">
+      <div className="mt-[38vh] pb-50 text-background">
+            <div className="px-[11%] mx-auto">
                 <div className="grid md:grid-cols-2 gap-8 relative overflow-x-hidden">
-                    <div className="md:order-2 relative">
-                        <img
-                            src="foto-perfil.png"
-                            alt="Juan Manuel Esparré"
-                            className="rounded-2xl w-full object-cover filter brightness-105"
-                        />
+                    <div className="md:order-2 relative mt-33">
+                        <Image src="/foto-perfil.png" alt="Juan Manuel Esparré - Desarrollador Web Full Stack y Diseñador UX/UI"
+                            className="rounded-2xl w-[96%] mx-auto object-cover filter brightness-105"
+                         width={1207} height={929} /> 
+                        
                     </div>
                     <div className="md:order-1 flex flex-col justify-between">
                         <div className="flex flex-col h-full justify-between">
                             <h1 className="text-6xl font-title">
-                                Sobre Mi
+                              Sobre Mi
                             </h1>
                             <div>
                                 <h2 className="text-4xl font-semibold mt-auto pt-8">
                                     Juan Manuel Esparré
                                 </h2>
-                                <p className="text-md max-w-md pt-4 ">
-                                    <a
-                                        href="https://kokonutui.com/"
-                                        className="underline"
-                                    >
-                                        "The Bright Young"
-                                    </a>{" "}
-                                    draws inspiration from Anglomania,
-                                    redefining sartorial elegance and school
-                                    uniforms with a nod to British heritage.
-                                    Suits of the collection are tailored out of
-                                    English cloth, crafted from 1920's inspired
-                                    cashmeres and wools, rewovendraws inspiration from Anglomania,
-                                    redefining sartorial elegance and school
-                                    uniforms with a nod to British heritage.
-                                    Suits of the collection are tailored out of
-                                    English cloth, crafted from 1920's inspired
-                                    cashmeres and wools, rewoven...
+                                <p className="text-sm  w-[98%] pt-4 ">
+                                    Soy Juan Manuel Esparré, un apasionado desarrollador y diseñador web con más de una década de experiencia en la creación de soluciones digitales innovadoras. Mi trayectoria abarca desde el desarrollo web a medida y e-commerce, hasta la implementación de sistemas CRM/CMS, estrategias de branding y optimización SEO. Me dedico a transformar ideas en plataformas digitales funcionales y estéticamente atractivas, siempre con un enfoque en la usabilidad y el rendimiento. Mi objetivo es ayudarte a potenciar tu presencia online y alcanzar tus metas de negocio a través de soluciones web personalizadas y de alta calidad.
                                 </p>
                             </div>
                         </div>

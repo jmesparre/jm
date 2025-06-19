@@ -51,18 +51,18 @@ const Blog8 = ({
   ],
 }: Blog8Props) => {
   return (
-    <section className="mt-[38vh] pb-100 w-full">
-      <div className=" flex flex-col gap-16">
-        <div className="px-[5%] sm:px-[5%] md:px-[12%] pb-20">
+    <section className="mt-[39vh] pb-100 w-full">
+      <div className="flex flex-col gap-16 px-[5%] sm:px-[5%] md:px-[11%] pb-20">
+        <div className="">
           <h2 className=" mb-6 text-pretty text-5xl md:text-5xl lg:text-6xl lg:max-w-3xl">
             {heading}
           </h2>
-          <p className="font-base ml-[0%] sm:ml-[39%] mt-[0px] sm:mt-[-140px] md:mt-[-130px] xl:mt-[-120px]">
+          <p className="font-base ml-[0%] sm:ml-[39%] mt-[0px] sm:mt-[-140px] md:mt-[-105px] xl:mt-[-120px]">
             {description}
           </p>
         </div>
 
-        <div className="grid px-[12%] sm:gap-y-12 md:gap-y-16 lg:gap-y-20 gap-y-10 ">
+        <div className="grid sm:gap-y-12 md:gap-y-16 lg:gap-y-20 gap-y-10 ">
           {posts.map((post) => (
             <Card
               key={post.id}
@@ -75,7 +75,7 @@ const Blog8 = ({
                       {post.tags?.map((tag) => <span key={tag}>{tag}</span>)}
                     </div>
                   </div>
-                  <h3 className="text-xl  font-semibold md:text-2xl lg:text-3xl">
+                  <h3 className="text-xl font-semibold md:text-2xl lg:text-3xl">
                     <a
                       href={post.url}
                       target="_blank"
@@ -84,7 +84,7 @@ const Blog8 = ({
                       {post.title}
                     </a>
                   </h3>
-                  <p className="mt-4 text-muted-foreground md:mt-5">
+                  <p className="mt-4 text-sm text-muted-foreground md:mt-5">
                     {post.summary}
                   </p>
                   <div className="mt-6 flex items-center space-x-4 text-sm md:mt-8">

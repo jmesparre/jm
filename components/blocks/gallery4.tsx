@@ -53,7 +53,7 @@ const Gallery4 = ({
 
   return (
     <section className="mt-[39vh] pb-20 w-full">
-      <div className="px-[5%] sm:px-[5%] md:px-[12%]">
+      <div className="px-[5%] sm:px-[5%] md:px-[11%]">
         <div className="mb-8 md:mb-14 lg:mb-16">
           <div className="flex flex-col gap-4 mb-20">
             <h2 className="text-5xl md:text-5xl lg:text-6xl pb-1">

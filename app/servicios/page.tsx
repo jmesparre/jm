@@ -1,4 +1,4 @@
-import Image from 'next/image'; // Import Image from next/image
+import Image from 'next/image'; 
 import { PackageOpen, Globe, PenTool, ChartNetwork, CircleDollarSign, Cog } from 'lucide-react'
 
 
