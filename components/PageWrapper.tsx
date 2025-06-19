@@ -167,7 +167,7 @@ export default function PageWrapper({ children }: PageWrapperProps) {
     >
       <div
         ref={contentRef}
-        className="w-full h-screen overflow-y-auto" // touch-none evita gestos del navegador
+        className="w-full h-screen overflow-y-auto" 
       >
         <motion.div
           initial={{ opacity: 0, y: 50 }}
