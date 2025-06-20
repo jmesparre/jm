@@ -12,7 +12,7 @@ export default function ColorInterpolationButton() {
 
         const motionAnimation = animate(
             motionElement,
-            { backgroundColor: ["#ff0088", "#0d63f8"] },
+            { backgroundColor: ["#f5f5ed", "#e8f9f9"] },
             {
                 duration: 2,
                 repeat: Infinity,

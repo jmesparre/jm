@@ -1,5 +1,4 @@
 import { NextResponse } from 'next/server';
-import { Configuration, TransactionalEmailsApi, SendSmtpEmail } from '@getbrevo/brevo';
 
 export async function POST(request: Request) {
   const { name, email, message } = await request.json();
@@ -8,32 +7,50 @@ export async function POST(request: Request) {
     return NextResponse.json({ message: 'Missing required fields' }, { status: 400 });
   }
 
-  const apiInstance = new TransactionalEmailsApi(new Configuration({
-    apiKey: process.env.BREVO_API_KEY as string,
-  }));
+  const brevoApiKey = process.env.BREVO_API_KEY;
+  const contactEmail = process.env.CONTACT_EMAIL || 'jmesparre@gmail.com';
 
-  const sendSmtpEmail = new SendSmtpEmail();
+  if (!brevoApiKey) {
+    return NextResponse.json({ message: 'Brevo API key not configured' }, { status: 500 });
+  }
 
-  sendSmtpEmail.sender = { email: email, name: name };
-  sendSmtpEmail.to = [{ email: process.env.CONTACT_EMAIL || 'jmesparre@gmail.com', name: 'Juan Manuel Esparré' }];
-  sendSmtpEmail.subject = `Nuevo mensaje de contacto de ${name}`;
-  sendSmtpEmail.htmlContent = `
-    <html>
-      <head></head>
-      <body>
-        <p>Has recibido un nuevo mensaje de contacto:</p>
-        <p><strong>Nombre:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Mensaje:</strong> ${message}</p>
-      </body>
-    </html>
-  `;
+  const data = {
+    sender: { email: email, name: name },
+    to: [{ email: contactEmail, name: 'Juan Manuel Esparré' }],
+    subject: `Nuevo mensaje de contacto de ${name}`,
+    htmlContent: `
+      <html>
+        <head></head>
+        <body>
+          <p>Has recibido un nuevo mensaje de contacto:</p>
+          <p><strong>Nombre:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Mensaje:</strong> ${message}</p>
+        </body>
+      </html>
+    `,
+  };
 
   try {
-    await apiInstance.sendTransacEmail(sendSmtpEmail);
-    return NextResponse.json({ message: 'Email sent successfully' }, { status: 200 });
+    const brevoResponse = await fetch('https://api.brevo.com/v3/smtp/email', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'api-key': brevoApiKey,
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (brevoResponse.ok) {
+      return NextResponse.json({ message: 'Email sent successfully' }, { status: 200 });
+    } else {
+      const errorData = await brevoResponse.json();
+      console.error('Error sending email via Brevo API:', errorData);
+      return NextResponse.json({ message: errorData.message || 'Error sending email via Brevo API' }, { status: brevoResponse.status });
+    }
   } catch (error) {
-    console.error('Error sending email:', error);
-    return NextResponse.json({ message: 'Error sending email' }, { status: 500 });
+    console.error('Error in API route:', error);
+    return NextResponse.json({ message: 'Internal server error' }, { status: 500 });
   }
 }
