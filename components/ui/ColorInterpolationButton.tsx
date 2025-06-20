@@ -1,7 +1,7 @@
 "use client"
 
 import { useAnimate } from "motion/react"
-import { useEffect, useRef } from "react"
+import { useEffect } from "react"
 import { Button } from "@/components/ui/button" // Assuming Button is a ShadCN component
 
 export default function ColorInterpolationButton() {
