@@ -15,7 +15,7 @@ export async function POST(request: Request) {
   }
 
   const data = {
-    sender: { email: email, name: name },
+    sender: { email: contactEmail, name: 'Juan Manuel Esparré' },
     to: [{ email: contactEmail, name: 'Juan Manuel Esparré' }],
     subject: `Nuevo mensaje de contacto de ${name}`,
     htmlContent: `
@@ -24,7 +24,7 @@ export async function POST(request: Request) {
         <body>
           <p>Has recibido un nuevo mensaje de contacto:</p>
           <p><strong>Nombre:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Email del remitente:</strong> ${email}</p>
           <p><strong>Mensaje:</strong> ${message}</p>
         </body>
       </html>

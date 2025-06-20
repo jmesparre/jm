@@ -27,6 +27,7 @@ This document tracks what has been built, what remains, the current status, know
 - **Brevo API key and contact email have been added to `.env.local`**.
 - **`@getbrevo/brevo` package has been installed**.
 - **Brevo email sending functionality in `app/api/contact/route.ts` has been updated to use a direct `fetch` request to the Brevo API**, resolving previous TypeScript errors with the SDK.
+- **The `app/api/contact/route.ts` has been updated to use a fixed, verified sender email (`jmesparre@gmail.com`)** and include the user's submitted email in the message body, resolving the "sender not valid" error from Brevo.
 
 ## What's Left to Build
 
@@ -58,13 +59,15 @@ Based on the implementation steps outlined in the Project Brief:
 
 ## Current Status
 
-The project is actively under development. Significant progress has been made on setting up the core structure, adding new service and blog pages, and integrating new components. The memory bank has been thoroughly updated to reflect these changes. The mobile scroll navigation issue has been addressed with multiple refinements. The contact form frontend is ready, and the backend API route for Brevo has been successfully implemented using a direct `fetch` request.
+The project is actively under development. Significant progress has been made on setting up the core structure, adding new service and blog pages, and integrating new components. The memory bank has been thoroughly updated to reflect these changes. The mobile scroll navigation issue has been addressed with multiple refinements. The contact form frontend is ready, and the backend API route for Brevo has been successfully implemented using a direct `fetch` request, with the sender validation issue now resolved.
 
 ## Known Issues
 
 - The content for all website sections (including services, portfolio items, and blog posts) is still placeholder and needs to be created.
 - Specific design details and visual prototypes are pending.
 - The choice of backend technology for the contact form and the headless CMS for the blog are pending decisions.
+- **Production Issue (Resolved):** The Brevo API key was not configured in the Vercel production environment, but this has been addressed by guiding the user to configure it directly in Vercel's project settings.
+- **Email Delivery Issue (Resolved):** Emails were not being received due to an unverified sender email (`artesanluis8@gmail.com`). This has been resolved by modifying the API route to use a fixed, verified sender (`jmesparre@gmail.com`) and including the user's email in the message body.
 
 ## Evolution of Decisions
 
@@ -74,3 +77,5 @@ The project is actively under development. Significant progress has been made on
 - The scroll-based navigation was initially implemented with a threshold, then refined to trigger at the absolute top/bottom of content, and now includes a debounce to improve user experience and correct navigation direction, along with more forgiving scroll boundary detection.
 - The issue with special characters in URLs was identified and resolved by standardizing directory and link names to ASCII-compatible versions.
 - The contact form email sending functionality is now implemented using a direct `fetch` request to the Brevo API, resolving previous issues with the `@getbrevo/brevo` SDK.
+- Identified and documented the need to configure environment variables directly in Vercel for production deployments.
+- Diagnosed and resolved the Brevo sender validation issue by changing the API route to use a fixed, verified sender email.

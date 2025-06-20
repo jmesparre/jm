@@ -116,8 +116,8 @@ export const Contact2 = ({
               <Button type="submit" className="w-full border-1" disabled={loading}>
                 {loading ? "Enviando..." : "Enviar"}
               </Button>
-              {success && <p className="text-green-500">¡Mensaje enviado con éxito!</p>}
-              {error && <p className="text-red-500">{error}</p>}
+              {success && <p className="text-background">¡Mensaje enviado con éxito!</p>}
+              {error && <p className="text-red-300">{error}</p>}
             </form>
           </div>
         </div>
