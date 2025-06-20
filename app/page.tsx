@@ -2,7 +2,6 @@
 
 import TiltedCard from '@/components/TiltedCard';
 import React, { useEffect, useRef } from 'react';
-import { Button } from "@/components/ui/button"
 import { animate, spring } from 'motion'
 import ColorInterpolationButton from '@/components/ui/ColorInterpolationButton';
 

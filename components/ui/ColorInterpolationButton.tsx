@@ -12,7 +12,7 @@ export default function ColorInterpolationButton() {
 
         const motionAnimation = animate(
             motionElement,
-            { backgroundColor: ["#f5f5ed", "#e0ffff"] },
+            { backgroundColor: ["#ff0088", "#0d63f8"] },
             {
                 duration: 2,
                 repeat: Infinity,
@@ -24,7 +24,7 @@ export default function ColorInterpolationButton() {
         return () => {
             motionAnimation.cancel()
         }
-    }, [])
+    }, [animate, motionRef])
 
     return (
         <Button className='bg-primary z-5 cursor-pointer group' variant="outline" size="sm" ref={motionRef}>

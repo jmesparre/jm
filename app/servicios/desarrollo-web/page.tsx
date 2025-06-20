@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import Image from 'next/image'; // Import Image from next/image
 import { Activity, DraftingCompass, Mail, Zap } from 'lucide-react'
 

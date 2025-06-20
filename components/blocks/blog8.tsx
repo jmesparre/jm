@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import Image from "next/image";
 
 interface Post {
   id: string;
@@ -108,10 +109,12 @@ const Blog8 = ({
                 <div className="order-first sm:order-last sm:col-span-5">
                   <a href={post.url} target="_blank" className="block">
                     <div className="aspect-[16/9] overflow-clip rounded-lg border border-border">
-                      <img
+                      <Image
                         src={post.image}
                         alt={post.title}
-                        className="w-full transition-opacity duration-200 fade-in hover:opacity-70"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover w-full transition-opacity duration-200 fade-in hover:opacity-70"
                       />
                     </div>
                   </a>
