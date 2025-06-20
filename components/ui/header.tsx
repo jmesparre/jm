@@ -9,7 +9,7 @@ import {
     NavigationMenuList,
     NavigationMenuTrigger,
 } from "./navigation-menu";
-import { Menu, MoveRight, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -25,6 +25,10 @@ function Header1() {
             title: "Servicios",
             description: "Explora nuestros servicios de desarrollo web y diseño.",
             items: [
+                {
+                    title: "Ver todos los servicios",
+                    href: "/servicios",
+                },
                 {
                     title: "Desarrollo Web",
                     href: "/servicios/desarrollo-web",
@@ -69,7 +73,7 @@ function Header1() {
         {
             title: "Contacto",
             href: "/contacto",
-            description: "Ponte en contacto con nosotros para más información.",
+            description: "Ponte en contacto con nosotros para más información.",   
         }
     ];
 
@@ -78,23 +82,16 @@ function Header1() {
         <header className="w-full z-40 fixed top-0 left-0 text-background">
               <div className="fixed top-1 sm:top-0 left-4 sm:left-11.5 z-10 logo">
               <Link href="/">
-                <Image src="/logosvg.svg" alt="Logo-juan-manuel-esparre-desarrollador-web" width={40} height={40} className="mt-3"/>
+                <Image  priority={true} src="/logosvg.svg" alt="Logo-juan-manuel-esparre-desarrollador-web" width={40} height={40} className="mt-3"/>
                 <h2 className="top-4 ml-12 logo-text font-bold">Desarrollo Web</h2>
               </Link>
             </div>
             <div className="container relative mx-auto min-h-15 flex gap-4 flex-row justify-end items-center">
-                <div className="justify-start items-center gap-4 lg:flex hidden flex-row">
-                    <NavigationMenu className="flex justify-start items-start">
-                        <NavigationMenuList className="flex justify-start flex-row">
+                <NavigationMenu className="flex justify-start items-start justify-start items-center gap-4 lg:flex hidden flex-row">
+                    <NavigationMenuList className="flex justify-start flex-row">
                             {navigationItems.map((item) => (
                                 <NavigationMenuItem key={item.title}>
-                                    {item.href ? (
-                                        <NavigationMenuLink asChild>
-                                            <Link href={item.href}>
-                                                <Button variant="ghost">{item.title}</Button>
-                                            </Link>
-                                        </NavigationMenuLink>
-                                    ) : (
+                                    {item.items ? ( // If item has sub-items (e.g., Servicios, Contacto)
                                         <>
                                             <NavigationMenuTrigger className="font-medium text-sm">
                                                 {item.title}
@@ -108,9 +105,13 @@ function Header1() {
                                                                 {item.description}
                                                             </p>
                                                         </div>
-                                                        <Button size="sm" className="mt-10">
-                                                            Contactame
-                                                        </Button>
+                                                        {item.title === "Contacto" && ( // Only show Contactame button for Contacto dropdown
+                                                            <a href="https://wa.me/541132750873/?text=Hola" target="_blank" rel="noopener noreferrer">
+                                                                <Button size="sm" className="mt-10 cursor-pointer">
+                                                                    Contactame
+                                                                </Button>
+                                                            </a>
+                                                        )}
                                                     </div>
                                                     <div className="flex flex-col text-sm h-full justify-end">
                                                         {item.items?.map((subItem) => (
@@ -120,38 +121,41 @@ function Header1() {
                                                                 className="flex  flex-row justify-between items-center hover:bg-muted py-2 px-4 rounded"
                                                             >
                                                                 <span>{subItem.title}</span>
-                                                                <MoveRight className="w-4 h-4 text-muted-foreground" />
                                                             </NavigationMenuLink>
                                                         ))}
                                                     </div>
                                                 </div>
                                             </NavigationMenuContent>
                                         </>
+                                    ) : ( // If item only has a direct link (e.g., Inicio, Trabajos, Blog, Sobre Mi)
+                                        <NavigationMenuLink asChild>
+                                            <Link href={item.href}>
+                                                <Button variant="ghost">{item.title}</Button>
+                                            </Link>
+                                        </NavigationMenuLink>
                                     )}
                                 </NavigationMenuItem>
                             ))}
                         </NavigationMenuList>
                     </NavigationMenu>
-                </div>
                 <div className="flex w-12 shrink lg:hidden items-end justify-end">
-                    <Button variant="ghost" onClick={() => setOpen(!isOpen)}>
-                        {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-                    </Button>
+                    <div onClick={() => { console.log("Mobile menu toggle clicked!"); setOpen(!isOpen); }} className="cursor-pointer pr-5 sm:pr-5 md:pr-0 ">
+                        {isOpen ? <X className="w-5 h-5" /> : <Menu className="pt-1.5 w-7 h-7" />}
+                    </div>
                     {isOpen && (
-                        <div className="absolute top-20 border-t flex flex-col w-full right-0 bg-foreground p-5 shadow-lg py-4 container gap-8">
+                        <div className="absolute top-20 border-t flex flex-col w-full right-0 bg-foreground   p-5 shadow-lg py-4 pb-6 container gap-6">
                             {navigationItems.map((item, index) => (
                                 <div key={`${item.title}-${index}`}>
                                     <div className="flex flex-col gap-2">
                                         {item.href ? (
                                             <Link
                                                 href={item.href}
-                                                className="flex justify-between items-center"
+                                                className="flex justify-between items-center "
                                             >
                                                 <span className="text-lg">{item.title}</span>
-                                                <MoveRight className="w-4 h-4 stroke-1 text-muted-foreground" />
                                             </Link>
                                         ) : (
-                                            <p className="text-lg">{item.title}</p>
+                                            <p className="text-lg ">{item.title}</p>
                                         )}
                                         {item.items &&
                                             item.items.map((subItem, subIndex) => (
@@ -160,10 +164,10 @@ function Header1() {
                                                     href={subItem.href}
                                                     className="flex justify-between items-center"
                                                 >
-                                                    <span className="text-muted-foreground">
+                                                    
+                                                    <span className="text-muted-foreground text-sm pl-7 ">
                                                         {subItem.title}
                                                     </span>
-                                                    <MoveRight className="w-4 h-4 stroke-1" />
                                                 </Link>
                                             ))}
                                     </div>
