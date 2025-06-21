@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import Image from "next/image";
 
 interface Post {
   id: string;
@@ -108,9 +109,12 @@ const TrabajosPage = ({
                 <div className="order-first sm:order-last sm:col-span-5">
                   <a href={post.url} target="_blank" className="block">
                     <div className="aspect-[16/9] overflow-clip rounded-lg border border-border">
-                      <img
+                      <Image
                         src={post.image}
                         alt={post.title}
+                        width={700}
+                        height={394}
+                        priority={false}
                         className="w-full transition-opacity duration-200 fade-in hover:opacity-70"
                       />
                     </div>

@@ -8,15 +8,13 @@ import Image from "next/image";
 
 interface Contact2Props {
   title?: string;
-  description?: string;
   phone?: string;
   email?: string;
   web?: { label: string; url: string };
 }
 
 export const Contact2 = ({
-  title = "Contacto",
-  description = "",
+  title = "Contactoss",
   phone = "(11) 32750873",
   email = "jmesparre@gmail.com",
   web = { label: "shadcnblocks.com", url: "https://shadcnblocks.com" },
