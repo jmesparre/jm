@@ -9,14 +9,14 @@ const SobreMiPage = () => {
                               Sobre Mi
                             </h1>
                 <div className="grid md:grid-cols-2 gap-8 relative overflow-x-hidden">
-                    <div className="md:order-1 relative mt-33">
+                    <div className="md:order-2 relative mt-33">
                         <Image src="/foto-perfil.png" alt="Juan Manuel Esparré - Desarrollador Web Full Stack y Diseñador UX/UI"
-                            className="rounded-2xl w-[96%] mx-auto object-cover filter brightness-105"
+                            className="rounded-2xl w-[77%] mx-auto object-cover filter brightness-105"
                          width={1207} height={929} /> 
                         
                     </div>
-                    <div className="md:order-2 flex flex-col justify-between">
-                        <div className="flex flex-col h-full justify-between mt-[1em] sm:mt-[52%]">
+                    <div className="md:order-1 flex flex-col justify-between">
+                        <div className="flex flex-col h-full justify-between mt-[1em] sm:mt-[22%]">
                             <div>
                                 <h2 className="text-5xl font-semibold  mt-auto pt-8">
                                     Juan Manuel Esparré
