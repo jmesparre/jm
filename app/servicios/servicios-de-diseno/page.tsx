@@ -3,21 +3,9 @@
 import React, { useEffect, useRef } from 'react';
 import Image from 'next/image'; // Import Image from next/image
 import { Activity, DraftingCompass, Mail, Zap } from 'lucide-react'
-import { animate, spring } from 'motion'
 
 
 const ServiciosDeDisenoPage = () => {
-  const boxRef = useRef(null);
-
-  useEffect(() => {
-    if (boxRef.current) {
-      animate(
-        boxRef.current,
-        { scale: [0, 1] },
-        { type: spring, stiffness: 170, damping: 20 }
-      );
-    }
-  }, []);
 
   return (
     <div>
@@ -49,7 +37,7 @@ const ServiciosDeDisenoPage = () => {
                       </ul>
                   </div>
                   <div className="relative p-3 lg:col-span-3  order-1 md:order-2">
-                      <div ref={boxRef} className="aspect-76/59 relative">
+                      <div className="aspect-76/59 relative">
                           <Image src="/servicio-diseño-grafico-argentina.png" alt="Servicios de Diseño Gráfico y UX/UI en Argentina" width={1207} height={929} />
                       </div>
                   </div>
