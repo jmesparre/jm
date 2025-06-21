@@ -1,6 +1,6 @@
-import { Blog8 } from "@/components/blocks/blog8"
+import { TrabajosPage } from "@/components/blocks/blog8"
 
-const demoData = {
+const trabajosData = {
   heading: "Trabajos",
   description:
     "Explora una selección de nuestros trabajos más recientes, donde combinamos diseño innovador y desarrollo robusto para crear soluciones digitales que generan impacto. Cada proyecto es un testimonio de nuestra dedicación a la calidad y a los resultados tangibles.",
@@ -45,19 +45,19 @@ const demoData = {
       id: "proyecto-kesug",
       title: "Sistema de Gestión para Kesug",
       summary: "Desarrollo de una herramienta de gestión interna a medida para Kesug, optimizando sus procesos operativos y mejorando la eficiencia en la administración de recursos y proyectos.",
-      label: "Herramientas de Gestión",
+      label: "Tienda Virtual",
       author: "Juan Manuel Esparré",
-      published: "18 Nov 2023",
-      url: "/proyectos/kesug",
-      image: "/kesug.png",
-      altText: "Sistema de gestión para Kesug",
-      tags: ["CRM/CMS", "Desarrollo Web", "Automatización"],
+      published: "18 Nov 2024",
+      url: "https://tiendadigital.kesug.com",
+      image: "/kesug-trabajo.png",
+      altText: "Sistema de venta para Kesug",
+      tags: ["E-commerce", "Desarrollo Web", "Automatización"],
     }
   ],
 };
 
-function Blog8Demo() {
-  return <Blog8 {...demoData} />;
+function TrabajosBlock() {
+  return <TrabajosPage {...trabajosData} />;
 }
 
-export { Blog8Demo };
+export { TrabajosBlock };

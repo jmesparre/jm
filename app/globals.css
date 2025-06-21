@@ -120,11 +120,6 @@ nav a {
   color: var(--color-primario);
 }
 
-.contacto{
-  color: var(--background);
-  padding-top: 100px;
-}
-
 
 .scrollbar-hide::-webkit-scrollbar {
     display: none;

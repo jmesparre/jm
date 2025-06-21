@@ -19,7 +19,7 @@ interface Blog8Props {
   posts?: Post[];
 }
 
-const Blog8 = ({
+const TrabajosPage = ({
   heading = "Blog Postsaaa",
   description = "Dasdaser the latest insights and tutorials about modern web development, UI design, and component-driven architecture.",
   posts = [
@@ -100,7 +100,7 @@ const Blog8 = ({
                       target="_blank"
                       className="inline-flex items-center font-semibold hover:underline md:text-base"
                     >
-                      <span>Read more</span>
+                      <span>Ver página</span>
                       <ArrowRight className="ml-2 size-4 transition-transform" />
                     </a>
                   </div>
@@ -125,4 +125,4 @@ const Blog8 = ({
   );
 };
 
-export { Blog8 };
+export { TrabajosPage };

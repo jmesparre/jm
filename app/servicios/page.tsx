@@ -12,7 +12,7 @@ export default function ServiciosPage() {
                         <div className="lg:col-span-2 order-2 md:order-1">
                             <div className="md:pr-6 lg:pr-0 pt-[-160px]">
                                 <h2 className="text-4xl sm:text-5xl lg:text-5xl font-title">Servicios de  Diseño y Desarrollo Web</h2>
-                                <p className="mt-6 text-sm xl:text-md ">Servicios digitales para potenciar tu negocio. Desde el desarrollo de sitios web a medida y tiendas virtuales, hasta estrategias de posicionamiento SEO y herramientas de gestión empresarial. Descubre cómo podemos transformar tu presencia online y ayudarte a alcanzar tus objetivos.</p>
+                                <p className="mt-6 text-sm xl:text-md ">¿Necesitas que todo se gestione desde cero? Colaboraremos para diseñar y construir un sitio web personalizado que refleje tu marca, cumpla tus objetivos y conecte con tus usuarios. Desde la estrategia inicial y los wireframes hasta el diseño, las funcionalidades y el desarrollo final, me encargo de todo el proceso. El resultado es un sitio web rápido, responsivo y accesible, cuidadosamente elaborado con las tecnologías más avanzadas.</p>
                             </div>
                             <ul className="mt-8 text-md divide-y border-y *:flex *:items-center *:gap-3 *:py-3">
                                 <li>

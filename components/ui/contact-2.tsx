@@ -16,7 +16,7 @@ interface Contact2Props {
 
 export const Contact2 = ({
   title = "Contacto",
-  description = "We are available for questions, feedback, or collaboration opportunities. Let us know how we can help!",
+  description = "",
   phone = "(11) 32750873",
   email = "jmesparre@gmail.com",
   web = { label: "shadcnblocks.com", url: "https://shadcnblocks.com" },
@@ -62,24 +62,24 @@ export const Contact2 = ({
   };
 
   return (
-    <section className=" px-[11%] pt-[128vh] pb-40 sm:pt-[78vh] text-background min-h-[110vh] sm:min-h-[101vh]">
+    <section className="px-[11%] pt-[5vh] sm:pt-[40vh] pb-40  text-background min-h-[110vh] sm:min-h-[101vh]">
         <div>
-              <h1 className="mb-6 text-pretty text-5xl md:text-5xl lg:text-6xl font-title">
-                {title}
-              </h1>
-              <p className="font-base ml-[0%] sm:ml-[39%] mt-[0px] sm:mt-[-140px] md:mt-[-75px] xl:mt-[-120px]">
-                {description}
-              </p>
+          <h1 className="mb-2 text-pretty text-5xl md:text-5xl lg:text-6xl font-title">
+            {title}
+          </h1>  
         </div>
         <div className="flex flex-col justify-between gap-10 lg:flex-row lg:gap-20">
-          <div className="mx-auto flex flex-col justify-between gap-10">
-            <div className="text-left mt-20">
-              <div className="max-w-120 mt-10">
+          <div className="mx-auto ml-0  sm:order-2 order-1 flex flex-col justify-between">
+            <div className="text-left">
+              <div className="max-w-120 mt-20 w-[90%]">
                    <Image priority={false} src="/contacto-juan-manuel-esparre.png" alt="Servicios de Diseño Gráfico y UX/UI en Argentina" width={1207} height={929} />
               </div>
             </div>
-            <div className="mx-auto w-fit lg:mx-0">
-              <ul className="ml-4 list-none">
+            <div className=" w-fit lg:mx-0">
+              <ul className=" list-none">
+                 <li className="pb-10">
+                  <p>Pongamonos en contacto</p>
+                </li>
                 <li>
                   <span className="font-bold">Telefono: </span>
                   {phone}
@@ -100,8 +100,8 @@ export const Contact2 = ({
             </div>
           </div>
 
-          <div className="mx-auto flex max-w-screen-md flex-col gap-6 rounded-lg border p-10 mt-25 pb-10">
-            <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+          <div className="mx-auto ml-0 sm:order-2 order-1 flex max-w-screen-md flex-col gap-6 rounded-lg border p-10 sm:mt-15 mt-5 pb-10">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-6 pb-5">
               <div className="flex gap-4 w-70 mt-4">
                 <div className="grid w-full items-center gap-1.5">
                   <Input type="text" id="firstname" placeholder="Nombre" value={name} onChange={(e) => setName(e.target.value)} required />

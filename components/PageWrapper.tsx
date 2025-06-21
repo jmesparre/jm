@@ -8,7 +8,7 @@ import ClickSpark from "@/components/ClickSpark";
 const pageOrder = [
   "/", "/servicios", "/servicios/desarrollo-web", "/servicios/servicios-de-diseno",
   "/servicios/e-commerce", "/servicios/posicionamiento-web", "/servicios/herramientas-de-gestion",
-  "/servicios/precios-fijos", "/proyectos", "/sobre-mi", "/blog", "/contacto"
+  "/servicios/precios-fijos", "/trabajos", "/sobre-mi", "/contacto"
 ];
 
 interface PageWrapperProps {
