@@ -1,5 +1,6 @@
 import Image from 'next/image'; 
 import { PackageOpen, Globe, PenTool, ChartNetwork, CircleDollarSign, Cog } from 'lucide-react'
+import Link from 'next/link';
 
 
 export default function ServiciosPage() {
@@ -14,30 +15,42 @@ export default function ServiciosPage() {
                                 <h2 className="text-4xl sm:text-5xl lg:text-5xl font-title">Servicios de  Diseño y Desarrollo Web</h2>
                                 <p className="mt-6 text-sm xl:text-md ">¿Necesitas que todo se gestione desde cero? Colaboraremos para diseñar y construir un sitio web personalizado que refleje tu marca, cumpla tus objetivos y conecte con tus usuarios. Desde la estrategia inicial y los wireframes hasta el diseño, las funcionalidades y el desarrollo final, me encargo de todo el proceso. El resultado es un sitio web rápido, responsivo y accesible, cuidadosamente elaborado con las tecnologías más avanzadas.</p>
                             </div>
-                            <ul className="mt-8 text-md divide-y border-y *:flex *:items-center *:gap-3 *:py-3">
-                                <li>
-                                    <Globe className="size-5" />
-                                   <a href="/servicios/desarrollo-web">Desarrollo Web</a> 
+                            <ul className="mt-8 text-md divide-y border-y">
+                                <li className="flex items-center gap-3 py-3 cursor-pointer hover:bg-muted px-2">
+                                    <Link href="/servicios/desarrollo-web" className="flex items-center gap-3 w-full">
+                                        <Globe className="size-5" />
+                                        <span>Desarrollo Web</span>
+                                    </Link>
                                 </li>
-                                <li>
-                                    <PenTool className="size-5" />
-                                    <a href="/servicios/servicios-de-diseno">Servicios de Diseño</a> 
+                                <li className="flex items-center gap-3 py-3 cursor-pointer hover:bg-muted px-2">
+                                    <Link href="/servicios/servicios-de-diseno" className="flex items-center gap-3 w-full">
+                                        <PenTool className="size-5" />
+                                        <span>Servicios de Diseño</span>
+                                    </Link>
                                 </li>
-                                <li>
-                                    <CircleDollarSign className="size-5" />
-                                    <a href="/servicios/e-commerce">Tiendas Virtuales</a> 
+                                <li className="flex items-center gap-3 py-3 cursor-pointer hover:bg-muted px-2">
+                                    <Link href="/servicios/e-commerce" className="flex items-center gap-3 w-full">
+                                        <CircleDollarSign className="size-5" />
+                                        <span>Tiendas Virtuales</span>
+                                    </Link>
                                 </li>
-                                <li>
-                                    <ChartNetwork className="size-5" />
-                                    <a href="/servicios/posicionamiento-web">Posicionamiento Web</a> 
+                                <li className="flex items-center gap-3 py-3 cursor-pointer hover:bg-muted px-2">
+                                    <Link href="/servicios/posicionamiento-web" className="flex items-center gap-3 w-full">
+                                        <ChartNetwork className="size-5" />
+                                        <span>Posicionamiento Web</span>
+                                    </Link>
                                 </li>
-                                 <li>
-                                    <Cog className="size-5" />
-                                    <a href="/servicios/herramientas-de-gestion">Herramientas de Gestión</a> 
+                                <li className="flex items-center gap-3 py-3 cursor-pointer hover:bg-muted px-2">
+                                    <Link href="/servicios/herramientas-de-gestion" className="flex items-center gap-3 w-full">
+                                        <Cog className="size-5" />
+                                        <span>Herramientas de Gestión</span>
+                                    </Link>
                                 </li>
-                                <li>
-                                    <PackageOpen className="size-5" />
-                                    <a href="/servicios/precios-fijos">Precios Fijos</a> 
+                                <li className="flex items-center gap-3 py-3 cursor-pointer hover:bg-muted px-2">
+                                    <Link href="/servicios/precios-fijos" className="flex items-center gap-3 w-full">
+                                        <PackageOpen className="size-5" />
+                                        <span>Precios Fijos</span>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>                        

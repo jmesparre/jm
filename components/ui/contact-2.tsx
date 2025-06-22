@@ -14,7 +14,7 @@ interface Contact2Props {
 }
 
 export const Contact2 = ({
-  title = "Contactos",
+  title = "Contacto",
   phone = "(11) 32750873",
   email = "jmesparre@gmail.com",
   web = { label: "shadcnblocks.com", url: "/" },

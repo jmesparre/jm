@@ -22,7 +22,9 @@ const SobreMiPage = () => {
                                     Juan Manuel Esparré
                                 </h2>
                                 <p className="text-sm  w-[95%] pt-4 ">
-                                    Soy Juan Manuel Esparré, un apasionado desarrollador y diseñador web con más de una década de experiencia en la creación de soluciones digitales innovadoras. Mi trayectoria abarca desde el desarrollo web a medida y e-commerce, hasta la implementación de sistemas CRM/CMS, estrategias de branding y optimización SEO. Me dedico a transformar ideas en plataformas digitales funcionales y estéticamente atractivas, siempre con un enfoque en la usabilidad y el rendimiento. Mi objetivo es ayudarte a potenciar tu presencia online y alcanzar tus metas de negocio a través de soluciones web personalizadas y de alta calidad.
+                                    Soy un desarrollador creativo que siempre tuvo curiosidad por cómo funcionan las cosas. Me encanta crear cosas que no solo sean funcionales, sino también intuitivas y un poco encantadoras. Ya sea una microinteracción o una experiencia completa, creo que el buen diseño está en los detalles.
+
+Trabajo mejor cuando formo parte de todo el proceso — desde la primera idea hasta la última línea de código. Ya sea diseñando y desarrollando desde cero, o dando vida a un diseño existente con un desarrollo limpio y responsivo, me enfoco en crear experiencias digitales que simplemente se sientan bien.
                                 </p>
                             </div>
                         </div>

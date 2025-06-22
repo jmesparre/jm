@@ -96,7 +96,7 @@ function Header1() {
     }, [isOpen]);
 
     return (
-        <header ref={headerRef} className="w-full bg-foreground z-40 fixed top-0 left-0 text-background px-2">
+        <header ref={headerRef} className="w-full bg-foreground z-40 fixed opacity-98 top-0 left-0 text-background px-2">
               <div className="fixed top-1 sm:top-0 left-4 sm:left-11.5 z-10 logo">
               <Link href="/">
                 <Image  priority={true} src="/logosvg.svg" alt="Logo-juan-manuel-esparre-desarrollador-web" width={40} height={40} className="mt-3"/>
@@ -158,7 +158,7 @@ function Header1() {
                 <div className="flex w-12 shrink lg:hidden items-end justify-end">
                     <AnimatedMenuButton open={isOpen} onToggle={() => setOpen(!isOpen)} />
                     {isOpen && (
-                        <div className="absolute top-15 border-t flex flex-col w-full right-0 bg-foreground p-5 shadow-lg py-4 pb-6 container gap-6">
+                        <div className="absolute top-15 border-t flex flex-col w-full right-0 bg-foreground p-5 shadow-lg py-4 pb-6 container gap-5">
                             {navigationItems.map((item, index) => (
                                 <div key={`${item.title}-${index}`}>
                                     <div className="flex flex-col gap-2">
