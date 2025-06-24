@@ -70,7 +70,7 @@ export const Contact2 = ({
           <div className="mx-auto ml-0 sm:order-2 order-1 flex flex-col justify-between">
             <div className="text-left">
               <div className="max-w-120 mt-10 w-[90%] sm:mt-20">
-                   <Image priority={false} src="/contacto-juan-manuel-esparre.png" alt="Servicios de Diseño Gráfico y UX/UI en Argentina" width={1207} height={929} />
+                   <Image priority={true} src="/contacto-juan-manuel-esparre.png" alt="Servicios de Diseño Gráfico y UX/UI en Argentina" width={1207} height={929} />
               </div>
             </div>
             <div className="w-fit lg:mx-0">

@@ -13,7 +13,7 @@ export default function ServiciosPage() {
                         <div className="lg:col-span-2 order-2 md:order-1">
                             <div className="md:pr-6 lg:pr-0 pt-[-160px]">
                                 <h2 className="text-4xl sm:text-5xl lg:text-5xl font-title">Servicios de  Diseño y Desarrollo Web</h2>
-                                <p className="mt-6 text-sm xl:text-md ">¿Necesitas que todo se gestione desde cero? Colaboraremos para diseñar y construir un sitio web personalizado que refleje tu marca, cumpla tus objetivos y conecte con tus usuarios. Desde la estrategia inicial y los wireframes hasta el diseño, las funcionalidades y el desarrollo final, me encargo de todo el proceso. El resultado es un sitio web rápido, responsivo y accesible, cuidadosamente elaborado con las tecnologías más avanzadas.</p>
+                                <p className="mt-6 text-sm xl:text-md ">¿Necesitas que todo se gestione desde cero? Colaboremos para diseñar y construir un sitio web personalizado que refleje tu marca, cumpla tus objetivos y conecte con tus usuarios. Desde la estrategia inicial y los wireframes hasta el diseño, las funcionalidades y el desarrollo final, me encargo de todo el proceso. El resultado es un sitio web rápido, responsivo y accesible, cuidadosamente elaborado con las tecnologías más avanzadas.</p>
                             </div>
                             <ul className="mt-8 text-md divide-y border-y">
                                 <li className="flex items-center gap-3 py-3 cursor-pointer hover:bg-muted px-2">
@@ -56,7 +56,7 @@ export default function ServiciosPage() {
                         </div>                        
                         <div className="relative  p-3 lg:col-span-3 order-1 md:order-2">
                           <div className="aspect-76/59 relative">
-                              <Image src="/desarrollador-web-juan-manuel-esparre.png" alt="Juan Manuel Esparré - Desarrollador Web, Diseño Web, E-commerce, SEO, CRM, CMS" width={1207} height={929} />
+                              <Image priority={true} src="/desarrollador-web-juan-manuel-esparre.png" alt="Juan Manuel Esparré - Desarrollador Web, Diseño Web, E-commerce, SEO, CRM, CMS" width={1207} height={929} />
                           </div>
                       </div>
                      </div>

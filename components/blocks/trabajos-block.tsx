@@ -41,6 +41,19 @@ const trabajosData = {
       altText: "Plataforma de turismo para San Luis",
       tags: ["Desarrollo Web", "Turismo", "UX/UI"],
     },
+     
+    {
+      id: "proyecto-barrio-privado",
+      title: "Herramienta de organizacion para barrio privado",
+      summary: "Implementación de una tienda virtual completa con pasarelas de pago integradas, gestión de inventario y optimización para conversiones, brindando una plataforma de ventas eficiente y escalable.",
+      label: "Herramienta de Geastion",
+      author: "Juan Manuel Esparré",
+      published: "25 Sep 2023",
+      url: "/proyectos/tienda-virtual",
+      image: "/ayni-trabajo2.png",
+      altText: "Herramienta de gestion barrio privado",
+      tags: ["E-commerce", "Desarrollo Web", "Pagos Online"],
+    },
     {
       id: "proyecto-kesug",
       title: "Sistema de Gestión para Kesug",

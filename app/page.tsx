@@ -22,9 +22,9 @@ export default function Home() {
       <section id="home" className="hero ">
         <div ref={boxRef} className='z-2 relative sm:absolute top-[19vh] sm:top-[25%] md:top-[30vh] lg:top-[22vh] left-[5%]  md:left-[11%] xl:left-[19%]  sm:w-[178px] sm:h-[280px] w-[216px] h-[340px] md:w-[216px] md:h-[340px] lg:w-[261px] lg:h-[410px]'>
           <TiltedCard
-            imageSrc="/juguete.png"
+            imageSrc="/juguete-gif.gif"
             altText="Juan Manuel Esparré - Desarrollador Web, Diseño Web, E-commerce, SEO"
-            captionText="Hola!"
+            captionText="Charlemos"
             containerHeight="100%"
             containerWidth="100%"
             imageHeight="100%"

@@ -11,12 +11,14 @@ const PosicionamientoWebPage = () => {
                   <div className="lg:col-span-2 order-2 md:order-1">
                       <div className="md:pr-6 lg:pr-0">
                           <h2 className="text-4xl font-semibold sm:text-3xl lg:text-4xl">Posicionamiento Web SEO: Aumenta tu Visibilidad Online</h2>
-                          <p className="mt-6 text-sm ">Implementamos estrategias de SEO (Search Engine Optimization) para mejorar el ranking de tu sitio web en los motores de búsqueda. A través de la optimización de palabras clave, contenido, estructura técnica y construcción de enlaces, aumentamos tu visibilidad orgánica, atraemos tráfico y te ayudamos destacar en las busquedas en google.</p>
+                          <p className="mt-6 text-sm ">
+                            Implemento estrategias de SEO (Optimización de Motores de Búsqueda) para mejorar el ranking de tu sitio web. A través de la optimización de palabras clave, contenido, estructura técnica y construcción de enlaces, aumenta tu visibilidad, atrae tráfico para destacar en las busquedas en google.
+                        </p>
                       </div>
                       <ul className="mt-8 divide-y border-y *:flex *:items-center *:gap-3 *:py-3">
                           <li>
                               <Mail className="size-5" />
-                              Auditorías SEO completas y personalizadas
+                              Auditorías SEO personalizadas
                           </li>
                           <li>
                               <Zap className="size-5" />
@@ -24,17 +26,13 @@ const PosicionamientoWebPage = () => {
                           </li>
                           <li>
                               <Activity className="size-5" />
-                              Monitoreo constante y reportes de rendimiento
-                          </li>
-                          <li>
-                              <DraftingCompass className="size-5" />
-                              Estrategias de link building y autoridad de dominio
+                              Monitoreo y reportes de rendimiento
                           </li>
                       </ul>
                   </div>
                   <div className="relative  p-3 lg:col-span-3 order-1 md:order-2">
                       <div className="aspect-76/59 relative">
-                          <Image src="/servicio-posicionamiento-web-seo-argentina.png" alt="Servicio de Posicionamiento Web SEO en Argentina" width={1207} height={929} />
+                          <Image priority={true} src="/servicio-posicionamiento-web-seo-argentina.png" alt="Servicio de Posicionamiento Web SEO en Argentina" width={1207} height={929} />
                       </div>
                   </div>
               </div>

@@ -14,7 +14,7 @@ const ServiciosDeDisenoPage = () => {
                       <div className="md:pr-6 lg:pr-0 ">
                           <h2 className="text-4xl font-semibold sm:text-3xl lg:text-4xl">Servicios de Diseño Gráfico. Impacto Visual para tu Marca</h2>
                           <p className="mt-6 text-sm ">
-                            Transformo tus ideas en experiencias visuales. Servicios de diseño gráfico y UX/UI que abarcan desde la creación logotipos, ilustraciones, hasta el diseño de interfaces de usuario, intuitivas y atractivas para sitios web y aplicaciones. 
+                            Transformo tus ideas en experiencias visuales. Servicios de diseño gráfico y UX/UI que abarcan desde la creación de logotipos, ilustraciones, hasta el diseño de interfaces de usuario, intuitivas y atractivas para sitios web y aplicaciones. 
                           </p>
                       </div>
                       <ul className="mt-8 divide-y border-y *:flex *:items-center *:gap-3 *:py-3">
@@ -38,7 +38,7 @@ const ServiciosDeDisenoPage = () => {
                   </div>
                   <div className="relative p-3 lg:col-span-3  order-1 md:order-2">
                       <div className="aspect-76/59 relative">
-                          <Image src="/servicio-diseño-grafico-argentina.png" alt="Servicios de Diseño Gráfico y UX/UI en Argentina" width={1207} height={929} />
+                          <Image priority={true} src="/servicio-diseño-grafico-argentina.png" alt="Servicios de Diseño Gráfico y UX/UI en Argentina" width={1207} height={929} />
                       </div>
                   </div>
               </div>

@@ -10,7 +10,7 @@ const SobreMiPage = () => {
                             </h1>
                 <div className="grid md:grid-cols-2 gap-8 relative overflow-x-hidden">
                     <div className="md:order-2 relative mt-33">
-                        <Image src="/foto-perfil.png" alt="Juan Manuel Esparré - Desarrollador Web Full Stack y Diseñador UX/UI"
+                        <Image priority={true} src="/foto-perfil.png" alt="Juan Manuel Esparré - Desarrollador Web Full Stack y Diseñador UX/UI"
                             className="rounded-2xl w-[77%] mx-auto object-cover filter brightness-105"
                          width={1207} height={929} /> 
                         
