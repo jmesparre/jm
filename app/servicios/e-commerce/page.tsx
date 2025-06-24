@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image'; // Import Image from next/image
-import { Activity, DraftingCompass, Mail, Zap } from 'lucide-react'
+import { Activity, DraftingCompass, Mail } from 'lucide-react'
 
 
 const ECommercePage = () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image'; // Import Image from next/image
-import { Activity, DraftingCompass, Mail, Zap } from 'lucide-react'
+import { Activity, Mail, Zap } from 'lucide-react'
 
 const PosicionamientoWebPage = () => {
   return (
