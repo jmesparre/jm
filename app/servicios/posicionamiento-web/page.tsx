@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image'; // Import Image from next/image
-import { Activity, Mail, Zap } from 'lucide-react'
+import { FileSearch, Megaphone, BarChart } from 'lucide-react'
 
 const PosicionamientoWebPage = () => {
   return (
@@ -17,15 +17,15 @@ const PosicionamientoWebPage = () => {
                       </div>
                       <ul className="mt-8 divide-y border-y *:flex *:items-center *:gap-3 *:py-3">
                           <li>
-                              <Mail className="size-5" />
+                              <FileSearch className="size-5" />
                               Auditorías SEO personalizadas
                           </li>
                           <li>
-                              <Zap className="size-5" />
+                              <Megaphone className="size-5" />
                               Optimización On-Page y Off-Page
                           </li>
                           <li>
-                              <Activity className="size-5" />
+                              <BarChart className="size-5" />
                               Monitoreo y reportes de rendimiento
                           </li>
                       </ul>

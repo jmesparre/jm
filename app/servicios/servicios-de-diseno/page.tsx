@@ -1,6 +1,6 @@
 
 import Image from 'next/image'; // Import Image from next/image
-import { Activity, DraftingCompass, Mail, Zap } from 'lucide-react'
+import { Brush, LayoutTemplate, Image as ImageIcon, Smartphone } from 'lucide-react'
 
 
 const ServiciosDeDisenoPage = () => {
@@ -19,19 +19,19 @@ const ServiciosDeDisenoPage = () => {
                       </div>
                       <ul className="mt-8 divide-y border-y *:flex *:items-center *:gap-3 *:py-3">
                           <li>
-                              <Mail className="size-5" />
+                              <Brush className="size-5" />
                               Diseño de identidad de marca y logotipos
                           </li>
                           <li>
-                              <Zap className="size-5" />
+                              <LayoutTemplate className="size-5" />
                               Diseño UX/UI para interfaces intuitivas
                           </li>
                           <li>
-                              <Activity className="size-5" />
-                              Creación de material gráfico para web y redes sociales
+                              <ImageIcon className="size-5" />
+                              Material gráfico para web y redes sociales
                           </li>
                           <li>
-                              <DraftingCompass className="size-5" />
+                              <Smartphone className="size-5" />
                               Diseño de aplicaciones móviles
                           </li>
                       </ul>

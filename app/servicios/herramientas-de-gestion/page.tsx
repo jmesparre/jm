@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image'; // Import Image from next/image
-import { Activity, DraftingCompass, Mail, Zap } from 'lucide-react'
+import { Users, Briefcase, Workflow, Plug } from 'lucide-react'
 
 
 const HerramientasGestionPage = () => {
@@ -21,19 +21,19 @@ const HerramientasGestionPage = () => {
                        </div>
                        <ul className="mt-8 divide-y border-y *:flex *:items-center *:gap-3 *:py-3">
                            <li>
-                               <Mail className="size-5" />
+                               <Users className="size-5" />
                                Sistemas de Gestión de relaciones con el cliente (CRM)
                                </li>
                            <li>
-                               <Zap className="size-5" />
+                               <Briefcase className="size-5" />
                                Herramientas de Gestión de Relaciones con los Empleados (ERM) 
                             </li>
                            <li>
-                               <Activity className="size-5" />
+                               <Workflow className="size-5" />
                                Automatización de procesos y flujos de trabajo
                            </li>
                            <li>
-                               <DraftingCompass className="size-5" />
+                               <Plug className="size-5" />
                                Integración con tus sistemas existentes
                            </li>
                        </ul>

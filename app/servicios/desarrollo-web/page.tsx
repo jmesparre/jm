@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image'; // Import Image from next/image
-import { Activity, DraftingCompass, Mail, Zap } from 'lucide-react'
+import { LifeBuoy, Rocket, BarChart, Building } from 'lucide-react'
 
 
 const DesarrolloWebPage = () => {
@@ -28,19 +28,19 @@ const DesarrolloWebPage = () => {
                        </div>
                        <ul className="mt-8 divide-y border-y *:flex *:items-center *:gap-3 *:py-3">
                            <li>
-                               <Mail className="size-5" />
+                               <LifeBuoy className="size-5" />
                                Soporte técnico y asesoramiento continuo
                            </li>
                            <li>
-                               <Zap className="size-5" />
+                               <Rocket className="size-5" />
                                Desarrollo ágil y tiempos de respuesta rápidos
                            </li>
                            <li>
-                               <Activity className="size-5" />
+                               <BarChart className="size-5" />
                                Monitoreo de rendimiento y analíticas web
                            </li>
                            <li>
-                               <DraftingCompass className="size-5" />
+                               <Building className="size-5" />
                                Diseño arquitectónico y escalabilidad
                            </li>
                        </ul>

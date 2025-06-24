@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image'; // Import Image from next/image
-import { Activity, DraftingCompass, Mail, Zap } from 'lucide-react'
+import { DollarSign, Zap, Monitor, LifeBuoy } from 'lucide-react'
 
 const PreciosFijosPage = () => {
   return (
@@ -17,7 +17,7 @@ const PreciosFijosPage = () => {
                       </div>
                       <ul className="mt-8 divide-y border-y *:flex *:items-center *:gap-3 *:py-3">
                           <li>
-                              <Mail className="size-5" />
+                              <DollarSign className="size-5" />
                               Presupuestos claros
                           </li>
                           <li>
@@ -25,11 +25,11 @@ const PreciosFijosPage = () => {
                               Entrega rápida y eficiente
                           </li>
                           <li>
-                              <Activity className="size-5" />
-                              Diseños modernos y adaptables a cualquier dispositivo
+                              <Monitor className="size-5" />
+                              Diseños adaptables a cualquier dispositivo
                           </li>
                           <li>
-                              <DraftingCompass className="size-5" />
+                              <LifeBuoy className="size-5" />
                               Soporte y mantenimiento post-lanzamiento
                           </li>
                       </ul>

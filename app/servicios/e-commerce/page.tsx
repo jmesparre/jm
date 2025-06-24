@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image'; // Import Image from next/image
-import { Activity, DraftingCompass, Mail } from 'lucide-react'
+import { CreditCard, Package, LayoutTemplate } from 'lucide-react'
 
 
 const ECommercePage = () => {
@@ -23,15 +23,15 @@ const ECommercePage = () => {
                        </div>
                        <ul className="mt-8 divide-y border-y *:flex *:items-center *:gap-3 *:py-3">
                            <li>
-                               <Mail className="size-5" />
+                               <CreditCard className="size-5" />
                                Integración de pasarelas de pago seguras
                            </li>
                            <li>
-                               <Activity className="size-5" />
+                               <Package className="size-5" />
                                Gestión de productos e inventario
                            </li>
                            <li>
-                               <DraftingCompass className="size-5" />
+                               <LayoutTemplate className="size-5" />
                                Diseño personalizado y experiencia de usuario intuitiva
                            </li>
                        </ul>
