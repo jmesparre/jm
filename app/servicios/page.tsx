@@ -55,7 +55,7 @@ export default function ServiciosPage() {
                             </ul>
                         </div>                        
                         <div className="relative  p-3 lg:col-span-3 order-1 md:order-2">
-                          <div className="aspect-76/59 relative">
+                          <div className="w-[80%] m-auto relative">
                               <Image priority={true} src="/desarrollador-web-juan-manuel-esparre.png" alt="Juan Manuel Esparré - Desarrollador Web, Diseño Web, E-commerce, SEO, CRM, CMS" width={1207} height={929} />
                           </div>
                       </div>

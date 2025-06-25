@@ -58,7 +58,7 @@ const TrabajosPage = ({
           <h2 className=" mb-6 text-pretty text-5xl md:text-5xl lg:text-6xl lg:max-w-3xl">
             {heading}
           </h2>
-          <p className="font-base ml-[0%] sm:ml-[39%] mt-[0px] sm:mt-[-140px] md:mt-[-105px] xl:mt-[-120px]">
+          <p className="font-base ml-[0%] opacity-0 sm:ml-[39%] mt-[0px] sm:mt-[-140px] md:mt-[-105px] xl:mt-[-120px]">
             {description}
           </p>
         </div>

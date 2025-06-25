@@ -20,7 +20,7 @@ const trabajosData = {
     {
       id: "proyecto-tienda-virtual",
       title: "E-commerce para Tienda de San Luis",
-      summary: "Implementación de una tienda virtual completa con pasarelas de pago integradas, gestión de inventario y optimización para conversiones, brindando una plataforma de ventas eficiente y escalable.",
+      summary: "Implementación de una tienda virtual completa con pasarelas de pago integradas, ventas por whataspp y optimización para conversiones, brindando una plataforma de ventas eficiente y escalable.",
       label: "E-commerce",
       author: "Tienda San Luis",
       published: "25 Sep 2023",
