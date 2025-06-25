@@ -104,7 +104,7 @@ function Header1() {
               </Link>
             </div>
             <div className="container relative mx-auto min-h-15 flex gap-4 flex-row justify-end items-center">
-                <NavigationMenu className="flex justify-start items-start justify-start items-center gap-4 lg:flex hidden flex-row">
+                <NavigationMenu delayDuration={100} className="flex justify-start items-start justify-start items-center gap-4 lg:flex hidden flex-row">
                     <NavigationMenuList className="flex justify-start flex-row">
                             {navigationItems.map((item) => (
                                 <NavigationMenuItem key={item.title}>
