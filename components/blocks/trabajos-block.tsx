@@ -10,7 +10,7 @@ const trabajosData = {
       title: "Estudio Arami: Diseño Web y Branding",
       summary: "Desarrollo de un sitio web moderno y una identidad de marca cohesiva para Estudio Arami, enfocándonos en una experiencia de usuario intuitiva y un diseño visual atractivo que refleja su profesionalismo.",
       label: "Diseño Web & Branding",
-      author: "Juan Manuel Esparré",
+      author: "Estudio Arami",
       published: "10 Mar 2023",
       url: "/proyectos/estudio-arami",
       image: "/arami-trabajo.png",
@@ -19,10 +19,10 @@ const trabajosData = {
     },
     {
       id: "proyecto-tienda-virtual",
-      title: "E-commerce para Tienda de Ropa Online",
+      title: "E-commerce para Tienda de San Luis",
       summary: "Implementación de una tienda virtual completa con pasarelas de pago integradas, gestión de inventario y optimización para conversiones, brindando una plataforma de ventas eficiente y escalable.",
       label: "E-commerce",
-      author: "Juan Manuel Esparré",
+      author: "Tienda San Luis",
       published: "25 Sep 2023",
       url: "/proyectos/tienda-virtual",
       image: "/tienda-trabajo.png",
@@ -44,7 +44,7 @@ const trabajosData = {
      
     {
       id: "proyecto-barrio-privado",
-      title: "Herramienta de organizacion para barrio privado",
+      title: "Herramienta de gestion para barrio privado",
       summary: "Implementación de una tienda virtual completa con pasarelas de pago integradas, gestión de inventario y optimización para conversiones, brindando una plataforma de ventas eficiente y escalable.",
       label: "Herramienta de Geastion",
       author: "Juan Manuel Esparré",
@@ -57,7 +57,7 @@ const trabajosData = {
     {
       id: "proyecto-kesug",
       title: "Sistema de Gestión para Kesug",
-      summary: "Desarrollo de una herramienta de gestión interna a medida para Kesug, optimizando sus procesos operativos y mejorando la eficiencia en la administración de recursos y proyectos.",
+      summary: "Implementación de una tienda virtual completa con pasarelas de pago integradas, gestión de inventario y optimización para conversiones, brindando una plataforma de ventas eficiente y escalable.",
       label: "Tienda Virtual",
       author: "Juan Manuel Esparré",
       published: "18 Nov 2024",

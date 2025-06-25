@@ -18,7 +18,7 @@ const ECommercePage = () => {
                        <div className="md:pr-6 lg:pr-0">
                            <h2 className="text-4xl font-semibold sm:text-3xl lg:text-4xl">Desarrollo de Tiendas Virtuales (E-commerce)</h2>
                            <p className="mt-6 text-sm">
-                            Creo tiendas virtuales y sistemas de pago que te permiten vender tus productos o servicios online de manera eficiente. Desde la configuración de pasarelas de pago hasta la gestión de inventario. 
+                            Creo tiendas virtuales y sistemas de pago que te permiten vender tus productos o servicios online de manera que se ajuste a tus necesidades . Desde la configuración de pasarelas de pago hasta la gestión de inventario. 
                            </p>
                        </div>
                        <ul className="mt-8 divide-y border-y *:flex *:items-center *:gap-3 *:py-3">

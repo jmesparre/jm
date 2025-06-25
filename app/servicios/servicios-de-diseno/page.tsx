@@ -12,9 +12,9 @@ const ServiciosDeDisenoPage = () => {
               <div className="grid items-center gap-12 md:grid-cols-2 md:gap-12 lg:grid-cols-5 lg:gap-11">
                   <div className="lg:col-span-2  order-2 md:order-1">
                       <div className="md:pr-6 lg:pr-0 ">
-                          <h2 className="text-4xl font-semibold sm:text-3xl lg:text-4xl">Servicios de Diseño Gráfico. Impacto Visual para tu Marca</h2>
+                          <h2 className="text-4xl font-semibold sm:text-3xl lg:text-4xl">Servicios de Diseño Gráfico.</h2>
                           <p className="mt-6 text-sm ">
-                            Transformo tus ideas en experiencias visuales. Servicios de diseño gráfico y UX/UI que abarcan desde la creación de logotipos, ilustraciones, hasta el diseño de interfaces de usuario, intuitivas y atractivas para sitios web y aplicaciones. 
+                            Tus ideas en experiencias visuales. Servicios de diseño gráfico y UX/UI que abarcan desde la creación de logotipos, ilustraciones, hasta el diseño de interfaces de usuario, intuitivas y atractivas para sitios web y aplicaciones. 
                           </p>
                       </div>
                       <ul className="mt-8 divide-y border-y *:flex *:items-center *:gap-3 *:py-3">
