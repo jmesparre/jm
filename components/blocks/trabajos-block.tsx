@@ -31,7 +31,7 @@ const trabajosData = {
     },
     {
       id: "proyecto-turismo-san-luis",
-      title: "Plataforma de Turismo para San Luis",
+      title: "Fundacion Coyuyo: ",
       summary: "Creación de una plataforma interactiva para promover el turismo en San Luis, con funcionalidades de búsqueda de destinos, galerías de imágenes y un sistema de reservas simplificado.",
       label: "Desarrollo Web",
       author: "Juan Manuel Esparré",
