@@ -13,7 +13,7 @@ import { Component as AnimatedMenuButton } from "./animated-menu-button";
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 
 function Header1() {
     const headerRef = useRef<HTMLElement>(null);
