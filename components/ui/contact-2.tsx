@@ -76,7 +76,7 @@ export const Contact2 = ({
             <div className="w-fit lg:mx-0">
               <ul className="list-none">
                  <li className="pb-10">
-                  <p>Pongamonos en contacto.</p>
+                  
                 </li>
                  <li >
                   <a href="https://wa.me/541132750873/?text=Hola" className="font-semibold" target="_blank" rel="noopener noreferrer">

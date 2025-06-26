@@ -18,18 +18,6 @@ const trabajosData = {
       tags: ["Diseño Web", "Branding", "UX/UI"],
     },
     {
-      id: "proyecto-tienda-virtual",
-      title: "E-commerce para Tienda de San Luis",
-      summary: "Implementación de una tienda virtual completa con pasarelas de pago integradas, ventas por whataspp y optimización para conversiones, brindando una plataforma de ventas eficiente y escalable.",
-      label: "E-commerce",
-      author: "Tienda San Luis",
-      published: "25 Sep 2023",
-      url: "/proyectos/tienda-virtual",
-      image: "/tienda-trabajo.png",
-      altText: "Tienda virtual de ropa online",
-      tags: ["E-commerce", "Desarrollo Web", "Pagos Online"],
-    },
-    {
       id: "proyecto-turismo-san-luis",
       title: "Fundacion Coyuyo: ",
       summary: "Creación de una plataforma interactiva para promover el turismo en San Luis, con funcionalidades de búsqueda de destinos, galerías de imágenes y un sistema de reservas simplificado.",
@@ -65,6 +53,18 @@ const trabajosData = {
       image: "/kesug-trabajo.png",
       altText: "Sistema de venta para Kesug",
       tags: ["E-commerce", "Desarrollo Web", "Automatización"],
+    },
+    {
+      id: "proyecto-tienda-virtual",
+      title: "E-commerce para Tienda de San Luis",
+      summary: "Implementación de una tienda virtual completa con pasarelas de pago integradas, ventas por whataspp y optimización para conversiones, brindando una plataforma de ventas eficiente y escalable.",
+      label: "E-commerce",
+      author: "Tienda San Luis",
+      published: "25 Sep 2023",
+      url: "/proyectos/tienda-virtual",
+      image: "/tienda-trabajo.png",
+      altText: "Tienda virtual de ropa online",
+      tags: ["E-commerce", "Desarrollo Web", "Pagos Online"],
     }
   ],
 };

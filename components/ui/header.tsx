@@ -77,26 +77,9 @@ function Header1() {
 
     const [isOpen, setOpen] = useState(false);
 
-    useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
-            if (headerRef.current && !headerRef.current.contains(event.target as Node)) {
-                setOpen(false);
-            }
-        };
-
-        if (isOpen) {
-            document.addEventListener("mousedown", handleClickOutside);
-        } else {
-            document.removeEventListener("mousedown", handleClickOutside);
-        }
-
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, [isOpen]);
 
     return (
-        <header ref={headerRef} className="w-full bg-foreground z-40 fixed opacity-98 top-0 left-0 text-background px-2">
+        <header ref={headerRef} className="w-full bg-foreground z-40 fixed  top-0 left-0 text-background px-2">
               <div className="fixed top-1 sm:top-0 left-4 sm:left-11.5 z-10 logo">
               <Link href="/">
                 <Image  priority={true} src="/logosvg.svg" alt="Logo-juan-manuel-esparre-desarrollador-web" width={40} height={40} className="mt-3"/>
@@ -104,10 +87,10 @@ function Header1() {
               </Link>
             </div>
             <div className="container relative mx-auto min-h-15 flex gap-4 flex-row justify-end items-center">
-                <NavigationMenu delayDuration={100} className="flex justify-start items-start justify-start items-center gap-4 lg:flex hidden flex-row">
+                <NavigationMenu delayDuration={0} skipDelayDuration={0} className="flex justify-start items-start justify-start items-center gap-4 lg:flex hidden flex-row">
                     <NavigationMenuList className="flex justify-start flex-row">
                             {navigationItems.map((item) => (
-                                <NavigationMenuItem key={item.title}>
+                                <NavigationMenuItem key={item.title} className="relative z-50">
                                     {item.items ? ( // If item has sub-items (e.g., Servicios, Contacto)
                                         <>
                                             <NavigationMenuTrigger className="font-medium text-sm">
