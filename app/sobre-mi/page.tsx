@@ -10,7 +10,7 @@ const SobreMiPage = () => {
                     <div className="md:order-2 relative ">
                         <Image priority={true} src="/profile7a.png" alt="Juan Manuel Esparré - Desarrollador Web Full Stack y Diseñador UX/UI"
                             className="rounded-2xl border-background border-2 w-[100%] lg:w-[82%] md:w-[100%] m-auto md:mt-33 lg:mt-22 object-cover filter brightness-105"
-                         width={388} height={568} quality={100} /> 
+                         width={500} height={500} quality={100} /> 
                         
                     </div>
                     <div className="md:order-1 flex flex-col justify-between">
