@@ -16,7 +16,7 @@ const DesarrolloWebPage = () => {
                <div className="grid items-center gap-12 md:grid-cols-2 md:gap-12 lg:grid-cols-5 lg:gap-11">
                 <div className="relative  p-3 lg:col-span-3">
                        <div className="aspect-76/59 relative">
-                           <Image priority={true} src="/servicio-desarrollo-web-argentina.png" alt="Desarrollo Web a Medida en Argentina - Sitios Web Profesionales" width={1207} height={929} />
+                           <Image src="/servicio-desarrollo-web-argentina.png" alt="Desarrollo Web a Medida en Argentina - Sitios Web Profesionales" width={1207} height={929} />
                        </div>
                    </div>
                    <div className="lg:col-span-2">

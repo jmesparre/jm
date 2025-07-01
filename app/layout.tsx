@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import PageWrapper from "@/components/PageWrapper";
 import { Header1 } from "@/components/ui/header";
+import ClientSidePreloader from "@/components/ui/ClientSidePreloader";
 
 export const metadata: Metadata = {
   title: "Juan Desarrollador Web",
@@ -23,6 +24,7 @@ export default function RootLayout({
             </div>
             <PageWrapper>{children}</PageWrapper>
           </div>
+        <ClientSidePreloader />
       </body>
     </html>
   );
