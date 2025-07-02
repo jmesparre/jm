@@ -20,9 +20,9 @@ const SobreMiPage = () => {
                               Sobre Mi
                             </h1>
                                 <p className="text-sm  w-[95%] pt-4 ">
-                                     Mi nombre es Juan Manuel Esparré, tengo 39 años y vivo en San Luis, Argentina. Soy un desarrollador creativo que siempre tuvo curiosidad por cómo funcionan las cosas. Me encanta crear cosas que no solo sean funcionales, sino también intuitivas y un poco encantadoras. Ya sea una microinteracción o una experiencia completa, creo que el buen diseño está en los detalles.
+                                     Mi nombre es Juan Manuel Esparré, vivo en San Luis, Argentina. Soy desarrollador. Me encanta crear cosas que no solo sean funcionales, sino también intuitivas y un poco encantadoras. Ya sea una microinteracción o una experiencia completa, creo que el buen diseño está en los detalles.
 
-Trabajo mejor cuando formo parte de todo el proceso — desde la primera idea hasta la última línea de código. Ya sea diseñando y desarrollando desde cero, o dando vida a un diseño existente con un desarrollo limpio y responsivo, me enfoco en crear experiencias digitales que simplemente se sientan bien.
+Me gusta desarrollar todo el proceso — desde la primera idea hasta la última línea de código. Ya sea diseñando y desarrollando desde cero, o dando vida a un diseño existente con un desarrollo limpio y responsivo, me enfoco en crear experiencias digitales que simplemente se sientan bien.
                                 </p>
                             </div>
                         </div>
