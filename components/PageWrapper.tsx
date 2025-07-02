@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useEffect, useRef, useCallback } from "react";
+import React, { useEffect, useRef, useCallback, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
+import Image from 'next/image';
 import * as motion from "motion/react-client";
 import ClickSpark from "@/components/ClickSpark";
 
@@ -11,6 +12,18 @@ const pageOrder = [
   "/servicios/precios-fijos", "/trabajos", "/sobre-mi", "/contacto"
 ];
 
+const pageToImageMap: { [key: string]: string } = {
+  "/": "/servicio-desarrollo-web-argentina.png", // Home preloads a default/first service
+  "/servicios": "/servicio-desarrollo-web-argentina.png",
+  "/servicios/desarrollo-web": "/servicio-diseño-grafico-argentina.png",
+  "/servicios/servicios-de-diseno": "/servicio-e-commerce-argentina.png",
+  "/servicios/e-commerce": "/servicio-posicionamiento-web-seo-argentina.png",
+  "/servicios/posicionamiento-web": "/servicio-herramientas-de-gestion-empresas.png",
+  "/servicios/herramientas-de-gestion": "/servicios-web-precios-fijos.png",
+  // Add mappings for other pages if they have specific subsequent images to preload
+  // For the last pages like /trabajos, /sobre-mi, /contacto, there might be no "next" image
+};
+
 interface PageWrapperProps {
   children: React.ReactNode;
 }
@@ -18,6 +31,8 @@ interface PageWrapperProps {
 export default function PageWrapper({ children }: PageWrapperProps) {
   const router = useRouter();
   const pathname = usePathname();
+  const [imageToPreload, setImageToPreload] = useState<string | null>(null);
+  const [isPageLoaded, setIsPageLoaded] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const isNavigatingRef = useRef(false);
@@ -157,29 +172,71 @@ export default function PageWrapper({ children }: PageWrapperProps) {
     window.scrollTo(0, 0);
   }, [pathname]);
 
+  useEffect(() => {
+    const currentPageIndex = pageOrder.indexOf(pathname);
+    let nextPagePath = null;
+    if (currentPageIndex > -1 && currentPageIndex < pageOrder.length - 1) {
+      nextPagePath = pageOrder[currentPageIndex + 1];
+    }
+    
+    const nextImage = nextPagePath ? pageToImageMap[nextPagePath] : null;
+    setImageToPreload(nextImage);
+
+  }, [pathname]);
+
+  useEffect(() => {
+    const handleLoad = () => {
+      setIsPageLoaded(true);
+    };
+
+    if (document.readyState === 'complete') {
+      handleLoad();
+    } else {
+      window.addEventListener('load', handleLoad);
+    }
+
+    return () => {
+      window.removeEventListener('load', handleLoad);
+    };
+  }, []);
+
+
   return (
-    <ClickSpark
+    <>
+      {isPageLoaded && imageToPreload && (
+        <div style={{ display: 'none' }}>
+          <Image
+            key={imageToPreload}
+            src={imageToPreload}
+            alt="Preloaded image for next page"
+            width={1}
+            height={1}
+          />
+        </div>
+      )}
+      <ClickSpark
       sparkColor="#004936"
       sparkSize={10}
       sparkRadius={15}
       sparkCount={8}
       duration={400}
-    >
-      <div
-        ref={contentRef}
-        className="w-full h-screen overflow-y-auto" 
       >
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -50 }}
-          transition={{ duration: 0.25 }}
-          key={pathname}
-          className="w-full min-h-screen"
+        <div
+          ref={contentRef}
+          className="w-full h-screen overflow-y-auto" 
         >
-          {children}
-        </motion.div>
-      </div>
-    </ClickSpark>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            transition={{ duration: 0.25 }}
+            key={pathname}
+            className="w-full min-h-screen"
+          >
+            {children}
+          </motion.div>
+        </div>
+      </ClickSpark>
+    </>
   );
 }
