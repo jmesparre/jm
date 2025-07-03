@@ -21,6 +21,7 @@ The project follows a modern web application architecture based on Next.js, whic
 - **Utility-First CSS:** Leveraging Tailwind CSS for styling promotes a utility-first approach.
 - **API Routes:** Next.js API routes will be used for the contact form backend integration.
 - **Data Fetching:** Data fetching patterns will be implemented to retrieve blog content from the headless CMS.
+- **Sequential Image Preloading:** A custom performance pattern has been implemented to improve perceived navigation speed. The logic is centralized in the `PageWrapper.tsx` component. It uses the current `pathname` to determine the next page in a predefined navigation order and preloads the main image for that next page. This preloading is intentionally delayed until after the `window.load` event of the current page to ensure the initial page load is not blocked.
 
 ## Component Relationships
 

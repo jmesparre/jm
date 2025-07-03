@@ -24,6 +24,11 @@ Maintaining and updating the project structure and components based on user requ
 - Integrated `Blog8Demo` into `app/proyectos/page.tsx`.
 - Updated `memory-bank/ShadCN-context.md` to include `Card`.
 - Completed review of all `page.tsx` files in `app/` directory. No significant structural changes or new functionalities found beyond what is already documented; content is primarily informative and uses existing components.
+- Implemented a sequential image preloading system to improve navigation performance.
+- The preloading logic is centralized in `PageWrapper.tsx`.
+- The system preloads the main image of the *next* page in the navigation sequence only after the current page has fully loaded.
+- Obsolete preloading components (`ClientSidePreloader.tsx`, `ImagePreloader.tsx`) were removed.
+- Changes were committed and pushed to the remote repository.
 
 ## Next Steps
 
@@ -52,3 +57,5 @@ Maintaining and updating the project structure and components based on user requ
 - Special characters in URLs can cause routing issues in Next.js, requiring careful handling (e.g., renaming paths to use ASCII-compatible characters).
 - Modular component design (e.g., `Blog8` and `Blog8Demo`) facilitates easier integration and reusability.
 - Consistent documentation of ShadCN components in `ShadCN-context.md` helps avoid redundant installations.
+- Centralizing navigation-related logic (like sequential preloading) within a wrapper component (`PageWrapper.tsx`) that has access to routing context (`pathname`) is an effective and clean architectural pattern.
+- Delaying non-critical background tasks (like preloading) until after the `window.load` event is a good strategy to optimize the initial page load time (Time to Interactive).
