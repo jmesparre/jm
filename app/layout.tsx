@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import "./globals.css";
 import PageWrapper from "../components/PageWrapper";
 import { Header1 } from "../components/ui/header";
