@@ -52,7 +52,7 @@ function TrabajosBlock() {
         title: t("kesug_title"),
         summary: t("kesug_summary"),
         label: t("kesug_label"),
-        author: "Wordpress , \ Woocommerce",
+        author: "Wordpress , \\ Woocommerce",
         published: "18 Nov 2024",
         url: "https://tiendadigital.kesug.com",
         image: "/kesug-trabajo.png",
