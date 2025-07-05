@@ -30,6 +30,10 @@ This document tracks what has been built, what remains, the current status, know
 - **Brevo email sending functionality in `app/api/contact/route.ts` has been updated to use a direct `fetch` request to the Brevo API**, resolving previous TypeScript errors with the SDK.
 - **The `app/api/contact/route.ts` has been updated to use a fixed, verified sender email (`jmesparre@gmail.com`)** and include the user's submitted email in the message body, resolving the "sender not valid" error from Brevo.
 - **Implemented a sequential, context-aware image preloading system** to enhance perceived navigation speed. The logic is centralized in `PageWrapper.tsx` and preloads the main image for the next page in the navigation sequence after the current page has fully loaded.
+- **Internationalization (i18n) system is fully implemented and functional.**
+    - The system uses `i18next` with `i18next-http-backend` to load translations dynamically from JSON files in `public/locales`.
+    - The configuration has been centralized and cleaned up.
+    - Key components like the header and project cards are now fully translated.
 
 ## What's Left to Build
 

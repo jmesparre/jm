@@ -29,6 +29,16 @@ Maintaining and updating the project structure and components based on user requ
 - The system preloads the main image of the *next* page in the navigation sequence only after the current page has fully loaded.
 - Obsolete preloading components (`ClientSidePreloader.tsx`, `ImagePreloader.tsx`) were removed.
 - Changes were committed and pushed to the remote repository.
+- **Implemented a robust internationalization (i18n) system:**
+    - Installed and configured `i18next-http-backend` to dynamically load translation files.
+    - Centralized the `i18next` configuration in `src/i18n.js`.
+    - Refactored `I18nProvider` to remove duplicate code and use the central configuration.
+    - Translated all hardcoded text in the header and project cards.
+    - Cleaned up the root layout to be a server component and use reliable relative paths.
+- **Updated the language switcher button in the header:**
+    - Replaced the two separate "EN" and "ES" buttons with a single, dynamic button.
+    - The button now displays the opposite language (e.g., shows "EN" when the site is in Spanish).
+    - Added the "Earth" icon from `lucide-react` to the button for better user experience.
 
 ## Next Steps
 

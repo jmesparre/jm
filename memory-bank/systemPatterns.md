@@ -22,6 +22,11 @@ The project follows a modern web application architecture based on Next.js, whic
 - **API Routes:** Next.js API routes will be used for the contact form backend integration.
 - **Data Fetching:** Data fetching patterns will be implemented to retrieve blog content from the headless CMS.
 - **Sequential Image Preloading:** A custom performance pattern has been implemented to improve perceived navigation speed. The logic is centralized in the `PageWrapper.tsx` component. It uses the current `pathname` to determine the next page in a predefined navigation order and preloads the main image for that next page. This preloading is intentionally delayed until after the `window.load` event of the current page to ensure the initial page load is not blocked.
+- **Internationalization (i18n):** The project uses `i18next` for handling translations.
+    - **Centralized Configuration:** The entire i18n setup is managed in `src/i18n.js`.
+    - **Dynamic JSON Loading:** The `i18next-http-backend` package is used to load translation files (`common.json`) from the `public/locales` directory. This allows for easy updates to translations without changing the application code.
+    - **React Integration:** `react-i18next` provides the `I18nextProvider` (wrapped in `app/providers/I18nProvider.tsx`) and the `useTranslation` hook, which is used in components to access translated strings.
+    - **Language Detection:** `i18next-browser-languagedetector` is used to automatically detect the user's preferred language.
 
 ## Component Relationships
 

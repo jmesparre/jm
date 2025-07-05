@@ -1,4 +1,5 @@
 import React, { useState, FormEvent } from "react";
+import { useTranslation } from "react-i18next";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -19,6 +20,7 @@ export const Contact2 = ({
   email = "jmesparre@gmail.com",
   web = { label: "juandesarrolloweb.com", url: "/" },
 }: Contact2Props) => {
+  const { t } = useTranslation();
   const [name, setName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -49,11 +51,11 @@ export const Contact2 = ({
         setUserEmail("");
         setMessage("");
       } else {
-        setError(data.message || "Error al enviar el mensaje.");
+        setError(data.message || t("contact_error"));
       }
     } catch (err) {
       console.error("Error en la petición:", err);
-      setError("Error de red o del servidor.");
+      setError(t("contact_network_error"));
     } finally {
       setLoading(false);
     }
@@ -63,7 +65,7 @@ export const Contact2 = ({
     <section className="px-4 pt-[25vh] sm:px-[11%] sm:pt-[40vh] pb-40 text-background min-h-[110vh] sm:min-h-[101vh]">
         <div>
           <h1 className="mb-2 text-pretty text-5xl md:text-5xl lg:text-6xl font-title">
-            {title}
+            {t('contact_title')}
           </h1>  
         </div>
         <div className="flex flex-col justify-between gap-10 lg:flex-row lg:gap-20">
@@ -81,22 +83,22 @@ export const Contact2 = ({
                  <li >
                   <a href="https://wa.me/541132750873/?text=Hola" className="font-semibold" target="_blank" rel="noopener noreferrer">
                     Whatsapp <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32.7 32.9" className="h-3.5 w-3.5 inline ml-1">
-                <path style={{ fill: '#1ac165', fillRule: 'evenodd' }} d="M24.1,19.7c-.4-.2-2.4-1.3-2.7-1.4-.4-.2-.6-.2-.9.2-.3.4-1.1,1.3-1.4,1.6-.2.3-.5.3-.9,0-.4-.2-1.7-.7-3.2-2.2-1.2-1.1-1.9-2.5-2.2-2.9-.2-.4,0-.6.2-.8.2-.2.4-.5.6-.7.2-.2.3-.4.4-.7.1-.3,0-.5,0-.7,0-.2-.8-2.3-1.1-3.1-.3-.8-.7-.7-.9-.7-.2,0-.5,0-.8,0-.3,0-.7,0-1.1.5-.4.4-1.5,1.3-1.6,3.4,0,2,1.3,4,1.5,4.3.2.3,2.7,4.6,6.8,6.4,4.1,1.8,4.1,1.2,4.9,1.2.8,0,2.5-.9,2.8-1.8.4-.9.4-1.8.3-1.9,0-.2-.4-.3-.8-.5h0ZM16.6,29.4c-2.7,0-5.2-.8-7.3-2.2l-5.1,1.6,1.7-5c-1.6-2.2-2.5-4.9-2.5-7.8,0-7.4,6-13.3,13.3-13.3s13.3,6,13.3,13.3-6,13.3-13.3,13.3h0ZM16.6,0C7.8,0,.6,7.2.6,16s.8,5.9,2.3,8.3l-2.9,8.6,8.9-2.8c2.3,1.3,4.9,2,7.7,2,8.9,0,16-7.2,16-16S25.5,0,16.6,0h0Z"/>
+                <path style={{ fill: '#1ac165', fillRule: 'evenodd' }} d="M24.1,19.7c-.4-.2-2.4-1.3-2.7-1.4-.4-.2-.6-.2-.9.2-.3.4-1.1,1.3-1.4,1.6-.2.3-.5.3-.9,0-.4-.2-1.7-.7-3.2-2.2-1.2-1.1-1.9-2.5-2.2-2.9-.2-.4,0-.6.2-.8.2-.2.4-.5.6-.7.2-.2.3-.4.4-.7.1-.3,0-.5,0-.7,0-.2-.8-2.3-1.1-3.1-.3-.8-.7-.7-.9-.7-.2,0-.5,0-.8,0-.3,0-.7,0-1.1.5-.4.4-1.5,1.3-1.6,3.4,0,2,1.3,4,1.5,4.3.2.3,2.7,4.6,6.8,6.4,4.1,1.8,4.1,1.2,4.9,1.2.8,0,2.5-.9,2.8-1.8.4-.9.4-1.8.3-1.9,0-.2-.4-.3-.8-.5h0ZM16.6,29.4c-2.7,0-5.2-.8-7.3-2.2l-5.1,1.6,1.7-5c-1.6-2.2-2.5-4.9-2.5-7.8,0-7.4,6-13.3,13.3-13.3s13.3,6,13.3,13.3-6,13.3,13.3,13.3h0ZM16.6,0C7.8,0,.6,7.2.6,16s.8,5.9,2.3,8.3l-2.9,8.6,8.9-2.8c2.3,1.3,4.9,2,7.7,2,8.9,0,16-7.2,16-16S25.5,0,16.6,0h0Z"/>
             </svg>
                   </a>
                 </li>
                 <li>
-                  <span className="font-bold">Telefono: </span>
+                  <span className="font-bold">{t('contact_phone')}: </span>
                   {phone}
                 </li>
                 <li>
-                  <span className="font-bold">Email: </span>
+                  <span className="font-bold">{t('contact_email')}: </span>
                   <a href={`mailto:${email}`} className="underline">
                     {email}
                   </a>
                 </li>
                 <li>
-                  <span className="font-bold">Web: </span>
+                  <span className="font-bold">{t('contact_web')}: </span>
                   <a href={web.url} target="_blank" className="underline">
                     {web.label}
                   </a>
@@ -109,19 +111,19 @@ export const Contact2 = ({
             <form onSubmit={handleSubmit} className="flex flex-col gap-6 pb-5">
               <div className="flex gap-4 w-60 sm:w-70 mt-4">
                 <div className="grid w-full items-center gap-1.5">
-                  <Input type="text" id="firstname" placeholder="Nombre" value={name} onChange={(e) => setName(e.target.value)} required />
+                  <Input type="text" id="firstname" placeholder={t('contact_name')} value={name} onChange={(e) => setName(e.target.value)} required />
                 </div>
               </div>
               <div className="grid w-full items-center gap-1.5">
-                <Input type="email" id="email" placeholder="Email" value={userEmail} onChange={(e) => setUserEmail(e.target.value)} required />
+                <Input type="email" id="email" placeholder={t('contact_email')} value={userEmail} onChange={(e) => setUserEmail(e.target.value)} required />
               </div>
               <div className="grid w-full gap-1.5">
-                <Textarea className="h-[150px]" placeholder="Mensaje" id="message" value={message} onChange={(e) => setMessage(e.target.value)} required />
+                <Textarea className="h-[150px]" placeholder={t('contact_message')} id="message" value={message} onChange={(e) => setMessage(e.target.value)} required />
               </div>
               <Button type="submit" className="w-full border-1" disabled={loading}>
-                {loading ? "Enviando..." : "Enviar"}
+                {loading ? t('contact_sending') : t('contact_send')}
               </Button>
-              {success && <p className="text-background">¡Mensaje enviado con éxito!</p>}
+              {success && <p className="text-background">{t('contact_success')}</p>}
               {error && <p className="text-red-300">{error}</p>}
             </form>
           </div>
