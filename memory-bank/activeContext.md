@@ -24,6 +24,21 @@ Maintaining and updating the project structure and components based on user requ
 - Integrated `Blog8Demo` into `app/proyectos/page.tsx`.
 - Updated `memory-bank/ShadCN-context.md` to include `Card`.
 - Completed review of all `page.tsx` files in `app/` directory. No significant structural changes or new functionalities found beyond what is already documented; content is primarily informative and uses existing components.
+- Implemented a sequential image preloading system to improve navigation performance.
+- The preloading logic is centralized in `PageWrapper.tsx`.
+- The system preloads the main image of the *next* page in the navigation sequence only after the current page has fully loaded.
+- Obsolete preloading components (`ClientSidePreloader.tsx`, `ImagePreloader.tsx`) were removed.
+- Changes were committed and pushed to the remote repository.
+- **Implemented a robust internationalization (i18n) system:**
+    - Installed and configured `i18next-http-backend` to dynamically load translation files.
+    - Centralized the `i18next` configuration in `src/i18n.js`.
+    - Refactored `I18nProvider` to remove duplicate code and use the central configuration.
+    - Translated all hardcoded text in the header and project cards.
+    - Cleaned up the root layout to be a server component and use reliable relative paths.
+- **Updated the language switcher button in the header:**
+    - Replaced the two separate "EN" and "ES" buttons with a single, dynamic button.
+    - The button now displays the opposite language (e.g., shows "EN" when the site is in Spanish).
+    - Added the "Earth" icon from `lucide-react` to the button for better user experience.
 
 ## Next Steps
 
@@ -52,3 +67,5 @@ Maintaining and updating the project structure and components based on user requ
 - Special characters in URLs can cause routing issues in Next.js, requiring careful handling (e.g., renaming paths to use ASCII-compatible characters).
 - Modular component design (e.g., `Blog8` and `Blog8Demo`) facilitates easier integration and reusability.
 - Consistent documentation of ShadCN components in `ShadCN-context.md` helps avoid redundant installations.
+- Centralizing navigation-related logic (like sequential preloading) within a wrapper component (`PageWrapper.tsx`) that has access to routing context (`pathname`) is an effective and clean architectural pattern.
+- Delaying non-critical background tasks (like preloading) until after the `window.load` event is a good strategy to optimize the initial page load time (Time to Interactive).
