@@ -5,6 +5,7 @@ import { useRouter, usePathname } from "next/navigation";
 import Image from 'next/image';
 import * as motion from "motion/react-client";
 import ClickSpark from "@/components/ClickSpark";
+import Loader from "@/components/ui/loader";
 
 const pageOrder = [
   "/", "/servicios", "/servicios/desarrollo-web", "/servicios/servicios-de-diseno",
@@ -33,6 +34,7 @@ export default function PageWrapper({ children }: PageWrapperProps) {
   const pathname = usePathname();
   const [imageToPreload, setImageToPreload] = useState<string | null>(null);
   const [isPageLoaded, setIsPageLoaded] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const isNavigatingRef = useRef(false);
@@ -55,6 +57,7 @@ export default function PageWrapper({ children }: PageWrapperProps) {
     }
 
     if (nextPagePath && nextPagePath !== pathname) {
+      setIsLoading(true);
       isNavigatingRef.current = true;
       router.push(nextPagePath);
       window.scrollTo(0, 0);
@@ -167,9 +170,10 @@ export default function PageWrapper({ children }: PageWrapperProps) {
     };
   }, [pathname, navigateToPage]);
 
-  // Forzar scroll al top cuando cambia la ruta
+  // Forzar scroll al top cuando cambia la ruta y ocultar loader
   useEffect(() => {
     window.scrollTo(0, 0);
+    setIsLoading(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -237,6 +241,11 @@ export default function PageWrapper({ children }: PageWrapperProps) {
           </motion.div>
         </div>
       </ClickSpark>
+      {isLoading && (
+        <div className="fixed bottom-8 right-8 transition-opacity duration-300">
+          <Loader />
+        </div>
+      )}
     </>
   );
 }
