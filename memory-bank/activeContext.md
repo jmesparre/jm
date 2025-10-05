@@ -29,6 +29,8 @@ Maintaining and updating the project structure and components based on user requ
 - The system preloads the main image of the *next* page in the navigation sequence only after the current page has fully loaded.
 - Obsolete preloading components (`ClientSidePreloader.tsx`, `ImagePreloader.tsx`) were removed.
 - Changes were committed and pushed to the remote repository.
+- Created a reusable `Loader` component (`components/ui/loader.tsx`).
+- Implemented a loading indicator in `PageWrapper.tsx` that displays during scroll-based page navigation. The loader appears when navigation starts and disappears when the new page loads.
 
 ## Next Steps
 
