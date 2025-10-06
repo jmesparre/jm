@@ -1,9 +1,13 @@
 
+"use client";
+
 import Image from 'next/image'; // Import Image from next/image
 import { Brush, LayoutTemplate, Image as ImageIcon, Smartphone } from 'lucide-react'
+import { useTranslation } from 'react-i18next';
 
 
 const ServiciosDeDisenoPage = () => {
+  const { t } = useTranslation();
 
   return (
     <div>
@@ -12,27 +16,27 @@ const ServiciosDeDisenoPage = () => {
               <div className="grid items-center gap-12 md:grid-cols-2 md:gap-12 lg:grid-cols-5 lg:gap-11">
                   <div className="lg:col-span-2  order-2 md:order-1">
                       <div className="md:pr-6 lg:pr-0 ">
-                          <h2 className="text-4xl font-semibold sm:text-3xl lg:text-4xl">Servicios de Diseño Gráfico.</h2>
+                          <h2 className="text-4xl font-semibold sm:text-3xl lg:text-4xl">{t('diseno_title')}</h2>
                           <p className="mt-6 text-sm ">
-                            Tus ideas en experiencias visuales. Servicios de diseño gráfico y UX/UI que abarcan desde la creación de logotipos, ilustraciones, hasta el diseño de interfaces de usuario, intuitivas y atractivas para sitios web y aplicaciones. 
+                            {t('diseno_text')}
                           </p>
                       </div>
                       <ul className="mt-8 divide-y border-y *:flex *:items-center *:gap-3 *:py-3">
                           <li>
                               <Brush className="size-5" />
-                              Diseño de identidad de marca y logotipos
+                              {t('diseno_feature1')}
                           </li>
                           <li>
                               <LayoutTemplate className="size-5" />
-                              Diseño UX/UI para interfaces intuitivas
+                              {t('diseno_feature2')}
                           </li>
                           <li>
                               <ImageIcon className="size-5" />
-                              Material gráfico para web y redes sociales
+                              {t('diseno_feature3')}
                           </li>
                           <li>
                               <Smartphone className="size-5" />
-                              Diseño de aplicaciones móviles
+                              {t('diseno_feature4')}
                           </li>
                       </ul>
                   </div>

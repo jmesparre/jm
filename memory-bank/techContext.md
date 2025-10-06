@@ -39,6 +39,7 @@ This document details the technologies used, the development setup, technical co
 - `next`: The Next.js framework.
 - `react`, `react-dom`: React libraries for building the UI.
 - `typescript`: For type safety.
+- `i18next`, `react-i18next`, `i18next-browser-languagedetector`, `i18next-http-backend`: For internationalization (i18n).
 - `tailwindcss`, `@tailwindcss/postcss`: For styling.
 - `@radix-ui/react-slot`, `class-variance-authority`: Likely used for shadcn/ui components.
 - `embla-carousel-react`: For carousel functionality.

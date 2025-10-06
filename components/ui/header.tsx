@@ -10,73 +10,89 @@ import {
     NavigationMenuTrigger,
 } from "./navigation-menu";
 import { Component as AnimatedMenuButton } from "./animated-menu-button";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useRef } from "react";
+import { useTranslation } from 'react-i18next';
+import { Earth } from 'lucide-react';
 
 function Header1() {
-    const headerRef = useRef<HTMLElement>(null);
+    const { t, i18n } = useTranslation();
+    const [, setLang] = useState(i18n.language);
+
+    useEffect(() => {
+        const handleLanguageChange = (lng: string) => setLang(lng);
+        i18n.on('languageChanged', handleLanguageChange);
+        return () => {
+            i18n.off('languageChanged', handleLanguageChange);
+        };
+    }, [i18n]);
+
+    const changeLanguage = () => {
+        const newLang = i18n.language === 'es' ? 'en' : 'es';
+        i18n.changeLanguage(newLang);
+    };
+
+    const [isOpen, setOpen] = useState(false);
+    const headerRef = useRef(null);
+
     const navigationItems = [
         {
-            title: "Inicio",
+            title: t('home'),
             href: "/",
             description: "",
         },
         {
-            title: "Servicios",
-            description: "Explora mis servicios de desarrollo web y diseño.",
+            title: t('services'),
+            description: t('services_description'),
             items: [
                 {
-                    title: "[ Ver todos los servicios ]",
+                    title: t('all_services'),
                     href: "/servicios",
                 },
                 {
-                    title: "[ Desarrollo Web ]",
+                    title: t('web_development'),
                     href: "/servicios/desarrollo-web",
                 },
                 
                 {
-                    title: "[ Servicios de Diseño ]",
+                    title: t('design_services'),
                     href: "/servicios/servicios-de-diseno",
                 },
                 {
-                    title: "[ E-commerce ]",
+                    title: t('ecommerce'),
                     href: "/servicios/e-commerce",
                 },
                 {
-                    title: "[ Posicionamiento Web ]",
+                    title: t('seo'),
                     href: "/servicios/posicionamiento-web",
                 },
                 {
-                    title: "[ Herramientas de Gestion ]",
+                    title: t('management_tools'),
                     href: "/servicios/herramientas-de-gestion",
                 },
                 {
-                    title: "[ Precios Fijos ]",
+                    title: t('fixed_prices'),
                     href: "/servicios/precios-fijos",
                 }
             ],
         },
         {
-            title: "Trabajos",
+            title: t('projects'),
             href: "/trabajos",
-            description: "Descubre nuestros proyectos destacados.",
+            description: t('projects_description'),
         },
         {
-            title: "Sobre Mi",
+            title: t('about_me'),
             href: "/sobre-mi",
             description: "",
         },
         {
-            title: "Contacto",
+            title: t('contact'),
             href: "/contacto",
-            description: "Ponte en contacto con nosotros para más información.",   
+            description: t('contact_description'),   
         }
     ];
-
-    const [isOpen, setOpen] = useState(false);
-
 
     return (
         <header ref={headerRef} className="w-full bg-foreground z-40 fixed  top-0 left-0 text-background px-2">
@@ -89,8 +105,8 @@ function Header1() {
             <div className="container relative mx-auto min-h-15 flex gap-4 flex-row justify-end items-center">
                 <NavigationMenu delayDuration={0} skipDelayDuration={0} className="flex justify-start items-start justify-start items-center gap-4 lg:flex hidden flex-row">
                     <NavigationMenuList className="flex justify-start flex-row">
-                            {navigationItems.map((item) => (
-                                <NavigationMenuItem key={item.title} className="relative z-50">
+                            {navigationItems.map((item, index) => (
+                                <NavigationMenuItem key={item.href || index} className="relative z-50">
                                     {item.items ? ( // If item has sub-items (e.g., Servicios, Contacto)
                                         <>
                                             <NavigationMenuTrigger className="font-medium text-sm">
@@ -105,10 +121,10 @@ function Header1() {
                                                                 {item.description}
                                                             </p>
                                                         </div>
-                                                        {item.title === "Contacto" && ( // Only show Contactame button for Contacto dropdown
+                                                        {item.title === t('contact') && ( // Only show Contactame button for Contacto dropdown
                                                             <a href="https://wa.me/541132750873/?text=Hola" target="_blank" rel="noopener noreferrer">
                                                                 <Button size="sm" className="mt-10 cursor-pointer">
-                                                                    Contactame
+                                                                    {t('contact_me')}
                                                                 </Button>
                                                             </a>
                                                         )}
@@ -138,6 +154,12 @@ function Header1() {
                             ))}
                         </NavigationMenuList>
                     </NavigationMenu>
+                    <div className="flex items-center gap-2 pt-[2px]">
+                        <Button variant="ghost" size="sm" onClick={changeLanguage}>
+                            {i18n.language === 'es' ? 'EN' : 'ES'}
+                            <Earth className="ml-2 h-3 w-3 mt-[-2px]" />
+                        </Button>
+                    </div>
                 <div className="flex w-12 shrink lg:hidden items-end justify-end">
                     <AnimatedMenuButton open={isOpen} onToggle={() => setOpen(!isOpen)} />
                     {isOpen && (

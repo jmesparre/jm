@@ -1,8 +1,12 @@
+"use client";
+
 import React from 'react';
 import Image from 'next/image'; // Import Image from next/image
 import { FileSearch, Megaphone, BarChart } from 'lucide-react'
+import { useTranslation } from 'react-i18next';
 
 const PosicionamientoWebPage = () => {
+  const { t } = useTranslation();
   return (
     <div>
       <section className="py-[22vh] text-background min-h-[110vh] sm:min-h-[140vh]">
@@ -10,23 +14,23 @@ const PosicionamientoWebPage = () => {
               <div className="grid items-center gap-12 md:grid-cols-2 md:gap-12 lg:grid-cols-5 lg:gap-11">
                   <div className="lg:col-span-2 order-2 md:order-1">
                       <div className="md:pr-6 lg:pr-0">
-                          <h2 className="text-4xl font-semibold sm:text-3xl lg:text-4xl">Posicionamiento Web SEO: Aumenta tu Visibilidad Online</h2>
+                          <h2 className="text-4xl font-semibold sm:text-3xl lg:text-4xl">{t('seo_title')}</h2>
                           <p className="mt-6 text-sm ">
-                            Implemento estrategias de SEO (Optimización de Motores de Búsqueda) para mejorar el ranking de tu sitio web. A través de la optimización de palabras clave, contenido, estructura técnica y construcción de enlaces, aumenta tu visibilidad, atrae tráfico para destacar en las busquedas en google.
+                            {t('seo_text')}
                         </p>
                       </div>
                       <ul className="mt-8 divide-y border-y *:flex *:items-center *:gap-3 *:py-3">
                           <li>
                               <FileSearch className="size-5" />
-                              Auditorías SEO personalizadas
+                              {t('seo_feature1')}
                           </li>
                           <li>
                               <Megaphone className="size-5" />
-                              Optimización On-Page y Off-Page
+                              {t('seo_feature2')}
                           </li>
                           <li>
                               <BarChart className="size-5" />
-                              Monitoreo y reportes de rendimiento
+                              {t('seo_feature3')}
                           </li>
                       </ul>
                   </div>

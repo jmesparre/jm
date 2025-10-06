@@ -1,8 +1,12 @@
+"use client";
+
 import React from 'react';
 import Image from 'next/image'; // Import Image from next/image
 import { DollarSign, Zap, Monitor, LifeBuoy } from 'lucide-react'
+import { useTranslation } from 'react-i18next';
 
 const PreciosFijosPage = () => {
+  const { t } = useTranslation();
   return (
     <div>
       <section className="py-[22vh] text-background min-h-[110vh] sm:min-h-[140vh]">
@@ -10,27 +14,27 @@ const PreciosFijosPage = () => {
               <div className="grid items-center gap-12 md:grid-cols-2 md:gap-12 lg:grid-cols-5 lg:gap-11">
                   <div className="lg:col-span-2 order-2 md:order-1">
                       <div className="md:pr-6 lg:pr-0">
-                          <h2 className="text-4xl font-semibold sm:text-3xl lg:text-4xl">Paquetes Web con Precios Fijos</h2>
+                          <h2 className="text-4xl font-semibold sm:text-3xl lg:text-4xl">{t('precios_fijos_title')}</h2>
                           <p className="mt-6 text-sm ">
-                            Paquetes de desarrollo web con precios fijos, diseñados para brindarte transparencia y control sobre tu inversión. Ideal para emprendedores y pequeñas empresas que buscan una presencia online profesional sin costos ocultos.
+                            {t('precios_fijos_text')}
                           </p>
                       </div>
                       <ul className="mt-8 divide-y border-y *:flex *:items-center *:gap-3 *:py-3">
                           <li>
                               <DollarSign className="size-5" />
-                              Presupuestos claros
+                              {t('precios_fijos_feature1')}
                           </li>
                           <li>
                               <Zap className="size-5" />
-                              Entrega rápida y eficiente
+                              {t('precios_fijos_feature2')}
                           </li>
                           <li>
                               <Monitor className="size-5" />
-                              Diseños adaptables a cualquier dispositivo
+                              {t('precios_fijos_feature3')}
                           </li>
                           <li>
                               <LifeBuoy className="size-5" />
-                              Soporte y mantenimiento post-lanzamiento
+                              {t('precios_fijos_feature4')}
                           </li>
                       </ul>
                   </div>

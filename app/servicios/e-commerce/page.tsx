@@ -1,9 +1,13 @@
+"use client";
+
 import React from 'react';
 import Image from 'next/image'; // Import Image from next/image
 import { CreditCard, Package, LayoutTemplate } from 'lucide-react'
+import { useTranslation } from 'react-i18next';
 
 
 const ECommercePage = () => {
+  const { t } = useTranslation();
   return (
      <div>
        <section className="py-[22vh] text-background min-h-[110vh] sm:min-h-[140vh]">
@@ -16,23 +20,23 @@ const ECommercePage = () => {
                    </div>
                    <div className="lg:col-span-2">
                        <div className="md:pr-6 lg:pr-0">
-                           <h2 className="text-4xl font-semibold sm:text-3xl lg:text-4xl">Desarrollo de Tiendas Virtuales (E-commerce)</h2>
+                           <h2 className="text-4xl font-semibold sm:text-3xl lg:text-4xl">{t('ecommerce_title')}</h2>
                            <p className="mt-6 text-sm">
-                            Creo tiendas virtuales y sistemas de pago que te permiten vender tus productos o servicios online de manera que se ajuste a tus necesidades . Desde la configuración de pasarelas de pago hasta la gestión de inventario. 
+                            {t('ecommerce_text')}
                            </p>
                        </div>
                        <ul className="mt-8 divide-y border-y *:flex *:items-center *:gap-3 *:py-3">
                            <li>
                                <CreditCard className="size-5" />
-                               Integración de pasarelas de pago seguras
+                               {t('ecommerce_feature1')}
                            </li>
                            <li>
                                <Package className="size-5" />
-                               Gestión de productos e inventario
+                               {t('ecommerce_feature2')}
                            </li>
                            <li>
                                <LayoutTemplate className="size-5" />
-                               Diseño personalizado y experiencia de usuario intuitiva
+                               {t('ecommerce_feature3')}
                            </li>
                        </ul>
                    </div>

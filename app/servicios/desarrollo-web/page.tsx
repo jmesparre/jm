@@ -3,10 +3,11 @@
 import React from 'react';
 import Image from 'next/image'; // Import Image from next/image
 import { LifeBuoy, Rocket, BarChart, Building } from 'lucide-react'
+import { useTranslation } from 'react-i18next';
 
 
 const DesarrolloWebPage = () => {
-
+  const { t } = useTranslation();
 
 
   return (
@@ -21,27 +22,27 @@ const DesarrolloWebPage = () => {
                    </div>
                    <div className="lg:col-span-2">
                        <div className="md:pr-6 lg:pr-0">
-                           <h2 className="text-4xl font-semibold sm:text-3xl lg:text-4xl">Desarrollo Web: Tu Presencia Online Profesional</h2>
+                           <h2 className="text-4xl font-semibold sm:text-3xl lg:text-4xl">{t('desarrollo_web_title')}</h2>
                            <p className="mt-6 text-sm ">
-                           Creo sitios web y aplicaciones a medida con funcionalidades para alcanzar tus objetivos de negocio. Desde landing pages optimizadas hasta complejas plataformas web, me enfoco en la experiencia de usuario, la escalabilidad y la integración de las últimas tecnologías para asegurar tu éxito digital.
+                           {t('desarrollo_web_text')}
                            </p>
                        </div>
                        <ul className="mt-8 divide-y border-y *:flex *:items-center *:gap-3 *:py-3">
                            <li>
                                <LifeBuoy className="size-5" />
-                               Soporte técnico y asesoramiento continuo
+                               {t('desarrollo_web_feature1')}
                            </li>
                            <li>
                                <Rocket className="size-5" />
-                               Desarrollo ágil y tiempos de respuesta rápidos
+                               {t('desarrollo_web_feature2')}
                            </li>
                            <li>
                                <BarChart className="size-5" />
-                               Monitoreo de rendimiento y analíticas web
+                               {t('desarrollo_web_feature3')}
                            </li>
                            <li>
                                <Building className="size-5" />
-                               Diseño arquitectónico y escalabilidad
+                               {t('desarrollo_web_feature4')}
                            </li>
                        </ul>
                    </div>

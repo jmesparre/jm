@@ -1,9 +1,13 @@
+"use client";
+
 import React from 'react';
 import Image from 'next/image'; // Import Image from next/image
 import { Users, Briefcase, Workflow, Plug } from 'lucide-react'
+import { useTranslation } from 'react-i18next';
 
 
 const HerramientasGestionPage = () => {
+  const { t } = useTranslation();
   return (
      <div>
        <section className="py-[22vh] text-background min-h-[110vh] sm:min-h-[140vh]">
@@ -16,25 +20,25 @@ const HerramientasGestionPage = () => {
                    </div>
                    <div className="lg:col-span-2">
                        <div className="md:pr-6 lg:pr-0">
-                           <h2 className="text-4xl font-semibold sm:text-3xl lg:text-4xl">Herramientas de Gestión Empresarial</h2>
-                           <p className="mt-6 text-sm ">Desarrollo e implemento sistemas a medida para optimizar tus procesos internos, mejorar la relación con tus clientes y gestionar tu contenido de manera eficiente. Soluciones que te permiten centralizar información, automatizar tareas y tomar decisiones estratégicas basadas en datos.</p>
+                           <h2 className="text-4xl font-semibold sm:text-3xl lg:text-4xl">{t('gestion_title')}</h2>
+                           <p className="mt-6 text-sm ">{t('gestion_text')}</p>
                        </div>
                        <ul className="mt-8 divide-y border-y *:flex *:items-center *:gap-3 *:py-3">
                            <li>
                                <Users className="size-5" />
-                               Sistemas de Gestión de relaciones con el cliente (CRM)
+                               {t('gestion_feature1')}
                                </li>
                            <li>
                                <Briefcase className="size-5" />
-                               Herramientas de Gestión de Relaciones con los Empleados (ERM) 
+                               {t('gestion_feature2')}
                             </li>
                            <li>
                                <Workflow className="size-5" />
-                               Automatización de procesos y flujos de trabajo
+                               {t('gestion_feature3')}
                            </li>
                            <li>
                                <Plug className="size-5" />
-                               Integración con tus sistemas existentes
+                               {t('gestion_feature4')}
                            </li>
                        </ul>
                    </div>
