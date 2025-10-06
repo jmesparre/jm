@@ -59,18 +59,6 @@ function TrabajosBlock() {
         tags: ["Sistema de Gestion", "Desarrollo Web", "Back-end"],
       },
       {
-        id: "proyecto-kesug",
-        title: t("kesug_title"),
-        summary: t("kesug_summary"),
-        label: t("kesug_label"),
-        author: "Wordpress , \\ Woocommerce",
-        published: "18 Nov 2024",
-        url: "https://tiendadigital.kesug.com",
-        image: "/kesug-trabajo.png",
-        altText: "Sistema de venta para Kesug",
-        tags: ["E-commerce", "Desarrollo Web", "Automatización"],
-      },
-      {
         id: "proyecto-tienda-virtual",
         title: t("tienda_title"),
         summary: t("tienda_summary"),
